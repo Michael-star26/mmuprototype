@@ -1,42 +1,83 @@
-# sv
+# Multimedia University of Kenya — Website Prototype
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+A modern website prototype for Multimedia University of Kenya (MMU), built to explore a cleaner information architecture, responsive interface, and reusable component system for a potential university website modernization project.
 
-## Creating a project
+## Stack
 
-If you're seeing this, you've probably already done this step. Congrats!
+* **SvelteKit**
+* **TypeScript**
+* **Tailwind CSS**
+* **shadcn-svelte**
+* **Lucide**
+* **IBM Plex Sans**
 
-```sh
-# create a new project
-npx sv create my-app
+## Features
+
+* Responsive university website layout
+* Reusable shared components
+* Programme, news, and event listings
+* Dynamic detail pages using route parameters
+* Breadcrumb navigation
+* Search interface
+* Responsive navigation with mobile sheet
+* Admissions and university information sections
+* Data-driven content architecture
+
+## Project Structure
+
+```text
+src/
+├── lib/
+│   ├── components/
+│   │   ├── shared/
+│   │   └── ui/
+│   ├── data/
+│   └── types/
+│
+└── routes/
+    ├── academics/
+    ├── admissions/
+    ├── campus-life/
+    ├── contact/
+    ├── events/
+    ├── news/
+    ├── research/
+    ├── university/
+    └── ...
 ```
 
-To recreate this project with the same configuration:
+## Development
 
-```sh
-# recreate this project
-npx sv@0.17.1 create --template minimal --types ts --add tailwindcss="plugins:typography,forms" --install npm mmuprototype
+Install dependencies:
+
+```bash
+npm install
 ```
 
-## Developing
+Start the development server:
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```sh
+```bash
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
-## Building
+Build for production:
 
-To create a production version of your app:
-
-```sh
+```bash
 npm run build
 ```
 
-You can preview the production build with `npm run preview`.
+Preview the production build:
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+```bash
+npm run preview
+```
+
+## Content
+
+The current implementation contains prototype content for demonstrating the site's structure and user experience. Content, contact information, statistics, programme information, and other institutional details should be verified against official MMU sources before production use.
+
+## Status
+
+**Prototype / Concept**
+
+This project is intended to demonstrate a possible direction for a modern MMU web experience, including its information architecture, visual system, reusable components, and content-driven page structure.
