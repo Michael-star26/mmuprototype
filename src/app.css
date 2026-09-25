@@ -1,0 +1,32 @@
+@import "tw-animate-css";
+@import "shadcn-svelte/tailwind.css";
+@import "@fontsource-variable/ibm-plex-sans";
+
+@layer base {
+	* {
+		@apply border-border outline-ring/50;
+	}
+
+	html {
+		@apply font-sans scroll-smooth;
+	}
+
+	body {
+		@apply bg-background text-foreground;
+		margin: 0;
+		min-width: 320px;
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+	::selection {
+		@apply bg-primary text-primary-foreground;
+	}
+}
+
+:focus-visible {
+	outline: 2px solid var(--ring);
+	outline-offset: 2px;
+}
