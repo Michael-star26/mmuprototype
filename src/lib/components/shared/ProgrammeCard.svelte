@@ -14,7 +14,7 @@
 <Card.Root class="h-full transition-shadow hover:shadow-md">
 	<Card.Header>
 		<Badge variant="secondary" class="w-fit">
-			{programme.degree}
+			{programme.level}
 		</Badge>
 
 		<Card.Title class="mt-3">

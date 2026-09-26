@@ -4,6 +4,7 @@ export interface Programme {
 	title: string;
 	faculty: string;
 	degree: string;
+	level:StudyLevel;
 	duration: string;
 	description: string;
 	overview: string;
@@ -44,6 +45,10 @@ export interface Leader {
 	image?: string;
 }
 
-export interface admin{
-	name:string
-}
+export type StudyLevel=
+	| 'Certificate' 
+    | 'Diploma' 
+    | 'Bachelor\'s Degree' 
+    | 'Postgraduate Diploma' 
+    | 'Master\'s Degree' 
+    | 'Doctoral (PhD)';

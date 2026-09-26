@@ -1,28 +1,26 @@
 <script lang="ts">
 	import PageHero from '$lib/components/shared/PageHero.svelte';
-	import ProgrammeCard from '$lib/components/shared/ProgrammeCard.svelte';
 	import SectionHeading from '$lib/components/shared/SectionHeading.svelte';
 	import CTASection from '$lib/components/shared/CTASection.svelte';
-
-	import { programmes } from '$lib/data/programmes';
+	import Breadcrumbs from '$lib/components/shared/Breadcrumbs.svelte';
 </script>
 
 <svelte:head>
 	<title>Academics | Multimedia University of Kenya</title>
 	<meta
 		name="description"
-		content="Explore academic programmes, faculties, and learning opportunities at Multimedia University of Kenya."
+		content="Explore academic programmes, faculties, research, and learning opportunities at Multimedia University of Kenya."
 	/>
 </svelte:head>
 
 <PageHero
 	eyebrow="Academics"
 	title="Learn. Explore. Grow."
-	description="Explore academic programmes, learning opportunities, and the academic community at Multimedia University of Kenya."
+	description="Discover academic programmes, faculties, research opportunities, and the learning environment at Multimedia University of Kenya."
 	actions={[
 		{
 			label: 'Explore Programmes',
-			href: '#programmes'
+			href: '/academics/programmes'
 		},
 		{
 			label: 'Admissions',
@@ -32,18 +30,87 @@
 	]}
 />
 
-<!-- Programmes -->
-<section id="programmes" class="container mx-auto px-4 py-16 md:py-20">
+<div class="container mx-auto px-4 pt-6">
+	<Breadcrumbs
+		items={[
+			{ label: 'Home', href: '/' },
+			{ label: 'Academics', href: '/academics' }
+		]}
+	/>
+</div>
+
+<!-- Academic Areas -->
+<section class="container mx-auto px-4 py-16 md:py-20">
 	<SectionHeading
-		eyebrow="Academic Programmes"
-		title="Explore Our Programmes"
-		description="Discover programmes designed to build practical knowledge, critical thinking, and career-ready skills."
+		eyebrow="Academic Areas"
+		title="Explore MMU Academics"
+		description="Discover our programmes, academic schools, research opportunities, and resources for students."
 	/>
 
-	<div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-		{#each programmes as programme}
-			<ProgrammeCard {programme} />
-		{/each}
+	<div class="mt-10 grid gap-6 md:grid-cols-2">
+		<a
+			href="/academics/programmes"
+			class="group rounded-lg border bg-background p-6 transition-colors hover:border-primary hover:bg-muted/30"
+		>
+			<h3 class="font-semibold transition-colors group-hover:text-primary">
+				Academic Programmes
+			</h3>
+			<p class="mt-2 text-sm leading-6 text-muted-foreground">
+				Browse undergraduate, postgraduate, diploma, certificate, and doctoral
+				programmes.
+			</p>
+			<span class="mt-4 inline-block text-sm font-medium">
+				Explore Programmes →
+			</span>
+		</a>
+
+		<a
+			href="/university/schools"
+			class="group rounded-lg border bg-background p-6 transition-colors hover:border-primary hover:bg-muted/30"
+		>
+			<h3 class="font-semibold transition-colors group-hover:text-primary">
+				Schools & Faculties
+			</h3>
+			<p class="mt-2 text-sm leading-6 text-muted-foreground">
+				Explore our academic schools, faculties, departments, and areas of
+				specialization.
+			</p>
+			<span class="mt-4 inline-block text-sm font-medium">
+				Explore Schools →
+			</span>
+		</a>
+
+		<a
+			href="/research"
+			class="group rounded-lg border bg-background p-6 transition-colors hover:border-primary hover:bg-muted/30"
+		>
+			<h3 class="font-semibold transition-colors group-hover:text-primary">
+				Research & Innovation
+			</h3>
+			<p class="mt-2 text-sm leading-6 text-muted-foreground">
+				Discover research, innovation, and opportunities to contribute to new
+				knowledge.
+			</p>
+			<span class="mt-4 inline-block text-sm font-medium">
+				Explore Research →
+			</span>
+		</a>
+
+		<a
+			href="/admissions"
+			class="group rounded-lg border bg-background p-6 transition-colors hover:border-primary hover:bg-muted/30"
+		>
+			<h3 class="font-semibold transition-colors group-hover:text-primary">
+				Admissions
+			</h3>
+			<p class="mt-2 text-sm leading-6 text-muted-foreground">
+				Find admission information and take the next step toward joining the
+				university.
+			</p>
+			<span class="mt-4 inline-block text-sm font-medium">
+				View Admissions →
+			</span>
+		</a>
 	</div>
 </section>
 
@@ -53,41 +120,33 @@
 		<SectionHeading
 			eyebrow="More Than Classrooms"
 			title="An Academic Community"
-			description="Explore the schools, research opportunities, and resources that support the student experience."
+			description="Learning at MMU extends beyond the classroom through research, innovation, collaboration, and student development."
 		/>
 
 		<div class="mt-8 grid gap-6 md:grid-cols-3">
-			<a
-				href="/university/schools"
-				class="rounded-lg border bg-background p-6 transition-colors hover:border-primary hover:bg-muted/30"
-			>
-				<h3 class="font-semibold">Schools & Faculties</h3>
+			<div class="rounded-lg border bg-background p-6">
+				<h3 class="font-semibold">Learning</h3>
 				<p class="mt-2 text-sm leading-6 text-muted-foreground">
-					Explore our academic schools, faculties, and areas of specialization.
+					Build practical knowledge and develop the skills needed for your
+					academic and professional journey.
 				</p>
-			</a>
+			</div>
 
-			<a
-				href="/research"
-				class="rounded-lg border bg-background p-6 transition-colors hover:border-primary hover:bg-muted/30"
-			>
+			<div class="rounded-lg border bg-background p-6">
 				<h3 class="font-semibold">Research</h3>
 				<p class="mt-2 text-sm leading-6 text-muted-foreground">
-					Discover research, innovation, and opportunities to contribute to
-					new knowledge.
+					Engage with research and innovation across different academic
+					disciplines.
 				</p>
-			</a>
+			</div>
 
-			<a
-				href="/admissions"
-				class="rounded-lg border bg-background p-6 transition-colors hover:border-primary hover:bg-muted/30"
-			>
-				<h3 class="font-semibold">Admissions</h3>
+			<div class="rounded-lg border bg-background p-6">
+				<h3 class="font-semibold">Community</h3>
 				<p class="mt-2 text-sm leading-6 text-muted-foreground">
-					Find admission information and take the next step toward joining
-					the university.
+					Connect with students, faculty, researchers, and the wider university
+					community.
 				</p>
-			</a>
+			</div>
 		</div>
 	</div>
 </section>
@@ -97,14 +156,15 @@
 	<CTASection
 		eyebrow="Ready to Begin?"
 		title="Find the programme that's right for you."
-		description="Review our programmes and admission information to plan your next step."
+		description="Explore the programme catalogue and review admission information to plan your next step."
 		primaryAction={{
+			label: 'Explore Programmes',
+			href: '/academics/programmes'
+		}}
+		secondaryAction={{
 			label: 'View Admissions',
 			href: '/admissions'
 		}}
-		secondaryAction={{
-			label: 'Contact Us',
-			href: '/contact'
-		}}
 	/>
 </section>
+
