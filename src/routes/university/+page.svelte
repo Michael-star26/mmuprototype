@@ -41,11 +41,13 @@
 	<div class="mt-10 grid gap-6 md:grid-cols-3">
 		<a
 			href="/university/leadership"
-			class="group rounded-lg border bg-background p-6 transition-colors hover:border-primary"
+			class="group rounded-lg border border-border/60 bg-background p-6 transition-colors hover:border-accent/40 hover:bg-muted/30"
 		>
-			<Users class="size-8 text-primary" />
+			<div class="flex h-12 w-12 items-center justify-center rounded-md bg-primary/10 text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
+				<Users class="size-6" />
+			</div>
 
-			<h2 class="mt-5 text-lg font-semibold group-hover:text-primary">
+			<h2 class="mt-5 text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
 				Leadership
 			</h2>
 
@@ -53,19 +55,21 @@
 				Meet the university leadership and learn about the people guiding MMU.
 			</p>
 
-			<span class="mt-5 inline-flex items-center gap-1 text-sm font-medium text-primary">
+			<span class="mt-5 inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-primary group-hover:text-accent transition-colors">
 				Meet the Leadership
-				<ArrowRight class="size-4" />
+				<ArrowRight class="size-4 transition-transform group-hover:translate-x-1" />
 			</span>
 		</a>
 
 		<a
 			href="/university/schools"
-			class="group rounded-lg border bg-background p-6 transition-colors hover:border-primary"
+			class="group rounded-lg border border-border/60 bg-background p-6 transition-colors hover:border-accent/40 hover:bg-muted/30"
 		>
-			<GraduationCap class="size-8 text-primary" />
+			<div class="flex h-12 w-12 items-center justify-center rounded-md bg-primary/10 text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
+				<GraduationCap class="size-6" />
+			</div>
 
-			<h2 class="mt-5 text-lg font-semibold group-hover:text-primary">
+			<h2 class="mt-5 text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
 				Schools
 			</h2>
 
@@ -73,19 +77,21 @@
 				Explore the schools and academic areas that make up the university.
 			</p>
 
-			<span class="mt-5 inline-flex items-center gap-1 text-sm font-medium text-primary">
+			<span class="mt-5 inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-primary group-hover:text-accent transition-colors">
 				Explore Schools
-				<ArrowRight class="size-4" />
+				<ArrowRight class="size-4 transition-transform group-hover:translate-x-1" />
 			</span>
 		</a>
 
 		<a
 			href="/academics"
-			class="group rounded-lg border bg-background p-6 transition-colors hover:border-primary"
+			class="group rounded-lg border border-border/60 bg-background p-6 transition-colors hover:border-accent/40 hover:bg-muted/30"
 		>
-			<Building2 class="size-8 text-primary" />
+			<div class="flex h-12 w-12 items-center justify-center rounded-md bg-primary/10 text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
+				<Building2 class="size-6" />
+			</div>
 
-			<h2 class="mt-5 text-lg font-semibold group-hover:text-primary">
+			<h2 class="mt-5 text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
 				Academics
 			</h2>
 
@@ -93,9 +99,9 @@
 				Discover programmes and academic opportunities available at MMU.
 			</p>
 
-			<span class="mt-5 inline-flex items-center gap-1 text-sm font-medium text-primary">
+			<span class="mt-5 inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-primary group-hover:text-accent transition-colors">
 				Explore Academics
-				<ArrowRight class="size-4" />
+				<ArrowRight class="size-4 transition-transform group-hover:translate-x-1" />
 			</span>
 		</a>
 	</div>

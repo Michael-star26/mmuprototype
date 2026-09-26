@@ -42,10 +42,12 @@
 	/>
 
 	<div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-		<div class="rounded-lg border bg-background p-6">
-			<Building2 class="size-8 text-primary" />
+		<div class="group rounded-lg border border-border/60 bg-background p-6 transition-colors hover:border-accent/40 hover:bg-muted/30">
+			<div class="flex h-12 w-12 items-center justify-center rounded-md bg-primary/10 text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
+				<Building2 class="size-6" />
+			</div>
 
-			<h2 class="mt-5 text-lg font-semibold">
+			<h2 class="mt-5 text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
 				School Name
 			</h2>
 
@@ -54,16 +56,22 @@
 				this school.
 			</p>
 
-			<Button href="/academics" variant="outline" class="mt-5">
+			<Button 
+				href="/academics" 
+				variant="outline" 
+				class="mt-5 border-border text-foreground hover:bg-accent hover:text-accent-foreground hover:border-accent transition-colors"
+			>
 				Explore
-				<ArrowRight />
+				<ArrowRight class="ml-2 size-4" />
 			</Button>
 		</div>
 
-		<div class="rounded-lg border bg-background p-6">
-			<GraduationCap class="size-8 text-primary" />
+		<div class="group rounded-lg border border-border/60 bg-background p-6 transition-colors hover:border-accent/40 hover:bg-muted/30">
+			<div class="flex h-12 w-12 items-center justify-center rounded-md bg-primary/10 text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
+				<GraduationCap class="size-6" />
+			</div>
 
-			<h2 class="mt-5 text-lg font-semibold">
+			<h2 class="mt-5 text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
 				School Name
 			</h2>
 
@@ -72,9 +80,13 @@
 				this school.
 			</p>
 
-			<Button href="/academics" variant="outline" class="mt-5">
+			<Button 
+				href="/academics" 
+				variant="outline" 
+				class="mt-5 border-border text-foreground hover:bg-accent hover:text-accent-foreground hover:border-accent transition-colors"
+			>
 				Explore
-				<ArrowRight />
+				<ArrowRight class="ml-2 size-4" />
 			</Button>
 		</div>
 	</div>

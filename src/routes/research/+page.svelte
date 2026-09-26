@@ -40,10 +40,12 @@
 	/>
 
 	<div class="mt-10 grid gap-6 md:grid-cols-3">
-		<div class="rounded-lg border bg-background p-6">
-			<FlaskConical class="size-8 text-primary" />
+		<div class="group rounded-lg border border-border/60 bg-background p-6 transition-colors hover:border-accent/40 hover:bg-muted/30">
+			<div class="flex h-12 w-12 items-center justify-center rounded-md bg-primary/10 text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
+				<FlaskConical class="size-6" />
+			</div>
 
-			<h2 class="mt-5 text-lg font-semibold">
+			<h2 class="mt-5 text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
 				Research Areas
 			</h2>
 
@@ -52,10 +54,12 @@
 			</p>
 		</div>
 
-		<div class="rounded-lg border bg-background p-6">
-			<Microscope class="size-8 text-primary" />
+		<div class="group rounded-lg border border-border/60 bg-background p-6 transition-colors hover:border-accent/40 hover:bg-muted/30">
+			<div class="flex h-12 w-12 items-center justify-center rounded-md bg-primary/10 text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
+				<Microscope class="size-6" />
+			</div>
 
-			<h2 class="mt-5 text-lg font-semibold">
+			<h2 class="mt-5 text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
 				Research Centres
 			</h2>
 
@@ -64,10 +68,12 @@
 			</p>
 		</div>
 
-		<div class="rounded-lg border bg-background p-6">
-			<Lightbulb class="size-8 text-primary" />
+		<div class="group rounded-lg border border-border/60 bg-background p-6 transition-colors hover:border-accent/40 hover:bg-muted/30">
+			<div class="flex h-12 w-12 items-center justify-center rounded-md bg-primary/10 text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
+				<Lightbulb class="size-6" />
+			</div>
 
-			<h2 class="mt-5 text-lg font-semibold">
+			<h2 class="mt-5 text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
 				Innovation
 			</h2>
 
@@ -78,15 +84,16 @@
 	</div>
 </section>
 
-<section class="border-y bg-muted/40">
+<section class="border-y border-border/60 bg-muted/20">
 	<div class="container mx-auto px-4 py-16">
 		<div class="grid gap-10 lg:grid-cols-2 lg:items-center">
 			<div>
-				<p class="text-sm font-semibold uppercase tracking-wider text-primary">
+				<p class="text-[9px] font-bold uppercase tracking-[0.18em] text-accent flex items-center gap-2">
+					<span class="h-px w-3 bg-accent"></span>
 					Research Community
 				</p>
 
-				<h2 class="mt-2 text-3xl font-bold tracking-tight md:text-4xl">
+				<h2 class="mt-2 text-3xl font-bold tracking-tight md:text-4xl text-foreground">
 					Research is more than publications.
 				</h2>
 
@@ -98,12 +105,19 @@
 			</div>
 
 			<div class="flex flex-wrap gap-3 lg:justify-end">
-				<Button href="/contact">
+				<Button 
+					href="/contact"
+					class="bg-primary text-primary-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
+				>
 					Get Involved
 					<ArrowRight class="ml-2 size-4" />
 				</Button>
 
-				<Button href="/academics" variant="outline">
+				<Button 
+					href="/academics" 
+					variant="outline"
+					class="border-border text-foreground hover:bg-muted hover:text-primary transition-colors"
+				>
 					Explore Academics
 				</Button>
 			</div>

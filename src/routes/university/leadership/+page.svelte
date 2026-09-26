@@ -34,17 +34,18 @@
 	/>
 
 	<div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-		<div class="overflow-hidden rounded-lg border bg-background">
-			<div class="flex aspect-[4/3] items-center justify-center bg-muted">
-				<Users class="size-12 text-muted-foreground" />
+		<div class="group overflow-hidden rounded-lg border border-border/60 bg-background transition-colors hover:border-accent/40">
+			<div class="flex aspect-[4/3] items-center justify-center bg-muted/40 transition-colors group-hover:bg-muted/60">
+				<Users class="size-12 text-muted-foreground group-hover:text-accent transition-colors" />
 			</div>
 
 			<div class="p-6">
-				<p class="text-sm font-medium text-primary">
+				<p class="text-[9px] font-bold uppercase tracking-[0.18em] text-accent flex items-center gap-2">
+					<span class="h-px w-3 bg-accent"></span>
 					Position
 				</p>
 
-				<h2 class="mt-1 text-xl font-semibold">
+				<h2 class="mt-2 text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
 					Leader Name
 				</h2>
 
@@ -54,17 +55,18 @@
 			</div>
 		</div>
 
-		<div class="overflow-hidden rounded-lg border bg-background">
-			<div class="flex aspect-[4/3] items-center justify-center bg-muted">
-				<BriefcaseBusiness class="size-12 text-muted-foreground" />
+		<div class="group overflow-hidden rounded-lg border border-border/60 bg-background transition-colors hover:border-accent/40">
+			<div class="flex aspect-[4/3] items-center justify-center bg-muted/40 transition-colors group-hover:bg-muted/60">
+				<BriefcaseBusiness class="size-12 text-muted-foreground group-hover:text-accent transition-colors" />
 			</div>
 
 			<div class="p-6">
-				<p class="text-sm font-medium text-primary">
+				<p class="text-[9px] font-bold uppercase tracking-[0.18em] text-accent flex items-center gap-2">
+					<span class="h-px w-3 bg-accent"></span>
 					Position
 				</p>
 
-				<h2 class="mt-1 text-xl font-semibold">
+				<h2 class="mt-2 text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
 					Leader Name
 				</h2>
 

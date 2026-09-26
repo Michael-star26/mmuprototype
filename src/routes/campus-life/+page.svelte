@@ -42,15 +42,15 @@
 	<div class="mt-10 grid gap-6 md:grid-cols-3">
 		<a
 			href="/campus-life/clubs-and-societies"
-			class="group rounded-lg border bg-background p-6 transition-colors hover:border-primary"
+			class="group rounded-lg border border-border/60 bg-background p-6 transition-colors hover:border-accent/40 hover:bg-muted/30"
 		>
 			<div
-				class="flex size-10 items-center justify-center rounded-md bg-primary/10 text-primary"
+				class="flex size-12 items-center justify-center rounded-md bg-primary/10 text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-colors"
 			>
-				<HeartHandshake class="size-5" />
+				<HeartHandshake class="size-6" />
 			</div>
 
-			<h2 class="mt-5 text-lg font-semibold group-hover:text-primary">
+			<h2 class="mt-5 text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
 				Clubs & Societies
 			</h2>
 
@@ -59,20 +59,20 @@
 				and shared interests.
 			</p>
 
-			<div class="mt-5 flex items-center gap-2 text-sm font-medium text-primary">
+			<div class="mt-5 flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-primary group-hover:text-accent transition-colors">
 				Explore Clubs & Societies
-				<ArrowRight class="size-4" />
+				<ArrowRight class="size-4 transition-transform group-hover:translate-x-1" />
 			</div>
 		</a>
 
-		<div class="rounded-lg border bg-background p-6">
+		<div class="group rounded-lg border border-border/60 bg-background p-6 transition-colors hover:border-accent/40 hover:bg-muted/30">
 			<div
-				class="flex size-10 items-center justify-center rounded-md bg-primary/10 text-primary"
+				class="flex size-12 items-center justify-center rounded-md bg-primary/10 text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-colors"
 			>
-				<Trophy class="size-5" />
+				<Trophy class="size-6" />
 			</div>
 
-			<h2 class="mt-5 text-lg font-semibold">
+			<h2 class="mt-5 text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
 				Sports & Recreation
 			</h2>
 
@@ -82,14 +82,14 @@
 			</p>
 		</div>
 
-		<div class="rounded-lg border bg-background p-6">
+		<div class="group rounded-lg border border-border/60 bg-background p-6 transition-colors hover:border-accent/40 hover:bg-muted/30">
 			<div
-				class="flex size-10 items-center justify-center rounded-md bg-primary/10 text-primary"
+				class="flex size-12 items-center justify-center rounded-md bg-primary/10 text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-colors"
 			>
-				<Building2 class="size-5" />
+				<Building2 class="size-6" />
 			</div>
 
-			<h2 class="mt-5 text-lg font-semibold">
+			<h2 class="mt-5 text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
 				Campus Facilities
 			</h2>
 
@@ -101,14 +101,16 @@
 	</div>
 </section>
 
-<section class="border-y bg-muted/40">
+<section class="border-y border-border/60 bg-muted/20">
 	<div class="container mx-auto px-4 py-16">
 		<div class="mx-auto max-w-3xl text-center">
-			<p class="text-sm font-semibold uppercase tracking-wider text-primary">
+			<p class="text-[9px] font-bold uppercase tracking-[0.18em] text-accent flex items-center justify-center gap-2">
+				<span class="h-px w-3 bg-accent"></span>
 				Student Community
+				<span class="h-px w-3 bg-accent"></span>
 			</p>
 
-			<h2 class="mt-2 text-2xl font-bold tracking-tight md:text-3xl">
+			<h2 class="mt-2 text-2xl font-bold tracking-tight md:text-3xl text-foreground">
 				Find your place on campus.
 			</h2>
 
@@ -118,7 +120,10 @@
 			</p>
 
 			<div class="mt-7">
-				<Button href="/campus-life/clubs-and-societies">
+				<Button 
+					href="/campus-life/clubs-and-societies"
+					class="bg-primary text-primary-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
+				>
 					Explore Student Activities
 					<ArrowRight class="ml-2 size-4" />
 				</Button>

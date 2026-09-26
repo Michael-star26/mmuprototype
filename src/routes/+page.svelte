@@ -6,8 +6,6 @@
     import FlaskConical from '@lucide/svelte/icons/flask-conical';
 
     import CTASection from '$lib/components/shared/CTASection.svelte';
-    import EventCard from '$lib/components/shared/EventCard.svelte';
-    import NewsCard from '$lib/components/shared/NewsCard.svelte';
 
     import { news } from '$lib/data/news';
     import { events } from '$lib/data/events';
@@ -119,7 +117,7 @@
     HERO
 ============================================================ -->
 
-<section class="relative overflow-hidden border-b border-border bg-background">
+<section class="relative overflow-hidden bg-background">
     <div class="container mx-auto px-5 lg:px-6">
         <div
             class="grid min-h-[calc(100svh-72px)] gap-12 py-14 md:py-20 lg:min-h-[calc(100vh-124px)] lg:grid-cols-[1fr_360px] lg:items-end lg:py-24"
@@ -142,7 +140,7 @@
                 </h1>
 
                 <div
-                    class="mt-9 grid max-w-4xl gap-7 border-t border-border pt-6 sm:mt-12 sm:gap-8 sm:pt-7 lg:grid-cols-[1fr_auto]"
+                    class="mt-9 grid max-w-4xl gap-7 border-t border-border/60 pt-6 sm:mt-12 sm:gap-8 sm:pt-7 lg:grid-cols-[1fr_auto]"
                 >
                     <p
                         class="max-w-xl text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7 md:text-lg"
@@ -156,7 +154,7 @@
                     >
                         <a
                             href="/academics/programmes"
-                            class="group inline-flex h-11 items-center justify-center border border-primary bg-primary px-5 text-[10px] font-bold uppercase tracking-[0.1em] text-primary-foreground shadow-sm transition-colors hover:bg-accent hover:border-accent hover:text-accent-foreground"
+                            class="group inline-flex h-11 items-center justify-center bg-primary px-5 text-[10px] font-bold uppercase tracking-[0.1em] text-primary-foreground shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground"
                         >
                             Explore programmes
 
@@ -167,14 +165,14 @@
 
                         <a
                             href="/admissions"
-                            class="inline-flex h-11 items-center justify-center border border-primary text-primary px-5 text-[10px] font-bold uppercase tracking-[0.1em] transition-colors hover:bg-secondary"
+                            class="inline-flex h-11 items-center justify-center border border-primary/70 px-5 text-[10px] font-bold uppercase tracking-[0.1em] text-primary transition-colors hover:border-primary hover:bg-secondary/60"
                         >
                             Admissions
                         </a>
                     </div>
                 </div>
 
-                <div class="mt-10 border-t border-border lg:hidden">
+                <div class="mt-10 border-t border-border/60 lg:hidden">
                     <div
                         class="py-4 text-[9px] font-semibold uppercase tracking-[0.18em] text-primary"
                     >
@@ -184,7 +182,7 @@
                     {#each exploreLinks as item}
                         <a
                             href={item.href}
-                            class="group flex items-center justify-between border-t border-border py-4"
+                            class="group flex items-center justify-between border-t border-border/60 py-4 transition-colors hover:border-primary/40"
                         >
                             <div class="flex items-center gap-4">
                                 <span
@@ -193,7 +191,7 @@
                                     {item.number}
                                 </span>
 
-                                <span class="text-sm font-medium hover:text-primary">
+                                <span class="text-sm font-medium group-hover:text-primary">
                                     {item.label}
                                 </span>
                             </div>
@@ -206,14 +204,14 @@
                 </div>
             </div>
 
-            <div class="hidden border-l border-border pl-8 lg:block">
+            <div class="hidden border-l border-border/60 pl-8 lg:block">
                 <p
                     class="text-[9px] font-semibold uppercase tracking-[0.18em] text-primary"
                 >
                     Explore MMU
                 </p>
 
-                <div class="mt-6 divide-y divide-border">
+                <div class="mt-6 divide-y divide-border/60">
                     {#each exploreLinks as item}
                         <a
                             href={item.href}
@@ -246,8 +244,8 @@
     STUDY
 ============================================================ -->
 
-<section class="border-b border-border bg-background">
-    <div class="container mx-auto px-5 py-16 sm:py-20 lg:px-6 lg:py-32">
+<section class="bg-secondary/10">
+    <div class="container mx-auto px-5 py-16 sm:py-24 lg:px-6 lg:py-32">
         <div
             class="grid gap-10 sm:gap-14 lg:grid-cols-[0.7fr_1.3fr] lg:gap-24"
         >
@@ -283,11 +281,11 @@
                 </a>
             </div>
 
-            <div class="border-t border-border">
+            <div class="border-t border-border/60">
                 {#each studyLinks as item}
                     <a
                         href={item.href}
-                        class="group grid gap-3 border-b border-border py-6 sm:grid-cols-[60px_1fr_auto] sm:items-center sm:gap-5 sm:py-9"
+                        class="group grid gap-3 border-b border-border/60 py-6 transition-colors hover:border-primary/30 hover:bg-background sm:grid-cols-[60px_1fr_auto] sm:items-center sm:gap-5 sm:py-9 sm:px-5"
                     >
                         <span
                             class="font-mono text-[10px] font-semibold text-accent sm:text-xs"
@@ -323,8 +321,8 @@
     AT A GLANCE
 ============================================================ -->
 
-<section class="border-b border-border bg-secondary/30">
-    <div class="container mx-auto px-5 py-16 sm:py-20 lg:px-6 lg:py-32">
+<section class="bg-background">
+    <div class="container mx-auto px-5 py-16 sm:py-24 lg:px-6 lg:py-32">
         <div
             class="grid gap-10 sm:gap-14 lg:grid-cols-[0.7fr_1.3fr] lg:gap-24"
         >
@@ -343,7 +341,7 @@
             </div>
 
             <div>
-                <div class="border-t border-border pt-6 sm:pt-8">
+                <div class="border-t border-border/60 pt-6 sm:pt-8">
                     <p
                         class="font-mono text-[clamp(4rem,18vw,7rem)] font-semibold leading-none tracking-[-0.075em] text-primary"
                     >
@@ -357,7 +355,7 @@
                     </p>
                 </div>
 
-                <div class="mt-8 grid grid-cols-3 border-t border-border sm:mt-12">
+                <div class="mt-8 grid grid-cols-3 border-t border-border/60 sm:mt-12">
                     <div class="py-6 pr-3 sm:py-8 sm:pr-6">
                         <BookOpen
                             class="mb-6 size-4 text-accent sm:mb-8"
@@ -376,7 +374,7 @@
                         </p>
                     </div>
 
-                    <div class="border-l border-border px-3 py-6 sm:px-6 sm:py-8">
+                    <div class="border-l border-border/50 px-3 py-6 sm:px-6 sm:py-8">
                         <FlaskConical
                             class="mb-6 size-4 text-accent sm:mb-8"
                         />
@@ -394,7 +392,7 @@
                         </p>
                     </div>
 
-                    <div class="border-l border-border py-6 pl-3 sm:py-8 sm:pl-6">
+                    <div class="border-l border-border/50 py-6 pl-3 sm:py-8 sm:pl-6">
                         <GraduationCap
                             class="mb-6 size-4 text-accent sm:mb-8"
                         />
@@ -413,8 +411,8 @@
                     </div>
                 </div>
 
-                <div class="mt-8 grid grid-cols-2 border-t border-border sm:mt-12">
-                    <div class="border-r border-border py-6 pr-5 sm:py-8 sm:pr-8">
+                <div class="mt-8 grid grid-cols-2 border-t border-border/60 sm:mt-12">
+                    <div class="border-r border-border/50 py-6 pr-5 sm:py-8 sm:pr-8">
                         <p
                             class="font-mono text-2xl font-semibold tracking-[-0.04em] text-primary sm:text-3xl"
                         >
@@ -451,8 +449,8 @@
     PROGRAMME FINDER
 ============================================================ -->
 
-<section class="border-b border-border bg-background">
-    <div class="container mx-auto px-5 py-16 sm:py-20 lg:px-6 lg:py-32">
+<section class="bg-secondary/10">
+    <div class="container mx-auto px-5 py-16 sm:py-24 lg:px-6 lg:py-32">
         <div
             class="flex flex-col justify-between gap-6 sm:gap-8 lg:flex-row lg:items-end"
         >
@@ -489,9 +487,9 @@
             </a>
         </div>
 
-        <div class="mt-10 border-y border-border sm:mt-14">
+        <div class="mt-10 border-y border-border/60 sm:mt-14">
             <div
-                class="grid gap-4 border-b border-border py-5 sm:grid-cols-[1fr_auto] sm:items-center sm:py-6"
+                class="grid gap-4 border-b border-border/60 py-5 sm:grid-cols-[1fr_auto] sm:items-center sm:py-6"
             >
                 <div>
                     <p
@@ -510,7 +508,7 @@
 
                 <a
                     href="/academics/programmes"
-                    class="group inline-flex w-full items-center justify-center border border-primary bg-primary/5 text-primary px-4 py-3 text-[10px] font-bold uppercase tracking-[0.1em] transition-colors hover:bg-primary hover:text-primary-foreground sm:w-fit"
+                    class="group inline-flex w-full items-center justify-center border border-primary/70 bg-primary/5 px-4 py-3 text-[10px] font-bold uppercase tracking-[0.1em] text-primary transition-colors hover:border-primary hover:bg-primary hover:text-primary-foreground sm:w-fit"
                 >
                     Open programme finder
 
@@ -524,7 +522,7 @@
                 {#each featuredProgrammes as programme, index}
                     <a
                         href={`/academics/programmes/${programme.slug}`}
-                        class="group grid gap-2 border-b border-border py-5 transition-colors last:border-b-0 hover:bg-secondary/50 sm:gap-4 sm:py-7 md:grid-cols-[70px_1fr_220px_auto] md:items-center md:px-5"
+                        class="group grid gap-2 border-b border-border/60 py-5 transition-colors last:border-b-0 hover:border-primary/30 hover:bg-background sm:gap-4 sm:py-7 md:grid-cols-[70px_1fr_220px_auto] md:items-center md:px-5"
                     >
                         <div
                             class="flex items-center justify-between md:contents"
@@ -566,8 +564,8 @@
     RESEARCH
 ============================================================ -->
 
-<section class="border-b border-border bg-background">
-    <div class="container mx-auto px-5 py-16 sm:py-20 lg:px-6 lg:py-32">
+<section class="bg-background">
+    <div class="container mx-auto px-5 py-16 sm:py-24 lg:px-6 lg:py-32">
         <div
             class="grid gap-10 sm:gap-14 lg:grid-cols-[1fr_0.8fr] lg:gap-24"
         >
@@ -606,8 +604,8 @@
                 </a>
             </div>
 
-            <div class="border-t border-border pt-2 sm:pt-6 lg:mt-16">
-                <div class="divide-y divide-border">
+            <div class="border-t border-border/60 pt-2 sm:pt-6 lg:mt-16">
+                <div class="divide-y divide-border/60">
                     {#each researchLinks as item}
                         <a
                             href={item.href}
@@ -645,11 +643,11 @@
 </section>
 
 <!-- ============================================================
-    NEWS
+    NEWS (UNIVERSITY LIFE)
 ============================================================ -->
 
-<section class="border-b border-border bg-background">
-    <div class="container mx-auto px-5 py-16 sm:py-20 lg:px-6 lg:py-32">
+<section class="bg-secondary/10">
+    <div class="container mx-auto px-5 py-16 sm:py-24 lg:px-6 lg:py-32">
         <div
             class="flex flex-col justify-between gap-6 sm:gap-8 md:flex-row md:items-end"
         >
@@ -679,24 +677,43 @@
             </a>
         </div>
 
-        <div
-            class="mt-10 grid gap-8 border-t border-border pt-6 sm:mt-14 sm:gap-10 sm:pt-8 md:grid-cols-12"
-        >
-            <div class="md:col-span-7">
-                {#if news[0]}
-                    <NewsCard news={news[0]} />
-                {/if}
-            </div>
+        <div class="mt-10 border-t border-border/60 sm:mt-14">
+            {#each news.slice(0, 4) as article, index}
+                <a
+                    href={`/news/${article.slug ?? article.id}`}
+                    class="group grid gap-3 border-b border-border/60 py-6 transition-colors hover:border-primary/30 hover:bg-background sm:grid-cols-[70px_1fr_200px_auto] sm:items-center sm:gap-6 sm:py-8 md:px-5"
+                >
+                    <span
+                        class="font-mono text-[10px] font-semibold text-accent sm:text-xs"
+                    >
+                        {String(index + 1).padStart(2, '0')}
+                    </span>
 
-            <div class="md:col-span-5 md:border-l md:border-border md:pl-8">
-                <div class="divide-y divide-border">
-                    {#each news.slice(1, 4) as article}
-                        <div class="py-4 first:pt-0 last:pb-0">
-                            <NewsCard news={article} />
-                        </div>
-                    {/each}
-                </div>
-            </div>
+                    <div>
+                        <h3
+                            class="text-base font-semibold tracking-tight transition-transform duration-200 group-hover:translate-x-1 group-hover:text-primary sm:text-lg md:text-xl"
+                        >
+                            {article.title}
+                        </h3>
+
+                        <p
+                            class="mt-1.5 line-clamp-1 text-xs text-muted-foreground sm:text-sm"
+                        >
+                            {article.excerpt || article.description}
+                        </p>
+                    </div>
+
+                    <p
+                        class="font-mono text-[11px] text-muted-foreground sm:text-xs"
+                    >
+                        {article.date}
+                    </p>
+
+                    <ArrowUpRight
+                        class="hidden size-5 text-primary transition-transform duration-200 group-hover:-translate-y-1 group-hover:translate-x-1 sm:block"
+                    />
+                </a>
+            {/each}
         </div>
     </div>
 </section>
@@ -705,8 +722,8 @@
     EVENTS
 ============================================================ -->
 
-<section class="border-b border-border bg-background">
-    <div class="container mx-auto px-5 py-16 sm:py-20 lg:px-6 lg:py-32">
+<section class="bg-background">
+    <div class="container mx-auto px-5 py-16 sm:py-24 lg:px-6 lg:py-32">
         <div
             class="flex flex-col justify-between gap-6 sm:gap-8 md:flex-row md:items-end"
         >
@@ -736,11 +753,42 @@
             </a>
         </div>
 
-        <div class="mt-10 border-t border-border sm:mt-14">
-            {#each events.slice(0, 3) as event}
-                <div class="border-b border-border py-3 sm:py-4">
-                    <EventCard {event} />
-                </div>
+        <div class="mt-10 border-t border-border/60 sm:mt-14">
+            {#each events.slice(0, 3) as event, index}
+                <a
+                    href={`/events/${event.slug ?? event.id}`}
+                    class="group grid gap-3 border-b border-border/60 py-6 transition-colors hover:border-primary/30 hover:bg-secondary/10 sm:grid-cols-[70px_1fr_220px_auto] sm:items-center sm:gap-6 sm:py-8 md:px-5"
+                >
+                    <span
+                        class="font-mono text-[10px] font-semibold text-accent sm:text-xs"
+                    >
+                        {String(index + 1).padStart(2, '0')}
+                    </span>
+
+                    <div>
+                        <h3
+                            class="text-base font-semibold tracking-tight transition-transform duration-200 group-hover:translate-x-1 group-hover:text-primary sm:text-lg md:text-xl"
+                        >
+                            {event.title}
+                        </h3>
+
+                        <p
+                            class="mt-1.5 text-xs text-muted-foreground sm:text-sm"
+                        >
+                            {event.location || event.time || 'Main Campus'}
+                        </p>
+                    </div>
+
+                    <p
+                        class="font-mono text-[11px] text-muted-foreground sm:text-xs"
+                    >
+                        {event.date}
+                    </p>
+
+                    <ArrowUpRight
+                        class="hidden size-5 text-primary transition-transform duration-200 group-hover:-translate-y-1 group-hover:translate-x-1 sm:block"
+                    />
+                </a>
             {/each}
         </div>
     </div>
@@ -750,8 +798,8 @@
     CAMPUS LIFE
 ============================================================ -->
 
-<section class="border-b border-border bg-background">
-    <div class="container mx-auto px-5 py-16 sm:py-20 lg:px-6 lg:py-32">
+<section class="bg-secondary/10">
+    <div class="container mx-auto px-5 py-16 sm:py-24 lg:px-6 lg:py-32">
         <div
             class="grid gap-10 sm:gap-14 lg:grid-cols-[0.75fr_1.25fr] lg:gap-24"
         >
@@ -778,11 +826,11 @@
                 </p>
             </div>
 
-            <div class="border-t border-border">
+            <div class="border-t border-border/60">
                 {#each campusLinks as item}
                     <a
                         href={item.href}
-                        class="group flex items-center justify-between border-b border-border py-6 sm:py-9"
+                        class="group flex items-center justify-between border-b border-border/60 py-6 transition-colors hover:border-primary/30 hover:bg-background sm:py-9 sm:px-5"
                     >
                         <div>
                             <p
@@ -812,8 +860,8 @@
     CTA
 ============================================================ -->
 
-<section>
-    <div class="container mx-auto px-5 py-16 sm:py-20 lg:px-6 lg:py-32">
+<section class="bg-background">
+    <div class="container mx-auto px-5 py-16 sm:py-24 lg:px-6 lg:py-32">
         <CTASection
             eyebrow="Your next step"
             title="Find your place at MMU."
