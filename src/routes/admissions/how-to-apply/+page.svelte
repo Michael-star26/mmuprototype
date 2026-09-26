@@ -1,48 +1,47 @@
 <script lang="ts">
 	import ArrowRight from '@lucide/svelte/icons/arrow-right';
-
-	import { Button } from '$lib/components/ui/button';
+	import ArrowUpRight from '@lucide/svelte/icons/arrow-up-right';
 
 	import PageHero from '$lib/components/shared/PageHero.svelte';
-	import SectionHeading from '$lib/components/shared/SectionHeading.svelte';
 	import CTASection from '$lib/components/shared/CTASection.svelte';
 
 	const steps = [
 		{
 			number: '01',
-			title: 'Create an Account',
+			title: 'Create an account',
 			description:
-				'Create an applicant account to begin your application and provide your basic information.'
+				'Create an applicant account and provide your basic information to begin.'
 		},
 		{
 			number: '02',
-			title: 'Choose Your Level of Study',
+			title: 'Choose your level of study',
 			description:
-				'Select the level of study you are applying for, such as undergraduate or postgraduate study.'
+				'Select the level of study you are applying for, such as undergraduate or postgraduate.'
 		},
 		{
 			number: '03',
-			title: 'Select Your Programme',
+			title: 'Select your programme',
 			description:
-				'Browse the available programmes and select the course you would like to apply for.'
+				'Browse available programmes and select the one that matches your academic goals.'
 		},
 		{
 			number: '04',
-			title: 'Choose Your Funding Mode',
+			title: 'Choose your funding mode',
 			description:
 				'Provide information about how you intend to finance your studies.'
 		},
 		{
 			number: '05',
-			title: 'Complete Your Application',
+			title: 'Complete your application',
 			description:
-				'Review the information you have provided and complete your application.'
+				'Review your information and complete your application before submitting.'
 		}
 	];
 </script>
 
 <svelte:head>
 	<title>How to Apply | Multimedia University of Kenya</title>
+
 	<meta
 		name="description"
 		content="Learn how to apply for programmes at Multimedia University of Kenya."
@@ -51,8 +50,8 @@
 
 <PageHero
 	eyebrow="Admissions"
-	title="Your Application Journey"
-	description="Follow the application process and prepare the information you need before submitting your application to MMU."
+	title="Your application journey"
+	description="Everything you need to know to move from choosing a programme to submitting your application."
 	breadcrumbs={[
 		{ label: 'Home', href: '/' },
 		{ label: 'Admissions', href: '/admissions' },
@@ -60,90 +59,261 @@
 	]}
 	actions={[
 		{
-			label: 'View Requirements',
+			label: 'View requirements',
 			href: '/admissions/requirements'
 		},
 		{
-			label: 'Explore Programmes',
+			label: 'Explore programmes',
 			href: '/academics/programmes',
 			variant: 'outline'
 		}
 	]}
 />
 
-<section class="container mx-auto px-4 py-16 md:py-20">
-	<div class="mx-auto max-w-3xl">
-		<SectionHeading
-			eyebrow="Application Process"
-			title="Apply in Five Steps"
-			description="Follow these steps to begin your application to MMU."
-		/>
-
-		<div class="mt-12">
-			{#each steps as step, i}
-				<div class="relative flex gap-6 pb-10 last:pb-0">
-					{#if i < steps.length - 1}
-						<div
-							class="absolute left-5 top-10 h-[calc(100%-2.5rem)] w-px bg-border"
-							aria-hidden="true"
-						></div>
-					{/if}
-
-					<div
-						class="relative z-10 flex size-10 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-primary-foreground"
+<main>
+	<!-- Application Process -->
+	<section class="border-b">
+		<div
+			class="container mx-auto px-5 py-16 sm:py-20 lg:px-6 lg:py-28"
+		>
+			<div
+				class="grid gap-12 lg:grid-cols-[260px_1fr] lg:gap-20"
+			>
+				<div>
+					<p
+						class="font-mono text-[9px] font-semibold uppercase tracking-[0.16em] text-muted-foreground"
 					>
-						{step.number}
+						01 / Process
+					</p>
+
+					<h2
+						class="mt-4 text-3xl font-semibold leading-[1.05] tracking-[-0.045em] sm:text-4xl"
+					>
+						Five steps to MMU.
+					</h2>
+
+					<p
+						class="mt-5 max-w-[240px] text-sm leading-7 text-muted-foreground"
+					>
+						A straightforward application process designed to
+						help you know what comes next.
+					</p>
+				</div>
+
+				<div>
+					<!-- Process header -->
+					<div
+						class="hidden border-y py-3 sm:grid sm:grid-cols-[72px_1fr_100px]"
+					>
+						<span
+							class="font-mono text-[9px] font-semibold uppercase tracking-[0.14em] text-muted-foreground"
+						>
+							No.
+						</span>
+
+						<span
+							class="font-mono text-[9px] font-semibold uppercase tracking-[0.14em] text-muted-foreground"
+						>
+							Application step
+						</span>
+
+						<span
+							class="text-right font-mono text-[9px] font-semibold uppercase tracking-[0.14em] text-muted-foreground"
+						>
+							Status
+						</span>
 					</div>
 
-					<div class="pt-1">
-						<h2 class="text-lg font-semibold">
-							{step.title}
-						</h2>
+					<div class="border-b">
+						{#each steps as step, index}
+							<div class="group relative border-t first:border-t-0">
+								<div
+									class="grid gap-4 py-6 sm:grid-cols-[72px_1fr_100px] sm:items-center sm:gap-6 sm:py-7"
+								>
+									<div>
+										<span
+											class="font-mono text-xs font-semibold tracking-[0.08em] text-muted-foreground"
+										>
+											{step.number}
+										</span>
+									</div>
 
-						<p class="mt-2 leading-6 text-muted-foreground">
-							{step.description}
-						</p>
+									<div>
+										<h3
+											class="text-lg font-semibold tracking-[-0.02em] transition-transform duration-200 group-hover:translate-x-1 sm:text-xl"
+										>
+											{step.title}
+										</h3>
+
+										<p
+											class="mt-2 max-w-xl text-sm leading-6 text-muted-foreground"
+										>
+											{step.description}
+										</p>
+									</div>
+
+									<div
+										class="flex items-center justify-between sm:justify-end sm:gap-4"
+									>
+										<span
+											class="font-mono text-[9px] uppercase tracking-[0.12em] text-muted-foreground"
+										>
+											Step {index + 1}
+										</span>
+
+										<ArrowRight
+											class="size-4 text-muted-foreground transition-transform duration-200 group-hover:translate-x-1 group-hover:text-foreground"
+										/>
+									</div>
+								</div>
+
+								<div
+									class="absolute bottom-0 left-0 h-px w-0 bg-foreground transition-all duration-300 group-hover:w-full"
+								></div>
+							</div>
+						{/each}
 					</div>
 				</div>
-			{/each}
+			</div>
 		</div>
-	</div>
-</section>
+	</section>
 
-<section class="border-y bg-muted/40">
-	<div class="container mx-auto px-4 py-16 md:py-20">
-		<SectionHeading
-			align="center"
-			eyebrow="Before You Begin"
-			title="Have Everything Ready?"
-			description="Make sure you've reviewed the programme requirements before starting your application."
-		/>
+	<!-- Before You Begin -->
+	<section class="border-b">
+		<div
+			class="container mx-auto px-5 py-16 sm:py-20 lg:px-6 lg:py-24"
+		>
+			<div
+				class="grid gap-12 lg:grid-cols-[260px_1fr] lg:gap-20"
+			>
+				<div>
+					<p
+						class="font-mono text-[9px] font-semibold uppercase tracking-[0.16em] text-muted-foreground"
+					>
+						02 / Preparation
+					</p>
 
-		<div class="mt-8 flex flex-wrap justify-center gap-3">
-			<Button href="/admissions/requirements" variant="outline">
-				View Requirements
-			</Button>
+					<h2
+						class="mt-4 text-3xl font-semibold leading-[1.05] tracking-[-0.045em]"
+					>
+						Before you begin.
+					</h2>
+				</div>
 
-			<Button href="/academics/programmes">
-				Explore Programmes
-				<ArrowRight class="ml-2 size-4" />
-			</Button>
+				<div>
+					<div class="grid border-t sm:grid-cols-2">
+						<a
+							href="/academics/programmes"
+							class="group border-b py-7 sm:border-r sm:pr-10"
+						>
+							<div class="flex items-start justify-between">
+								<span
+									class="font-mono text-xs text-muted-foreground"
+								>
+									01
+								</span>
+
+								<ArrowUpRight
+									class="size-4 text-muted-foreground transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-foreground"
+								/>
+							</div>
+
+							<h3
+								class="mt-12 text-xl font-semibold tracking-[-0.025em]"
+							>
+								Explore programmes
+							</h3>
+
+							<p
+								class="mt-3 max-w-sm text-sm leading-6 text-muted-foreground"
+							>
+								Find a programme that fits your interests,
+								goals and preferred level of study.
+							</p>
+						</a>
+
+						<a
+							href="/admissions/requirements"
+							class="group border-b py-7 sm:pl-10"
+						>
+							<div class="flex items-start justify-between">
+								<span
+									class="font-mono text-xs text-muted-foreground"
+								>
+									02
+								</span>
+
+								<ArrowUpRight
+									class="size-4 text-muted-foreground transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-foreground"
+								/>
+							</div>
+
+							<h3
+								class="mt-12 text-xl font-semibold tracking-[-0.025em]"
+							>
+								Review requirements
+							</h3>
+
+							<p
+								class="mt-3 max-w-sm text-sm leading-6 text-muted-foreground"
+							>
+								Check the admission requirements and prepare
+								the information needed for your application.
+							</p>
+						</a>
+					</div>
+
+					<div
+						class="flex flex-col justify-between gap-5 border-b py-6 sm:flex-row sm:items-center"
+					>
+						<div>
+							<p
+								class="text-[9px] font-semibold uppercase tracking-[0.14em] text-muted-foreground"
+							>
+								Need assistance?
+							</p>
+
+							<p
+								class="mt-2 text-sm font-medium tracking-tight"
+							>
+								Get in touch with MMU admissions.
+							</p>
+						</div>
+
+						<a
+							href="/contact"
+							class="group inline-flex items-center text-[10px] font-bold uppercase tracking-[0.1em]"
+						>
+							Contact admissions
+
+							<ArrowRight
+								class="ml-3 size-4 transition-transform duration-200 group-hover:translate-x-1"
+							/>
+						</a>
+					</div>
+				</div>
+			</div>
 		</div>
-	</div>
-</section>
+	</section>
 
-<section class="container mx-auto px-4 py-16 md:py-20">
-	<CTASection
-		eyebrow="Ready?"
-		title="Start your application."
-		description="Once you've selected your programme and reviewed the requirements, you can begin the application process."
-		primaryAction={{
-			label: 'Begin Application',
-			href: '/admissions'
-		}}
-		secondaryAction={{
-			label: 'Contact Us',
-			href: '/contact'
-		}}
-	/>
-</section>
+	<!-- Application CTA -->
+	<section>
+		<div
+			class="container mx-auto px-5 py-16 sm:py-20 lg:px-6 lg:py-32"
+		>
+			<CTASection
+				eyebrow="03 / Next step"
+				title="Ready to begin?"
+				description="Choose your programme, review the requirements and start your application when you're ready."
+				primaryAction={{
+					label: 'Begin application',
+					href: '/admissions'
+				}}
+				secondaryAction={{
+					label: 'View all programmes',
+					href: '/academics/programmes'
+				}}
+			/>
+		</div>
+	</section>
+</main>

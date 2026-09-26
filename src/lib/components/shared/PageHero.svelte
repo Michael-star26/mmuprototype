@@ -1,5 +1,5 @@
 <script lang="ts">
-	import ArrowRight from '@lucide/svelte/icons/arrow-right';
+	import ArrowUpRight from '@lucide/svelte/icons/arrow-up-right';
 
 	import Breadcrumbs from './Breadcrumbs.svelte';
 	import { Button } from '$lib/components/ui/button';
@@ -32,45 +32,58 @@
 	} = $props();
 </script>
 
-<section class="border-b bg-muted/30">
-	<div class="container mx-auto px-4 py-12 md:py-16 lg:py-20">
+<section class="border-b bg-background">
+	<div class="container mx-auto px-5 sm:px-6">
 		{#if breadcrumbs.length > 0}
-			<div class="mb-8">
+			<div class="border-b py-4 sm:py-5">
 				<Breadcrumbs items={breadcrumbs} />
 			</div>
 		{/if}
 
-		<div class="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(280px,420px)] lg:items-center">
-			<div class="max-w-3xl">
+		<div
+			class="grid gap-10 py-12 sm:gap-12 sm:py-16 lg:grid-cols-[1fr_auto] lg:items-end lg:py-20"
+		>
+			<div class="max-w-4xl">
 				{#if eyebrow}
-					<div class="mb-3 text-sm font-semibold uppercase tracking-wider text-primary">
+					<div
+						class="mb-5 flex items-center gap-3 text-[9px] font-semibold uppercase tracking-[0.18em] text-muted-foreground sm:text-[10px]"
+					>
+						<span class="h-px w-7 bg-foreground sm:w-10"></span>
+
 						{eyebrow}
 					</div>
 				{/if}
 
 				<h1
-					class="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl"
+					class="max-w-4xl text-[clamp(3.2rem,11vw,6.5rem)] font-semibold leading-[0.88] tracking-[-0.065em]"
 				>
 					{title}
 				</h1>
 
 				{#if description}
-					<p class="mt-5 max-w-2xl text-base leading-7 text-muted-foreground sm:text-lg">
+					<p
+						class="mt-7 max-w-2xl text-sm leading-6 text-muted-foreground sm:mt-8 sm:text-base sm:leading-7 lg:text-lg"
+					>
 						{description}
 					</p>
 				{/if}
 
 				{#if actions.length > 0}
-					<div class="mt-8 flex flex-wrap gap-3">
+					<div
+						class="mt-8 flex flex-col gap-2.5 sm:mt-10 sm:flex-row sm:flex-wrap sm:gap-3"
+					>
 						{#each actions as action, index}
 							<Button
 								href={action.href}
 								variant={action.variant ?? (index === 0 ? 'default' : 'outline')}
+								class="group inline-flex h-11 w-full rounded-none px-5 text-[10px] font-bold uppercase tracking-[0.1em] transition-colors sm:w-auto"
 							>
 								{action.label}
 
 								{#if index === 0}
-									<ArrowRight class="ml-2 size-4" />
+									<ArrowUpRight
+										class="ml-2 size-3.5 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+									/>
 								{/if}
 							</Button>
 						{/each}

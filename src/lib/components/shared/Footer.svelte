@@ -2,8 +2,8 @@
 	import Mail from '@lucide/svelte/icons/mail';
 	import MapPin from '@lucide/svelte/icons/map-pin';
 	import Phone from '@lucide/svelte/icons/phone';
-
-	import { Separator } from '$lib/components/ui/separator';
+	import ArrowUpRight from '@lucide/svelte/icons/arrow-up-right';
+	import Globe from '@lucide/svelte/icons/globe';
 
 	const footerSections = [
 		{
@@ -11,80 +11,137 @@
 			links: [
 				{ label: 'About MMU', href: '/university' },
 				{ label: 'Leadership', href: '/university/leadership' },
-				{ label: 'Schools', href: '/university/schools' },
-				{ label: 'Research', href: '/research' },
-				{ label: 'News', href: '/news' }
+				{ label: 'Schools & Faculties', href: '/university/schools' },
+				{ label: 'Research Ecosystem', href: '/research' },
+				{ label: 'News & Press', href: '/news' }
 			]
 		},
 		{
 			title: 'Academics',
 			links: [
-				{ label: 'Programmes', href: '/academics/programmes' },
+				{ label: 'Programmes Directory', href: '/academics/programmes' },
 				{ label: 'Admissions', href: '/admissions' },
 				{ label: 'How to Apply', href: '/admissions/how-to-apply' },
-				{ label: 'Requirements', href: '/admissions/requirements' },
-				{ label: 'Events', href: '/events' }
+				{ label: 'Entry Requirements', href: '/admissions/requirements' },
+				{ label: 'Academic Calendar', href: '/events' }
 			]
 		},
 		{
-			title: 'Information',
+			title: 'Resources',
 			links: [
-				{ label: 'Contact Us', href: '/contact' },
+				{ label: 'Student Portal', href: '#', external: true },
+				{ label: 'E-Learning', href: '#', external: true },
+				{ label: 'Library Services', href: '/resources' },
 				{ label: 'Campus Life', href: '/campus-life' },
-				{ label: 'Resources', href: '/resources' },
-				{ label: 'FAQs', href: '#' }
+				{ label: 'Help & FAQs', href: '/contact' }
 			]
 		}
 	];
 </script>
 
-<footer class="border-t bg-muted/40">
-	<div class="container mx-auto px-4 py-12">
-		<div class="grid gap-10 md:grid-cols-2 lg:grid-cols-5">
+<footer class="border-t bg-muted/20">
+	<!-- ============================================================
+		ADMISSIONS STRIP
+	============================================================ -->
+
+	<div class="border-b">
+		<div class="container mx-auto px-5 py-7 lg:px-6 lg:py-8">
+			<div
+				class="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between"
+			>
+				<div class="flex items-start gap-4 sm:items-center">
+					<span class="mt-1.5 size-2 shrink-0 bg-primary sm:mt-0"></span>
+
+					<p
+						class="max-w-xl text-[10px] font-semibold uppercase leading-5 tracking-[0.14em] sm:text-xs sm:leading-normal"
+					>
+						Admissions for the upcoming academic intake are open.
+					</p>
+				</div>
+
+				<a
+					href="/admissions/how-to-apply"
+					class="group inline-flex items-center text-[10px] font-bold uppercase tracking-[0.1em] sm:text-xs"
+				>
+					Start your application
+
+					<ArrowUpRight
+						class="ml-2 size-3.5 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+					/>
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<!-- ============================================================
+		MAIN FOOTER
+	============================================================ -->
+
+	<div class="container mx-auto px-5 py-16 sm:py-20 lg:px-6 lg:py-24">
+		<div
+			class="grid gap-12 sm:gap-16 lg:grid-cols-[1.5fr_1fr_1fr_1fr] lg:gap-12"
+		>
 			<!-- Brand / Contact -->
-			<div class="lg:col-span-2">
-				<a href="/" class="inline-flex items-center gap-3">
+
+			<div class="space-y-7 sm:space-y-8">
+				<a
+					href="/"
+					class="group inline-flex items-center gap-4"
+					aria-label="Multimedia University of Kenya"
+				>
 					<div
-						class="flex size-10 items-center justify-center rounded-md bg-primary font-bold text-primary-foreground"
+						class="flex size-11 items-center justify-center border border-foreground bg-foreground text-[11px] font-bold tracking-[-0.04em] text-background transition-colors duration-200 group-hover:bg-primary group-hover:text-primary-foreground sm:size-12 sm:text-sm"
 					>
 						MMU
 					</div>
 
 					<div>
-						<div class="font-bold text-foreground">
+						<div class="text-sm font-semibold tracking-tight">
 							Multimedia University
 						</div>
 
-						<div class="text-sm text-muted-foreground">
+						<div class="mt-0.5 text-xs text-muted-foreground">
 							of Kenya
 						</div>
 					</div>
 				</a>
 
-				<p class="mt-5 max-w-md text-sm leading-6 text-muted-foreground">
-					A modern university committed to education, research, innovation,
-					and the development of future-ready graduates.
+				<p
+					class="max-w-sm text-xs leading-6 text-muted-foreground sm:text-sm"
+				>
+					A modern technological institution anchored in rigorous
+					academic scholarship, applied research, and creative
+					industry preparation.
 				</p>
 
-				<div class="mt-6 space-y-3 text-sm text-muted-foreground">
+				<div class="grid gap-3 pt-1 text-xs text-muted-foreground">
 					<div class="flex items-start gap-3">
-						<MapPin class="mt-0.5 size-4 shrink-0" />
-						<span>Nairobi, Kenya</span>
+						<MapPin
+							class="mt-0.5 size-4 shrink-0 text-foreground"
+						/>
+
+						<span>
+							Magadi Road, Nairobi, Kenya
+						</span>
 					</div>
 
 					<div class="flex items-center gap-3">
-						<Phone class="size-4 shrink-0" />
+						<Phone
+							class="size-4 shrink-0 text-foreground"
+						/>
 
 						<a
-							href="tel:+254000000000"
+							href="tel:+254700000000"
 							class="transition-colors hover:text-foreground"
 						>
-							+254 000 000 000
+							+254 (0) 700 000 000
 						</a>
 					</div>
 
 					<div class="flex items-center gap-3">
-						<Mail class="size-4 shrink-0" />
+						<Mail
+							class="size-4 shrink-0 text-foreground"
+						/>
 
 						<a
 							href="mailto:info@mmu.ac.ke"
@@ -96,21 +153,42 @@
 				</div>
 			</div>
 
-			<!-- Link Groups -->
-			{#each footerSections as section}
-				<div>
-					<h2 class="text-sm font-semibold text-foreground">
-						{section.title}
-					</h2>
+			<!-- Link columns -->
 
-					<ul class="mt-4 space-y-3">
+			{#each footerSections as section, sIdx}
+				<div class="border-t pt-5 lg:border-t-0 lg:pt-0">
+					<div class="flex items-center justify-between">
+						<h3
+							class="text-[9px] font-bold uppercase tracking-[0.2em] text-foreground sm:text-[10px]"
+						>
+							{section.title}
+						</h3>
+
+						<span
+							class="text-[9px] text-muted-foreground lg:hidden"
+						>
+							0{sIdx + 1}
+						</span>
+					</div>
+
+					<ul class="mt-5 space-y-3 sm:mt-6 sm:space-y-3.5">
 						{#each section.links as link}
 							<li>
 								<a
 									href={link.href}
-									class="text-sm text-muted-foreground transition-colors hover:text-foreground"
+									class="group inline-flex items-center gap-2 text-xs text-muted-foreground transition-colors hover:text-foreground"
 								>
-									{link.label}
+									<span
+										class="transition-transform duration-150 group-hover:translate-x-1"
+									>
+										{link.label}
+									</span>
+
+									{#if link.external}
+										<ArrowUpRight
+											class="size-3 opacity-40 transition-opacity duration-150 group-hover:opacity-100"
+										/>
+									{/if}
 								</a>
 							</li>
 						{/each}
@@ -119,30 +197,59 @@
 			{/each}
 		</div>
 
-		<Separator class="my-8" />
+		<!-- ============================================================
+			LOWER BAR
+		============================================================ -->
 
-		<div
-			class="flex flex-col gap-4 text-sm text-muted-foreground md:flex-row md:items-center md:justify-between"
-		>
-			<p>
-				© {new Date().getFullYear()} Multimedia University of Kenya.
-				All rights reserved.
-			</p>
-
-			<div class="flex gap-5">
-				<a
-					href="#"
-					class="transition-colors hover:text-foreground"
+		<div class="mt-14 border-t pt-7 sm:mt-20 sm:pt-8">
+			<div
+				class="flex flex-col gap-5 text-[10px] text-muted-foreground sm:text-[11px] md:flex-row md:items-center md:justify-between"
+			>
+				<div
+					class="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-5"
 				>
-					Privacy Policy
-				</a>
+					<p>
+						© {new Date().getFullYear()} Multimedia University of Kenya.
+						All rights reserved.
+					</p>
 
-				<a
-					href="#"
-					class="transition-colors hover:text-foreground"
-				>
-					Terms of Use
-				</a>
+					<span class="hidden text-muted-foreground/30 sm:block">
+						/
+					</span>
+
+					<div class="flex items-center gap-2">
+						<Globe class="size-3" />
+
+						<span>Nairobi, Kenya</span>
+					</div>
+				</div>
+
+				<div class="flex flex-wrap items-center gap-x-4 gap-y-2">
+					<a
+						href="#"
+						class="transition-colors hover:text-foreground"
+					>
+						Privacy
+					</a>
+
+					<span class="text-muted-foreground/40">·</span>
+
+					<a
+						href="#"
+						class="transition-colors hover:text-foreground"
+					>
+						Terms
+					</a>
+
+					<span class="text-muted-foreground/40">·</span>
+
+					<a
+						href="/contact"
+						class="transition-colors hover:text-foreground"
+					>
+						Contact
+					</a>
+				</div>
 			</div>
 		</div>
 	</div>

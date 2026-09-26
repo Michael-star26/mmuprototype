@@ -1,164 +1,188 @@
 <script lang="ts">
+	import ArrowUpRight from '@lucide/svelte/icons/arrow-up-right';
 	import Menu from '@lucide/svelte/icons/menu';
-	import Sun from '@lucide/svelte/icons/sun';
-	import Moon from '@lucide/svelte/icons/moon';
-	import Globe from '@lucide/svelte/icons/globe';
 
 	import { page } from '$app/state';
-	import { toggleMode, mode } from 'mode-watcher';
 
-	import { Button } from '$lib/components/ui/button';
 	import * as Sheet from '$lib/components/ui/sheet';
 
 	import SearchModal from './SearchModal.svelte';
 
-	let mobileOpen = $state(false);
+	const navItems = [
+		{ label: 'Study', href: '/academics' },
+		{ label: 'Research', href: '/research' },
+		{ label: 'University', href: '/university' },
+		{ label: 'Campus Life', href: '/campus-life' },
+		{ label: 'News & Events', href: '/news' }
+	];
 
-	const topUtilityLinks = [
-		{ label: 'Student Portal', href: '/portal' },
-		{ label: 'Staff Mail', href: '/staff' },
+	const quickLinks = [
+		{ label: 'Students', href: '/portal' },
+		{ label: 'Staff', href: '/staff' },
 		{ label: 'Library', href: '/library' },
 		{ label: 'Alumni', href: '/alumni' }
 	];
 
-	const navItems = [
-		{ label: 'University', href: '/university' },
-		{ label: 'Academics', href: '/academics' },
-		{ label: 'Admissions', href: '/admissions' },
-		{ label: 'Research', href: '/research' },
-		{ label: 'News', href: '/news' },
-		{ label: 'Events', href: '/events' }
-	];
+	let mobileOpen = $state(false);
 
 	function isActive(href: string) {
-		return page.url.pathname === href || page.url.pathname.startsWith(`${href}/`);
+		return (
+			page.url.pathname === href ||
+			page.url.pathname.startsWith(`${href}/`)
+		);
+	}
+
+	function closeMenu() {
+		mobileOpen = false;
 	}
 </script>
 
-<!-- Institutional Utility Bar -->
-<div class="hidden border-b bg-slate-900 text-xs text-slate-300 md:block">
-	<div class="container mx-auto flex h-8 items-center justify-between px-4">
-		<div class="flex items-center gap-3 font-medium">
-			<span class="inline-block size-2 animate-pulse rounded-full bg-red-600"></span>
-			<span>Admissions for Academic Year are Open</span>
+<header class="sticky top-0 z-50 border-b bg-background">
+	<!-- Desktop -->
+	<div class="mx-auto hidden max-w-[1440px] px-6 lg:block">
+		<div
+			class="grid h-[88px] grid-cols-[300px_1fr_240px] items-center"
+		>
+			<!-- Brand -->
+			<a
+				href="/"
+				class="group flex w-fit items-center gap-4"
+				aria-label="Multimedia University of Kenya"
+			>
+				<div
+					class="text-[30px] font-bold leading-none tracking-[-0.09em] transition-colors group-hover:text-primary"
+				>
+					MMU
+				</div>
+
+				<div class="h-8 w-px bg-border"></div>
+
+				<div
+					class="max-w-[145px] text-[9px] font-semibold uppercase leading-[1.45] tracking-[0.12em] text-muted-foreground"
+				>
+					Multimedia University
+					of Kenya
+				</div>
+			</a>
+
+			<!-- Primary navigation -->
+			<nav
+				class="flex h-full items-center justify-center"
+				aria-label="Main navigation"
+			>
+				{#each navItems as item}
+					{@const active = isActive(item.href)}
+
+					<a
+						href={item.href}
+						aria-current={active ? 'page' : undefined}
+						class="group relative flex h-full items-center px-5 text-[13px] font-medium"
+					>
+						<span
+							class={`whitespace-nowrap transition-colors duration-150 ${
+								active
+									? 'text-foreground'
+									: 'text-muted-foreground group-hover:text-foreground'
+							}`}
+						>
+							{item.label}
+						</span>
+
+						<span
+							class={`absolute bottom-0 left-5 right-5 h-px origin-center bg-foreground transition-transform duration-200 ${
+								active
+									? 'scale-x-100'
+									: 'scale-x-0 group-hover:scale-x-100'
+							}`}
+						/>
+					</a>
+				{/each}
+			</nav>
+
+			<!-- Actions -->
+			<div class="flex items-center justify-end gap-3">
+				<SearchModal />
+
+				<a
+					href="/admissions"
+					class="group inline-flex h-10 items-center border border-foreground bg-foreground px-4 text-[10px] font-bold uppercase tracking-[0.1em] text-background transition-colors hover:border-primary hover:bg-primary hover:text-primary-foreground"
+				>
+					Apply to MMU
+
+					<ArrowUpRight
+						class="ml-2 size-3.5 transition-transform duration-150 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+					/>
+				</a>
+			</div>
 		</div>
 
-		<div class="flex items-center gap-6">
+		<!-- Utility navigation -->
+		<div
+			class="flex h-9 items-center justify-between border-t"
+		>
 			<div class="flex items-center gap-4">
-				{#each topUtilityLinks as link}
+				<span
+					class="text-[9px] font-semibold uppercase tracking-[0.14em] text-muted-foreground"
+				>
+					Multimedia University of Kenya
+				</span>
+
+				<span class="h-3 w-px bg-border"></span>
+
+				<span
+					class="text-[9px] uppercase tracking-[0.12em] text-muted-foreground"
+				>
+					Nairobi · Kenya
+				</span>
+			</div>
+
+			<nav
+				class="flex h-full items-center"
+				aria-label="Utility navigation"
+			>
+				{#each quickLinks as link}
 					<a
 						href={link.href}
-						class="transition-colors hover:text-white"
+						class="flex h-full items-center border-l px-4 text-[9px] font-medium uppercase tracking-[0.1em] text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
 					>
 						{link.label}
 					</a>
 				{/each}
-			</div>
-
-			<div
-				class="flex items-center gap-1.5 border-l border-slate-700 pl-4 font-semibold text-white"
-			>
-				<Globe class="size-3 text-blue-400" />
-				<span>KE</span>
-			</div>
+			</nav>
 		</div>
 	</div>
-</div>
 
-<!-- Main Header -->
-<header
-	class="sticky top-0 z-50 h-16 border-b bg-background/95 backdrop-blur-md"
->
-	<div class="container mx-auto flex h-full items-center justify-between px-4">
-		<!-- Brand -->
-		<a href="/" class="group flex items-center gap-3">
+	<!-- Mobile -->
+	<div
+		class="flex h-[72px] items-center justify-between px-5 lg:hidden"
+	>
+		<a
+			href="/"
+			class="group flex items-center gap-3"
+			aria-label="Multimedia University of Kenya"
+		>
 			<div
-				class="flex size-10 items-center justify-center rounded-lg bg-primary text-sm font-black tracking-wider text-primary-foreground shadow-sm ring-2 ring-red-600/30"
+				class="text-[27px] font-bold leading-none tracking-[-0.09em] transition-colors group-hover:text-primary"
 			>
-				<span class="mr-0.5 font-extrabold text-red-500">•</span>
 				MMU
 			</div>
 
-			<div class="hidden leading-tight sm:block">
-				<div
-					class="text-sm font-bold tracking-tight text-foreground transition-colors group-hover:text-primary"
-				>
-					Multimedia University
-				</div>
+			<div class="h-7 w-px bg-border"></div>
 
-				<div
-					class="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground"
-				>
-					of Kenya
-					<span class="font-bold text-red-600">|</span>
-					Excellence &amp; Technology
-				</div>
+			<div
+				class="max-w-[130px] text-[8px] font-semibold uppercase leading-[1.4] tracking-[0.1em] text-muted-foreground"
+			>
+				Multimedia University
+				of Kenya
 			</div>
 		</a>
 
-		<!-- Desktop Navigation -->
-		<nav
-			class="hidden h-full items-center gap-1 lg:flex"
-			aria-label="Main navigation"
-		>
-			{#each navItems as item}
-				{@const active = isActive(item.href)}
-
-				<a
-					href={item.href}
-					class={`group relative flex h-full items-center px-4 text-sm font-medium transition-colors ${
-						active
-							? 'font-semibold text-primary'
-							: 'text-foreground/80 hover:bg-muted/40 hover:text-foreground'
-					}`}
-					aria-current={active ? 'page' : undefined}
-				>
-					<span>{item.label}</span>
-
-					<span
-						class={`absolute bottom-0 left-4 right-4 h-[2px] bg-primary transition-all duration-200 ${
-							active
-								? 'scale-x-100 opacity-100'
-								: 'scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100'
-						}`}
-					></span>
-				</a>
-			{/each}
-		</nav>
-
-		<!-- Actions -->
 		<div class="flex items-center gap-2">
 			<SearchModal />
 
-			<!-- Theme Toggle -->
-			<Button
-				variant="ghost"
-				size="icon"
-				class="size-9 rounded-md"
-				onclick={toggleMode}
-				aria-label={mode.current === 'dark'
-					? 'Switch to light mode'
-					: 'Switch to dark mode'}
-			>
-				{#if mode.current === 'dark'}
-					<Sun class="size-4 text-amber-400" />
-				{:else}
-					<Moon class="size-4 text-slate-700" />
-				{/if}
-			</Button>
-
-			<!-- Apply -->
-			<Button
-				href="/admissions"
-				class="hidden h-9 bg-primary px-4 text-sm font-semibold text-primary-foreground shadow-xs hover:bg-primary/90 sm:inline-flex"
-			>
-				Apply Now
-			</Button>
-
-			<!-- Mobile Navigation -->
 			<Sheet.Root bind:open={mobileOpen}>
 				<Sheet.Trigger
-					class="inline-flex size-9 items-center justify-center rounded-md border border-input bg-background text-foreground hover:bg-muted lg:hidden"
+					class="inline-flex size-10 items-center justify-center rounded-sm border bg-background transition-colors hover:bg-muted"
 					aria-label="Open navigation menu"
 				>
 					<Menu class="size-5" />
@@ -166,32 +190,25 @@
 
 				<Sheet.Content
 					side="right"
-					class="flex w-[300px] flex-col p-0 sm:w-[360px]"
+					class="w-[min(90vw,400px)] p-0"
 				>
-					<Sheet.Header class="border-b bg-muted/30 p-6 text-left">
-						<div class="flex items-center gap-3">
-							<div
-								class="flex size-9 items-center justify-center rounded-md bg-primary text-xs font-bold text-primary-foreground"
-							>
-								MMU
-							</div>
-
-							<div>
-								<Sheet.Title class="text-sm font-bold">
-									Multimedia University
-								</Sheet.Title>
-
-								<Sheet.Description class="text-xs">
-									Of Kenya
-								</Sheet.Description>
-							</div>
+					<Sheet.Header class="border-b p-6 text-left">
+						<div
+							class="text-3xl font-bold tracking-[-0.09em]"
+						>
+							MMU
 						</div>
+
+						<Sheet.Title
+							class="mt-1 text-[9px] font-semibold uppercase tracking-[0.14em] text-muted-foreground"
+						>
+							Multimedia University of Kenya
+						</Sheet.Title>
 					</Sheet.Header>
 
-					<div class="flex-1 space-y-6 overflow-y-auto p-6">
-						<!-- Mobile Navigation -->
+					<div class="overflow-y-auto">
 						<nav
-							class="flex flex-col gap-1"
+							class="border-b p-5"
 							aria-label="Mobile navigation"
 						>
 							{#each navItems as item}
@@ -199,37 +216,39 @@
 
 								<a
 									href={item.href}
-									onclick={() => {
-										mobileOpen = false;
-									}}
-									class={`flex h-10 items-center rounded-md px-3 text-sm font-medium transition-colors ${
+									onclick={closeMenu}
+									aria-current={active
+										? 'page'
+										: undefined}
+									class={`group flex items-center justify-between border-b py-5 text-lg tracking-tight last:border-b-0 ${
 										active
-											? 'bg-primary/10 font-semibold text-primary'
-											: 'text-foreground/80 hover:bg-muted hover:text-foreground'
+											? 'font-semibold text-primary'
+											: 'text-foreground'
 									}`}
-									aria-current={active ? 'page' : undefined}
 								>
-									{item.label}
+									<span>{item.label}</span>
+
+									<ArrowUpRight
+										class="size-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+									/>
 								</a>
 							{/each}
 						</nav>
 
-						<!-- Quick Portals -->
-						<div class="space-y-2 border-t pt-4">
-							<p
-								class="px-2 text-xs font-semibold uppercase text-muted-foreground"
+						<!-- Quick access -->
+						<div class="border-b p-5">
+							<div
+								class="mb-4 text-[9px] font-bold uppercase tracking-[0.14em] text-muted-foreground"
 							>
-								Quick Portals
-							</p>
+								Quick access
+							</div>
 
-							<div class="grid grid-cols-2 gap-2">
-								{#each topUtilityLinks as link}
+							<div class="grid grid-cols-2 border">
+								{#each quickLinks as link}
 									<a
 										href={link.href}
-										onclick={() => {
-											mobileOpen = false;
-										}}
-										class="rounded-lg border bg-card p-2.5 text-center text-xs font-medium transition-colors hover:bg-muted"
+										onclick={closeMenu}
+										class="border-b border-r p-4 text-[10px] font-semibold uppercase tracking-[0.08em] transition-colors hover:bg-muted"
 									>
 										{link.label}
 									</a>
@@ -237,36 +256,41 @@
 							</div>
 						</div>
 
-						<!-- Mobile CTA -->
-						<Button
-							href="/admissions"
-							onclick={() => {
-								mobileOpen = false;
-							}}
-							class="w-full bg-primary font-semibold text-primary-foreground hover:bg-primary/90"
-						>
-							Apply Now
-						</Button>
-					</div>
+						<!-- Admissions -->
+						<div class="p-5">
+							<div class="border bg-muted/40 p-5">
+								<div
+									class="text-[9px] font-bold uppercase tracking-[0.14em] text-primary"
+								>
+									Admissions
+								</div>
 
-					<!-- Mobile Theme Toggle -->
-					<div class="border-t bg-muted/20 p-4">
-						<Button
-							variant="outline"
-							class="w-full justify-start text-xs font-medium"
-							onclick={toggleMode}
-							aria-label={mode.current === 'dark'
-								? 'Switch to light mode'
-								: 'Switch to dark mode'}
-						>
-							{#if mode.current === 'dark'}
-								<Sun class="mr-2 size-4 text-amber-400" />
-								Switch to Light Mode
-							{:else}
-								<Moon class="mr-2 size-4 text-slate-700" />
-								Switch to Dark Mode
-							{/if}
-						</Button>
+								<h2
+									class="mt-2 text-xl font-semibold tracking-tight"
+								>
+									Find your programme.
+								</h2>
+
+								<p
+									class="mt-2 text-sm leading-6 text-muted-foreground"
+								>
+									Explore programmes, entry requirements
+									and application information.
+								</p>
+
+								<a
+									href="/admissions"
+									onclick={closeMenu}
+									class="mt-5 inline-flex h-10 w-full items-center justify-center bg-foreground px-4 text-[10px] font-bold uppercase tracking-[0.1em] text-background transition-colors hover:bg-primary hover:text-primary-foreground"
+								>
+									Explore admissions
+
+									<ArrowUpRight
+										class="ml-2 size-3.5"
+									/>
+								</a>
+							</div>
+						</div>
 					</div>
 				</Sheet.Content>
 			</Sheet.Root>
