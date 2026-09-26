@@ -1,4 +1,3 @@
-```svelte
 <script lang="ts">
 	import PageHero from '$lib/components/shared/PageHero.svelte';
 	import SectionHeading from '$lib/components/shared/SectionHeading.svelte';
@@ -115,4 +114,4 @@
 		}}
 	/>
 </section>
-```
+
