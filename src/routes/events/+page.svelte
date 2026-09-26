@@ -19,8 +19,17 @@
 </svelte:head>
 
 <PageHero
-	title="Events"
-	subtitle="What's Happening"
+	eyebrow="University Events"
+	title="What's Happening"
+	description="Stay connected with events, activities, and opportunities happening across the university."
+	breadcrumbs={[
+		{ label: 'Home', href: '/' },
+		{ label: 'Events' }
+	]}
+	actions={[
+		{ label: 'Explore Academics', href: '/academics' },
+		{ label: 'Admissions', href: '/admissions', variant: 'outline' }
+	]}
 />
 
 <section class="container mx-auto px-4 py-16">
@@ -39,9 +48,7 @@
 
 <section class="border-y bg-muted/40">
 	<div class="container mx-auto px-4 py-12">
-		<div
-			class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between"
-		>
+		<div class="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
 			<div>
 				<p class="text-sm font-semibold uppercase tracking-wider text-primary">
 					Stay Connected
@@ -50,12 +57,22 @@
 				<h2 class="mt-1 text-xl font-bold tracking-tight">
 					Don't miss what's happening at MMU.
 				</h2>
+
+				<p class="mt-1 text-sm text-muted-foreground">
+					Explore the university and discover more opportunities to get involved.
+				</p>
 			</div>
 
-			<Button href="/contact" variant="outline">
-				Contact Us
-				<CalendarDays />
-			</Button>
+			<div class="flex flex-wrap gap-3">
+				<Button href="/contact" variant="outline">
+					Contact Us
+				</Button>
+
+				<Button href="/admissions">
+					Explore Admissions
+					<CalendarDays class="ml-2 size-4" />
+				</Button>
+			</div>
 		</div>
 	</div>
 </section>

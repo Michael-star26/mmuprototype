@@ -5,7 +5,6 @@
 	import { Badge } from '$lib/components/ui/badge';
 	import * as Card from '$lib/components/ui/card';
 
-	import Breadcrumbs from '$lib/components/shared/Breadcrumbs.svelte';
 	import CTASection from '$lib/components/shared/CTASection.svelte';
 	import PageHero from '$lib/components/shared/PageHero.svelte';
 
@@ -20,30 +19,21 @@
 	<meta name="description" content={article.summary} />
 </svelte:head>
 
-<div class="container mx-auto px-4 pt-6">
-	<Breadcrumbs
-		items={[
-			{ label: 'Home', href: '/' },
-			{ label: 'News', href: '/news' },
-			{ label: article.title }
-		]}
-	/>
-</div>
-
-<PageHero title={article.title} subtitle={article.category} />
+<PageHero
+	eyebrow={article.category}
+	title={article.title}
+	description={article.summary}
+	breadcrumbs={[
+		{ label: 'Home', href: '/' },
+		{ label: 'News', href: '/news' },
+		{ label: article.title }
+	]}
+/>
 
 <main class="container mx-auto px-4 py-12">
 	<div class="grid gap-12 lg:grid-cols-3">
 		<article class="space-y-8 lg:col-span-2">
-			<div>
-				<Badge variant="secondary">{article.category}</Badge>
-
-				<p class="mt-6 text-lg leading-8 text-muted-foreground">
-					{article.summary}
-				</p>
-			</div>
-
-			<div class="space-y-4 text-sm text-muted-foreground">
+			<div class="flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-muted-foreground">
 				<div class="flex items-center gap-2">
 					<CalendarDays class="size-4 shrink-0" />
 					<span>{article.date}</span>
@@ -55,17 +45,15 @@
 				</div>
 			</div>
 
-			<section>
-				<h2 class="text-2xl font-bold tracking-tight">
-					{article.title}
-				</h2>
+			<div class="border-t pt-8">
+				<Badge variant="secondary">{article.category}</Badge>
 
 				<div class="mt-6">
 					<p class="leading-8 text-muted-foreground">
 						{article.content}
 					</p>
 				</div>
-			</section>
+			</div>
 		</article>
 
 		<aside>

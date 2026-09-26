@@ -1,11 +1,8 @@
 <script lang="ts">
-	import ArrowRight from '@lucide/svelte/icons/arrow-right';
-
-	import { Button } from '$lib/components/ui/button';
-
 	import PageHero from '$lib/components/shared/PageHero.svelte';
 	import ProgrammeCard from '$lib/components/shared/ProgrammeCard.svelte';
 	import SectionHeading from '$lib/components/shared/SectionHeading.svelte';
+	import CTASection from '$lib/components/shared/CTASection.svelte';
 
 	import { programmes } from '$lib/data/programmes';
 </script>
@@ -19,11 +16,24 @@
 </svelte:head>
 
 <PageHero
-	title="Academics"
-	subtitle="Learn. Explore. Grow."
+	eyebrow="Academics"
+	title="Learn. Explore. Grow."
+	description="Explore academic programmes, learning opportunities, and the academic community at Multimedia University of Kenya."
+	actions={[
+		{
+			label: 'Explore Programmes',
+			href: '#programmes'
+		},
+		{
+			label: 'Admissions',
+			href: '/admissions',
+			variant: 'outline'
+		}
+	]}
 />
 
-<section class="container mx-auto px-4 py-16">
+<!-- Programmes -->
+<section id="programmes" class="container mx-auto px-4 py-16 md:py-20">
 	<SectionHeading
 		eyebrow="Academic Programmes"
 		title="Explore Our Programmes"
@@ -37,31 +47,32 @@
 	</div>
 </section>
 
+<!-- Academic Community -->
 <section class="border-y bg-muted/40">
-	<div class="container mx-auto px-4 py-16">
+	<div class="container mx-auto px-4 py-16 md:py-20">
 		<SectionHeading
 			eyebrow="More Than Classrooms"
 			title="An Academic Community"
-			description="Explore the faculties, research opportunities, and learning resources that support the student experience."
+			description="Explore the schools, research opportunities, and resources that support the student experience."
 		/>
 
 		<div class="mt-8 grid gap-6 md:grid-cols-3">
 			<a
-				href="/academics/faculties"
-				class="rounded-lg border bg-background p-6 transition-colors hover:border-primary"
+				href="/university/schools"
+				class="rounded-lg border bg-background p-6 transition-colors hover:border-primary hover:bg-muted/30"
 			>
-				<h3 class="font-semibold">Faculties & Schools</h3>
-				<p class="mt-2 text-sm text-muted-foreground">
-					Explore our academic faculties, schools, and areas of specialization.
+				<h3 class="font-semibold">Schools & Faculties</h3>
+				<p class="mt-2 text-sm leading-6 text-muted-foreground">
+					Explore our academic schools, faculties, and areas of specialization.
 				</p>
 			</a>
 
 			<a
 				href="/research"
-				class="rounded-lg border bg-background p-6 transition-colors hover:border-primary"
+				class="rounded-lg border bg-background p-6 transition-colors hover:border-primary hover:bg-muted/30"
 			>
 				<h3 class="font-semibold">Research</h3>
-				<p class="mt-2 text-sm text-muted-foreground">
+				<p class="mt-2 text-sm leading-6 text-muted-foreground">
 					Discover research, innovation, and opportunities to contribute to
 					new knowledge.
 				</p>
@@ -69,10 +80,10 @@
 
 			<a
 				href="/admissions"
-				class="rounded-lg border bg-background p-6 transition-colors hover:border-primary"
+				class="rounded-lg border bg-background p-6 transition-colors hover:border-primary hover:bg-muted/30"
 			>
 				<h3 class="font-semibold">Admissions</h3>
-				<p class="mt-2 text-sm text-muted-foreground">
+				<p class="mt-2 text-sm leading-6 text-muted-foreground">
 					Find admission information and take the next step toward joining
 					the university.
 				</p>
@@ -81,28 +92,19 @@
 	</div>
 </section>
 
-<section class="container mx-auto px-4 py-16">
-	<div
-		class="flex flex-col gap-6 rounded-lg border bg-background p-8 md:flex-row md:items-center md:justify-between"
-	>
-		<div class="max-w-2xl">
-			<p class="text-sm font-semibold uppercase tracking-wider text-primary">
-				Ready to begin?
-			</p>
-
-			<h2 class="mt-2 text-2xl font-bold tracking-tight md:text-3xl">
-				Find the programme that's right for you.
-			</h2>
-
-			<p class="mt-3 text-muted-foreground">
-				Review our programmes and admission information to plan your next
-				step.
-			</p>
-		</div>
-
-		<Button href="/admissions">
-			Admissions
-			<ArrowRight />
-		</Button>
-	</div>
+<!-- CTA -->
+<section class="container mx-auto px-4 py-16 md:py-20">
+	<CTASection
+		eyebrow="Ready to Begin?"
+		title="Find the programme that's right for you."
+		description="Review our programmes and admission information to plan your next step."
+		primaryAction={{
+			label: 'View Admissions',
+			href: '/admissions'
+		}}
+		secondaryAction={{
+			label: 'Contact Us',
+			href: '/contact'
+		}}
+	/>
 </section>

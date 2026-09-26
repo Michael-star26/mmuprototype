@@ -8,7 +8,6 @@
 
 	import PageHero from '$lib/components/shared/PageHero.svelte';
 	import SectionHeading from '$lib/components/shared/SectionHeading.svelte';
-	import CTASection from '$lib/components/shared/CTASection.svelte';
 </script>
 
 <svelte:head>
@@ -20,8 +19,17 @@
 </svelte:head>
 
 <PageHero
-	title="Campus Life"
-	subtitle="Life Beyond the Classroom"
+	eyebrow="Campus Life"
+	title="Life Beyond the Classroom"
+	description="Discover student life, clubs, societies, activities, and opportunities to connect with the wider campus community."
+	breadcrumbs={[
+		{ label: 'Home', href: '/' },
+		{ label: 'Campus Life' }
+	]}
+	actions={[
+		{ label: 'Explore Student Activities', href: '/campus-life/clubs-and-societies' },
+		{ label: 'Contact Us', href: '/contact', variant: 'outline' }
+	]}
 />
 
 <section class="container mx-auto px-4 py-16">
@@ -112,25 +120,9 @@
 			<div class="mt-7">
 				<Button href="/campus-life/clubs-and-societies">
 					Explore Student Activities
-					<ArrowRight />
+					<ArrowRight class="ml-2 size-4" />
 				</Button>
 			</div>
 		</div>
 	</div>
-</section>
-
-<section class="container mx-auto px-4 py-16">
-	<CTASection
-		eyebrow="Student Life"
-		title="Get involved."
-		description="Discover opportunities to meet people, develop new interests, and make the most of your university experience."
-		primaryAction={{
-			label: 'Clubs & Societies',
-			href: '/campus-life/clubs-and-societies'
-		}}
-		secondaryAction={{
-			label: 'Contact Us',
-			href: '/contact'
-		}}
-	/>
 </section>

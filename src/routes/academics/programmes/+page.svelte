@@ -1,11 +1,8 @@
 <script lang="ts">
-	import ArrowRight from '@lucide/svelte/icons/arrow-right';
-
-	import { Button } from '$lib/components/ui/button';
-
 	import CTASection from '$lib/components/shared/CTASection.svelte';
 	import PageHero from '$lib/components/shared/PageHero.svelte';
 	import ProgrammeCard from '$lib/components/shared/ProgrammeCard.svelte';
+	import SectionHeading from '$lib/components/shared/SectionHeading.svelte';
 
 	import { programmes } from '$lib/data/programmes';
 </script>
@@ -19,21 +16,29 @@
 </svelte:head>
 
 <PageHero
-	title="Academic Programmes"
-	subtitle="Find Your Path"
+	eyebrow="Academics"
+	title="Find Your Path"
+	description="Explore academic programmes at Multimedia University of Kenya and find an area of study that matches your interests and career goals."
+	actions={[
+		{
+			label: 'Admissions',
+			href: '/admissions'
+		},
+		{
+			label: 'Contact Us',
+			href: '/contact',
+			variant: 'outline'
+		}
+	]}
 />
 
-<section class="container mx-auto px-4 py-16">
-	<div class="mx-auto max-w-3xl text-center">
-		<h2 class="text-2xl font-bold tracking-tight md:text-3xl">
-			Explore Our Programmes
-		</h2>
-
-		<p class="mt-3 text-muted-foreground">
-			Explore our range of undergraduate programmes and find an area of study
-			that matches your interests and career goals.
-		</p>
-	</div>
+<section class="container mx-auto px-4 py-16 md:py-20">
+	<SectionHeading
+		align="center"
+		eyebrow="Academic Programmes"
+		title="Explore Our Programmes"
+		description="Explore our range of undergraduate programmes and discover opportunities to build knowledge, practical skills, and career-ready expertise."
+	/>
 
 	<div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
 		{#each programmes as programme}
@@ -42,7 +47,7 @@
 	</div>
 </section>
 
-<section class="container mx-auto px-4 pb-16">
+<section class="container mx-auto px-4 pb-16 md:pb-20">
 	<CTASection
 		eyebrow="Admissions"
 		title="Ready to take the next step?"

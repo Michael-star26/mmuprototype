@@ -6,11 +6,19 @@
 
 	let open = $state(false);
 	let query = $state('');
+
+	function handleOpenChange(value: boolean) {
+		open = value;
+
+		if (!value) {
+			query = '';
+		}
+	}
 </script>
 
-<Dialog.Root bind:open>
+<Dialog.Root bind:open onOpenChange={handleOpenChange}>
 	<Dialog.Trigger
-		class="inline-flex size-9 items-center justify-center rounded-md hover:bg-accent hover:text-accent-foreground"
+		class="inline-flex size-9 items-center justify-center rounded-md hover:bg-muted hover:text-foreground"
 		aria-label="Search"
 	>
 		<Search class="size-5" />
@@ -26,11 +34,17 @@
 		</Dialog.Header>
 
 		<div class="relative">
+			<label for="site-search" class="sr-only">
+				Search MMU
+			</label>
+
 			<Search
 				class="absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground"
 			/>
 
 			<Input
+				id="site-search"
+				type="search"
 				bind:value={query}
 				placeholder="Search..."
 				class="pl-9"

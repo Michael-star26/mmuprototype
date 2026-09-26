@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Newspaper from '@lucide/svelte/icons/newspaper';
+	import CalendarDays from '@lucide/svelte/icons/calendar-days';
 
 	import { Button } from '$lib/components/ui/button';
 
@@ -19,15 +19,20 @@
 </svelte:head>
 
 <PageHero
-	title="News"
-	subtitle="MMU News & Updates"
+	eyebrow="News & Updates"
+	title="What's Happening at MMU"
+	description="Stay informed about the latest developments, achievements, announcements, and stories from across the university."
+	breadcrumbs={[
+		{ label: 'Home', href: '/' },
+		{ label: 'News' }
+	]}
 />
 
 <section class="container mx-auto px-4 py-16">
 	<SectionHeading
 		eyebrow="Latest News"
-		title="What's Happening at MMU"
-		description="Stay informed about the latest developments, achievements, announcements, and stories from across the university."
+		title="News & Stories"
+		description="Explore the latest developments, achievements, announcements, and stories from across the university."
 	/>
 
 	<div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -39,23 +44,31 @@
 
 <section class="border-y bg-muted/40">
 	<div class="container mx-auto px-4 py-12">
-		<div
-			class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between"
-		>
+		<div class="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
 			<div>
 				<p class="text-sm font-semibold uppercase tracking-wider text-primary">
 					Stay Informed
 				</p>
 
 				<h2 class="mt-1 text-xl font-bold tracking-tight">
-					Keep up with MMU.
+					More from MMU
 				</h2>
+
+				<p class="mt-1 text-sm text-muted-foreground">
+					Explore upcoming events or get in touch with the university.
+				</p>
 			</div>
 
-			<Button href="/contact" variant="outline">
-				Contact Us
-				<Newspaper />
-			</Button>
+			<div class="flex flex-wrap gap-3">
+				<Button href="/events" variant="outline">
+					Upcoming Events
+					<CalendarDays class="ml-2 size-4" />
+				</Button>
+
+				<Button href="/contact">
+					Contact Us
+				</Button>
+			</div>
 		</div>
 	</div>
 </section>

@@ -5,7 +5,6 @@
 	import { Button } from '$lib/components/ui/button';
 	import * as Card from '$lib/components/ui/card';
 
-	import Breadcrumbs from '$lib/components/shared/Breadcrumbs.svelte';
 	import CTASection from '$lib/components/shared/CTASection.svelte';
 	import PageHero from '$lib/components/shared/PageHero.svelte';
 
@@ -20,23 +19,19 @@
 	<meta name="description" content={programme.description} />
 </svelte:head>
 
-<div class="container mx-auto px-4 pt-6">
-	<Breadcrumbs
-		items={[
-			{ label: 'Home', href: '/' },
-			{ label: 'Academics', href: '/academics' },
-			{ label: 'Programmes', href: '/academics/programmes' },
-			{ label: programme.title }
-		]}
-	/>
-</div>
-
 <PageHero
+	eyebrow={programme.faculty}
 	title={programme.title}
-	subtitle={programme.faculty}
+	description={programme.description}
+	breadcrumbs={[
+		{ label: 'Home', href: '/' },
+		{ label: 'Academics', href: '/academics' },
+		{ label: 'Programmes', href: '/academics/programmes' },
+		{ label: programme.title }
+	]}
 />
 
-<main class="container mx-auto px-4 py-12">
+<main class="container mx-auto px-4 py-12 md:py-16">
 	<div class="grid gap-12 lg:grid-cols-3">
 		<!-- Main content -->
 		<div class="space-y-10 lg:col-span-2">
@@ -58,7 +53,10 @@
 				<ul class="mt-4 space-y-3">
 					{#each programme.requirements as requirement}
 						<li class="flex gap-3 text-muted-foreground">
-							<span class="mt-2 size-1.5 shrink-0 rounded-full bg-primary"></span>
+							<span
+								class="mt-2 size-1.5 shrink-0 rounded-full bg-primary"
+								aria-hidden="true"
+							></span>
 							<span>{requirement}</span>
 						</li>
 					{/each}
@@ -120,7 +118,7 @@
 				<Card.Footer>
 					<Button href="/admissions/how-to-apply" class="w-full">
 						Apply Now
-						<ArrowRight />
+						<ArrowRight class="ml-2 size-4" />
 					</Button>
 				</Card.Footer>
 			</Card.Root>
@@ -128,7 +126,7 @@
 	</div>
 </main>
 
-<section class="container mx-auto px-4 pb-16">
+<section class="container mx-auto px-4 pb-16 md:pb-20">
 	<CTASection
 		eyebrow="Next Step"
 		title="Ready to apply?"

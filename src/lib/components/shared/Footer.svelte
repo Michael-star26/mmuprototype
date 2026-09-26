@@ -9,28 +9,29 @@
 		{
 			title: 'University',
 			links: [
-				{ label: 'About MMU', href: '/about' },
-				{ label: 'Leadership', href: '/about/leadership' },
+				{ label: 'About MMU', href: '/university' },
+				{ label: 'Leadership', href: '/university/leadership' },
+				{ label: 'Schools', href: '/university/schools' },
 				{ label: 'Research', href: '/research' },
-				{ label: 'News', href: '/news' },
-				{ label: 'Events', href: '/events' }
+				{ label: 'News', href: '/news' }
 			]
 		},
 		{
 			title: 'Academics',
 			links: [
 				{ label: 'Programmes', href: '/academics/programmes' },
-				{ label: 'Faculties', href: '/academics/faculties' },
 				{ label: 'Admissions', href: '/admissions' },
-				{ label: 'Student Portal', href: '#' }
+				{ label: 'How to Apply', href: '/admissions/how-to-apply' },
+				{ label: 'Requirements', href: '/admissions/requirements' },
+				{ label: 'Events', href: '/events' }
 			]
 		},
 		{
 			title: 'Information',
 			links: [
 				{ label: 'Contact Us', href: '/contact' },
-				{ label: 'Library', href: '#' },
-				{ label: 'Downloads', href: '#' },
+				{ label: 'Campus Life', href: '/campus-life' },
+				{ label: 'Resources', href: '/resources' },
 				{ label: 'FAQs', href: '#' }
 			]
 		}
@@ -50,8 +51,13 @@
 					</div>
 
 					<div>
-						<div class="font-bold">Multimedia University</div>
-						<div class="text-sm text-muted-foreground">of Kenya</div>
+						<div class="font-bold text-foreground">
+							Multimedia University
+						</div>
+
+						<div class="text-sm text-muted-foreground">
+							of Kenya
+						</div>
 					</div>
 				</a>
 
@@ -68,16 +74,21 @@
 
 					<div class="flex items-center gap-3">
 						<Phone class="size-4 shrink-0" />
-						<a href="tel:+254000000000" class="hover:text-foreground">
+
+						<a
+							href="tel:+254000000000"
+							class="transition-colors hover:text-foreground"
+						>
 							+254 000 000 000
 						</a>
 					</div>
 
 					<div class="flex items-center gap-3">
 						<Mail class="size-4 shrink-0" />
+
 						<a
 							href="mailto:info@mmu.ac.ke"
-							class="hover:text-foreground"
+							class="transition-colors hover:text-foreground"
 						>
 							info@mmu.ac.ke
 						</a>
@@ -85,10 +96,12 @@
 				</div>
 			</div>
 
-			<!-- Link groups -->
+			<!-- Link Groups -->
 			{#each footerSections as section}
 				<div>
-					<h2 class="text-sm font-semibold">{section.title}</h2>
+					<h2 class="text-sm font-semibold text-foreground">
+						{section.title}
+					</h2>
 
 					<ul class="mt-4 space-y-3">
 						{#each section.links as link}
@@ -112,13 +125,24 @@
 			class="flex flex-col gap-4 text-sm text-muted-foreground md:flex-row md:items-center md:justify-between"
 		>
 			<p>
-				© {new Date().getFullYear()} Multimedia University of Kenya. All
-				rights reserved.
+				© {new Date().getFullYear()} Multimedia University of Kenya.
+				All rights reserved.
 			</p>
 
 			<div class="flex gap-5">
-				<a href="#" class="hover:text-foreground">Privacy Policy</a>
-				<a href="#" class="hover:text-foreground">Terms of Use</a>
+				<a
+					href="#"
+					class="transition-colors hover:text-foreground"
+				>
+					Privacy Policy
+				</a>
+
+				<a
+					href="#"
+					class="transition-colors hover:text-foreground"
+				>
+					Terms of Use
+				</a>
 			</div>
 		</div>
 	</div>

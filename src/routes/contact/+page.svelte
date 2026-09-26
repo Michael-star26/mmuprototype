@@ -21,13 +21,17 @@
 </svelte:head>
 
 <PageHero
-	title="Contact Us"
-	subtitle="We're Here to Help"
+	eyebrow="Contact"
+	title="We're Here to Help"
+	description="Have a question about admissions, programmes, or university services? Get in touch with MMU."
+	breadcrumbs={[
+		{ label: 'Home', href: '/' },
+		{ label: 'Contact' }
+	]}
 />
 
 <section class="container mx-auto px-4 py-16">
 	<div class="grid gap-12 lg:grid-cols-3">
-		<!-- Contact information -->
 		<div>
 			<SectionHeading
 				eyebrow="Get in Touch"
@@ -61,7 +65,7 @@
 					<div>
 						<h2 class="font-semibold">Phone</h2>
 						<p class="mt-1 text-sm text-muted-foreground">
-							+254 000 000 000
+							Contact details to be added.
 						</p>
 					</div>
 				</div>
@@ -83,7 +87,6 @@
 			</div>
 		</div>
 
-		<!-- Contact form -->
 		<Card.Root class="lg:col-span-2">
 			<Card.Header>
 				<Card.Title>Send Us a Message</Card.Title>
@@ -99,6 +102,7 @@
 							<label for="name" class="text-sm font-medium">
 								Full Name
 							</label>
+
 							<Input
 								id="name"
 								name="name"
@@ -110,6 +114,7 @@
 							<label for="email" class="text-sm font-medium">
 								Email Address
 							</label>
+
 							<Input
 								id="email"
 								name="email"
@@ -123,6 +128,7 @@
 						<label for="subject" class="text-sm font-medium">
 							Subject
 						</label>
+
 						<Input
 							id="subject"
 							name="subject"
@@ -134,6 +140,7 @@
 						<label for="message" class="text-sm font-medium">
 							Message
 						</label>
+
 						<Textarea
 							id="message"
 							name="message"
@@ -141,14 +148,12 @@
 							class="min-h-36"
 						/>
 					</div>
+
+					<Button type="submit">
+						Send Message
+					</Button>
 				</form>
 			</Card.Content>
-
-			<Card.Footer>
-				<Button type="submit">
-					Send Message
-				</Button>
-			</Card.Footer>
 		</Card.Root>
 	</div>
 </section>

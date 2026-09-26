@@ -6,7 +6,6 @@
 
 	import { Button } from '$lib/components/ui/button';
 
-	import CTASection from '$lib/components/shared/CTASection.svelte';
 	import PageHero from '$lib/components/shared/PageHero.svelte';
 	import SectionHeading from '$lib/components/shared/SectionHeading.svelte';
 </script>
@@ -20,8 +19,17 @@
 </svelte:head>
 
 <PageHero
-	title="Research & Innovation"
-	subtitle="Discover. Innovate. Impact."
+	eyebrow="Research & Innovation"
+	title="Discover. Innovate. Impact."
+	description="Explore research activities, innovation, and opportunities to contribute to solutions that address real-world challenges."
+	breadcrumbs={[
+		{ label: 'Home', href: '/' },
+		{ label: 'Research & Innovation' }
+	]}
+	actions={[
+		{ label: 'Explore Academics', href: '/academics' },
+		{ label: 'Contact Us', href: '/contact', variant: 'outline' }
+	]}
 />
 
 <section class="container mx-auto px-4 py-16">
@@ -92,7 +100,7 @@
 			<div class="flex flex-wrap gap-3 lg:justify-end">
 				<Button href="/contact">
 					Get Involved
-					<ArrowRight />
+					<ArrowRight class="ml-2 size-4" />
 				</Button>
 
 				<Button href="/academics" variant="outline">
@@ -101,14 +109,4 @@
 			</div>
 		</div>
 	</div>
-</section>
-
-<section class="container mx-auto px-4 pb-16">
-	<CTASection
-		eyebrow="Explore Further"
-		title="Want to explore research?"
-		description="Learn more about research, innovation, and opportunities to get involved."
-		primaryAction={{ label: 'Contact Us', href: '/contact' }}
-		secondaryAction={{ label: 'View Academics', href: '/academics' }}
-	/>
 </section>

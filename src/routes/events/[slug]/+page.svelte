@@ -3,11 +3,10 @@
 	import Clock from '@lucide/svelte/icons/clock';
 	import MapPin from '@lucide/svelte/icons/map-pin';
 
-	import { Badge } from '$lib/components/ui/badge';
 	import { Button } from '$lib/components/ui/button';
+	import { Badge } from '$lib/components/ui/badge';
 	import * as Card from '$lib/components/ui/card';
 
-	import Breadcrumbs from '$lib/components/shared/Breadcrumbs.svelte';
 	import CTASection from '$lib/components/shared/CTASection.svelte';
 	import PageHero from '$lib/components/shared/PageHero.svelte';
 
@@ -22,38 +21,31 @@
 	<meta name="description" content={event.description} />
 </svelte:head>
 
-<div class="container mx-auto px-4 pt-6">
-	<Breadcrumbs
-		items={[
-			{ label: 'Home', href: '/' },
-			{ label: 'Events', href: '/events' },
-			{ label: event.title }
-		]}
-	/>
-</div>
-
 <PageHero
+	eyebrow={event.category}
 	title={event.title}
-	subtitle={event.category}
+	description={event.description}
+	breadcrumbs={[
+		{ label: 'Home', href: '/' },
+		{ label: 'Events', href: '/events' },
+		{ label: event.title }
+	]}
 />
 
 <main class="container mx-auto px-4 py-12">
 	<div class="grid gap-12 lg:grid-cols-3">
-		<!-- Main content -->
 		<article class="space-y-8 lg:col-span-2">
 			<div>
 				<Badge variant="secondary">{event.category}</Badge>
 
-				<h2 class="mt-4 text-2xl font-bold tracking-tight">
-					About This Event
-				</h2>
-
-				<p class="mt-4 text-lg leading-7 text-muted-foreground">
-					{event.description}
-				</p>
+				<div class="mt-6">
+					<p class="leading-8 text-muted-foreground">
+						{event.description}
+					</p>
+				</div>
 			</div>
 
-			<section>
+			<section class="border-t pt-8">
 				<h2 class="text-2xl font-bold tracking-tight">
 					Event Details
 				</h2>
@@ -64,7 +56,6 @@
 			</section>
 		</article>
 
-		<!-- Event information -->
 		<aside>
 			<Card.Root class="lg:sticky lg:top-24">
 				<Card.Header>

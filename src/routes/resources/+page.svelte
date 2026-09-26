@@ -5,8 +5,6 @@
 	import HelpCircle from '@lucide/svelte/icons/help-circle';
 	import Library from '@lucide/svelte/icons/library';
 
-	import { Button } from '$lib/components/ui/button';
-
 	import CTASection from '$lib/components/shared/CTASection.svelte';
 	import PageHero from '$lib/components/shared/PageHero.svelte';
 	import SectionHeading from '$lib/components/shared/SectionHeading.svelte';
@@ -21,8 +19,13 @@
 </svelte:head>
 
 <PageHero
+	eyebrow="Resources"
 	title="University Resources"
-	subtitle="Information & Support"
+	description="Access useful information, academic resources, and services that support the university community."
+	breadcrumbs={[
+		{ label: 'Home', href: '/' },
+		{ label: 'Resources' }
+	]}
 />
 
 <section class="container mx-auto px-4 py-16">
@@ -33,13 +36,10 @@
 	/>
 
 	<div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-		<a
-			href="#"
-			class="group rounded-lg border bg-background p-6 transition-colors hover:border-primary"
-		>
+		<div class="rounded-lg border bg-background p-6">
 			<Library class="size-8 text-primary" />
 
-			<h2 class="mt-5 font-semibold group-hover:text-primary">
+			<h2 class="mt-5 font-semibold">
 				Library
 			</h2>
 
@@ -47,19 +47,15 @@
 				Access library services, collections, and academic resources.
 			</p>
 
-			<span class="mt-5 inline-flex items-center gap-1 text-sm font-medium text-primary">
-				Explore
-				<ArrowRight class="size-4" />
+			<span class="mt-5 inline-flex items-center gap-1 text-sm font-medium text-muted-foreground">
+				Coming Soon
 			</span>
-		</a>
+		</div>
 
-		<a
-			href="#"
-			class="group rounded-lg border bg-background p-6 transition-colors hover:border-primary"
-		>
+		<div class="rounded-lg border bg-background p-6">
 			<FileText class="size-8 text-primary" />
 
-			<h2 class="mt-5 font-semibold group-hover:text-primary">
+			<h2 class="mt-5 font-semibold">
 				Downloads
 			</h2>
 
@@ -67,19 +63,15 @@
 				Find forms, documents, publications, and other useful materials.
 			</p>
 
-			<span class="mt-5 inline-flex items-center gap-1 text-sm font-medium text-primary">
-				View Downloads
-				<ArrowRight class="size-4" />
+			<span class="mt-5 inline-flex items-center gap-1 text-sm font-medium text-muted-foreground">
+				Coming Soon
 			</span>
-		</a>
+		</div>
 
-		<a
-			href="#"
-			class="group rounded-lg border bg-background p-6 transition-colors hover:border-primary"
-		>
+		<div class="rounded-lg border bg-background p-6">
 			<BookOpen class="size-8 text-primary" />
 
-			<h2 class="mt-5 font-semibold group-hover:text-primary">
+			<h2 class="mt-5 font-semibold">
 				Student Resources
 			</h2>
 
@@ -87,19 +79,15 @@
 				Find information and services designed to support students.
 			</p>
 
-			<span class="mt-5 inline-flex items-center gap-1 text-sm font-medium text-primary">
-				Explore
-				<ArrowRight class="size-4" />
+			<span class="mt-5 inline-flex items-center gap-1 text-sm font-medium text-muted-foreground">
+				Coming Soon
 			</span>
-		</a>
+		</div>
 
-		<a
-			href="#"
-			class="group rounded-lg border bg-background p-6 transition-colors hover:border-primary"
-		>
+		<div class="rounded-lg border bg-background p-6">
 			<HelpCircle class="size-8 text-primary" />
 
-			<h2 class="mt-5 font-semibold group-hover:text-primary">
+			<h2 class="mt-5 font-semibold">
 				FAQs
 			</h2>
 
@@ -107,11 +95,10 @@
 				Find answers to common questions about the university.
 			</p>
 
-			<span class="mt-5 inline-flex items-center gap-1 text-sm font-medium text-primary">
-				View FAQs
-				<ArrowRight class="size-4" />
+			<span class="mt-5 inline-flex items-center gap-1 text-sm font-medium text-muted-foreground">
+				Coming Soon
 			</span>
-		</a>
+		</div>
 	</div>
 </section>
 

@@ -2,7 +2,6 @@
 	import Check from '@lucide/svelte/icons/check';
 	import GraduationCap from '@lucide/svelte/icons/graduation-cap';
 
-	import { Badge } from '$lib/components/ui/badge';
 	import * as Card from '$lib/components/ui/card';
 
 	import PageHero from '$lib/components/shared/PageHero.svelte';
@@ -19,11 +18,28 @@
 </svelte:head>
 
 <PageHero
-	title="Admission Requirements"
-	subtitle="Before You Apply"
+	eyebrow="Admissions"
+	title="Before You Apply"
+	description="Review the general admission requirements and programme-specific criteria before beginning your application."
+	breadcrumbs={[
+		{ label: 'Home', href: '/' },
+		{ label: 'Admissions', href: '/admissions' },
+		{ label: 'Requirements' }
+	]}
+	actions={[
+		{
+			label: 'How to Apply',
+			href: '/admissions/how-to-apply'
+		},
+		{
+			label: 'Explore Programmes',
+			href: '/academics/programmes',
+			variant: 'outline'
+		}
+	]}
 />
 
-<section class="container mx-auto px-4 py-16">
+<section class="container mx-auto px-4 py-16 md:py-20">
 	<div class="mx-auto max-w-3xl">
 		<SectionHeading
 			eyebrow="Undergraduate Admissions"
@@ -31,7 +47,7 @@
 			description="Review the general academic requirements before beginning your application."
 		/>
 
-		<div class="mt-10 space-y-6">
+		<div class="mt-10">
 			<Card.Root>
 				<Card.Header>
 					<div class="flex items-start gap-4">
@@ -52,7 +68,8 @@
 
 				<Card.Content>
 					<div class="flex items-center gap-3">
-						<Check class="size-5 text-primary" />
+						<Check class="size-5 text-primary" aria-hidden="true" />
+
 						<span class="text-lg font-semibold">
 							C+ and above
 						</span>
@@ -64,26 +81,33 @@
 </section>
 
 <section class="border-y bg-muted/40">
-	<div class="container mx-auto px-4 py-16">
+	<div class="container mx-auto px-4 py-16 md:py-20">
 		<SectionHeading
 			eyebrow="Important"
 			title="Programme-Specific Requirements"
 			description="Some programmes may have additional subject, grade, or professional requirements beyond the general admission criteria."
 		/>
 
-		<div class="mx-auto mt-8 max-w-3xl rounded-lg border bg-background p-6">
-			<Badge variant="secondary">Check Before Applying</Badge>
+		<Card.Root class="mx-auto mt-8 max-w-3xl">
+			<Card.Header>
+				<Card.Title>Check Your Programme</Card.Title>
+				<Card.Description>
+					Requirements may vary by course of study.
+				</Card.Description>
+			</Card.Header>
 
-			<p class="mt-4 text-sm leading-6 text-muted-foreground">
-				Applicants should review the requirements for their specific
-				programme before submitting an application. Programme requirements
-				may differ depending on the course of study.
-			</p>
-		</div>
+			<Card.Content>
+				<p class="text-sm leading-6 text-muted-foreground">
+					Applicants should review the requirements for their specific
+					programme before submitting an application. Programme requirements
+					may differ depending on the course of study.
+				</p>
+			</Card.Content>
+		</Card.Root>
 	</div>
 </section>
 
-<section class="container mx-auto px-4 py-16">
+<section class="container mx-auto px-4 py-16 md:py-20">
 	<CTASection
 		eyebrow="Next Step"
 		title="Ready to apply?"

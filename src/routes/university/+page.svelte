@@ -4,31 +4,38 @@
 	import GraduationCap from '@lucide/svelte/icons/graduation-cap';
 	import Users from '@lucide/svelte/icons/users';
 
-	import { Button } from '$lib/components/ui/button';
-
 	import CTASection from '$lib/components/shared/CTASection.svelte';
 	import PageHero from '$lib/components/shared/PageHero.svelte';
 	import SectionHeading from '$lib/components/shared/SectionHeading.svelte';
 </script>
 
 <svelte:head>
-	<title>About MMU | Multimedia University of Kenya</title>
+	<title>The University | Multimedia University of Kenya</title>
 	<meta
 		name="description"
-		content="Learn more about Multimedia University of Kenya, its leadership, schools, and university community."
+		content="Learn more about Multimedia University of Kenya, its leadership, schools, and academic community."
 	/>
 </svelte:head>
 
 <PageHero
-	title="About MMU"
-	subtitle="Discover Our University"
+	eyebrow="The University"
+	title="Discover MMU"
+	description="Learn more about Multimedia University of Kenya, its leadership, schools, and academic community."
+	breadcrumbs={[
+		{ label: 'Home', href: '/' },
+		{ label: 'The University' }
+	]}
+	actions={[
+		{ label: 'Explore Academics', href: '/academics' },
+		{ label: 'Contact Us', href: '/contact', variant: 'outline' }
+	]}
 />
 
 <section class="container mx-auto px-4 py-16">
 	<SectionHeading
 		eyebrow="About the University"
 		title="Get to Know MMU"
-		description="Explore the university, its academic community, leadership, and schools."
+		description="Explore the university, its leadership, schools, and academic community."
 	/>
 
 	<div class="mt-10 grid gap-6 md:grid-cols-3">
@@ -83,7 +90,7 @@
 			</h2>
 
 			<p class="mt-2 text-sm leading-6 text-muted-foreground">
-				Discover programmes, faculties, and the academic opportunities available at MMU.
+				Discover programmes and academic opportunities available at MMU.
 			</p>
 
 			<span class="mt-5 inline-flex items-center gap-1 text-sm font-medium text-primary">

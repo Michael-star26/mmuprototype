@@ -1,11 +1,7 @@
 <script lang="ts">
-	import ArrowRight from '@lucide/svelte/icons/arrow-right';
 	import BriefcaseBusiness from '@lucide/svelte/icons/briefcase-business';
 	import Users from '@lucide/svelte/icons/users';
 
-	import { Button } from '$lib/components/ui/button';
-
-	import Breadcrumbs from '$lib/components/shared/Breadcrumbs.svelte';
 	import CTASection from '$lib/components/shared/CTASection.svelte';
 	import PageHero from '$lib/components/shared/PageHero.svelte';
 	import SectionHeading from '$lib/components/shared/SectionHeading.svelte';
@@ -19,19 +15,15 @@
 	/>
 </svelte:head>
 
-<div class="container mx-auto px-4 pt-6">
-	<Breadcrumbs
-		items={[
-			{ label: 'Home', href: '/' },
-			{ label: 'University', href: '/university' },
-			{ label: 'Leadership' }
-		]}
-	/>
-</div>
-
 <PageHero
+	eyebrow="The University"
 	title="University Leadership"
-	subtitle="Leading the University Forward"
+	description="Meet the people responsible for guiding the university and supporting its academic and institutional mission."
+	breadcrumbs={[
+		{ label: 'Home', href: '/' },
+		{ label: 'The University', href: '/university' },
+		{ label: 'Leadership' }
+	]}
 />
 
 <section class="container mx-auto px-4 py-16">

@@ -1,6 +1,5 @@
 <script lang="ts">
 	import ArrowRight from '@lucide/svelte/icons/arrow-right';
-	import Check from '@lucide/svelte/icons/check';
 
 	import { Button } from '$lib/components/ui/button';
 
@@ -51,11 +50,28 @@
 </svelte:head>
 
 <PageHero
-	title="How to Apply"
-	subtitle="Your Application Journey"
+	eyebrow="Admissions"
+	title="Your Application Journey"
+	description="Follow the application process and prepare the information you need before submitting your application to MMU."
+	breadcrumbs={[
+		{ label: 'Home', href: '/' },
+		{ label: 'Admissions', href: '/admissions' },
+		{ label: 'How to Apply' }
+	]}
+	actions={[
+		{
+			label: 'View Requirements',
+			href: '/admissions/requirements'
+		},
+		{
+			label: 'Explore Programmes',
+			href: '/academics/programmes',
+			variant: 'outline'
+		}
+	]}
 />
 
-<section class="container mx-auto px-4 py-16">
+<section class="container mx-auto px-4 py-16 md:py-20">
 	<div class="mx-auto max-w-3xl">
 		<SectionHeading
 			eyebrow="Application Process"
@@ -66,21 +82,19 @@
 		<div class="mt-12">
 			{#each steps as step, i}
 				<div class="relative flex gap-6 pb-10 last:pb-0">
-					<!-- Connector -->
 					{#if i < steps.length - 1}
 						<div
-							class="absolute left-5 top-11 h-[calc(100%-2rem)] w-px bg-border"
+							class="absolute left-5 top-10 h-[calc(100%-2.5rem)] w-px bg-border"
+							aria-hidden="true"
 						></div>
 					{/if}
 
-					<!-- Step number -->
 					<div
 						class="relative z-10 flex size-10 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-primary-foreground"
 					>
 						{step.number}
 					</div>
 
-					<!-- Step content -->
 					<div class="pt-1">
 						<h2 class="text-lg font-semibold">
 							{step.title}
@@ -97,8 +111,9 @@
 </section>
 
 <section class="border-y bg-muted/40">
-	<div class="container mx-auto px-4 py-16">
+	<div class="container mx-auto px-4 py-16 md:py-20">
 		<SectionHeading
+			align="center"
 			eyebrow="Before You Begin"
 			title="Have Everything Ready?"
 			description="Make sure you've reviewed the programme requirements before starting your application."
@@ -111,20 +126,20 @@
 
 			<Button href="/academics/programmes">
 				Explore Programmes
-				<ArrowRight />
+				<ArrowRight class="ml-2 size-4" />
 			</Button>
 		</div>
 	</div>
 </section>
 
-<section class="container mx-auto px-4 py-16">
+<section class="container mx-auto px-4 py-16 md:py-20">
 	<CTASection
 		eyebrow="Ready?"
 		title="Start your application."
 		description="Once you've selected your programme and reviewed the requirements, you can begin the application process."
 		primaryAction={{
-			label: 'Apply Now',
-			href: '#'
+			label: 'Begin Application',
+			href: '/admissions'
 		}}
 		secondaryAction={{
 			label: 'Contact Us',
