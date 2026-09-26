@@ -72,7 +72,7 @@
 
 <main>
 	<!-- Application Process -->
-	<section class="border-b">
+	<section class="border-b border-border/60">
 		<div
 			class="container mx-auto px-5 py-16 sm:py-20 lg:px-6 lg:py-28"
 		>
@@ -81,13 +81,14 @@
 			>
 				<div>
 					<p
-						class="font-mono text-[9px] font-semibold uppercase tracking-[0.16em] text-muted-foreground"
+						class="font-mono text-[9px] font-semibold uppercase tracking-[0.16em] text-accent flex items-center gap-2"
 					>
+						<span class="h-px w-5 bg-accent"></span>
 						01 / Process
 					</p>
 
 					<h2
-						class="mt-4 text-3xl font-semibold leading-[1.05] tracking-[-0.045em] sm:text-4xl"
+						class="mt-4 text-3xl font-semibold leading-[1.05] tracking-[-0.045em] sm:text-4xl text-foreground"
 					>
 						Five steps to MMU.
 					</h2>
@@ -103,7 +104,7 @@
 				<div>
 					<!-- Process header -->
 					<div
-						class="hidden border-y py-3 sm:grid sm:grid-cols-[72px_1fr_100px]"
+						class="hidden border-y border-border/60 py-3 sm:grid sm:grid-cols-[72px_1fr_100px]"
 					>
 						<span
 							class="font-mono text-[9px] font-semibold uppercase tracking-[0.14em] text-muted-foreground"
@@ -124,15 +125,15 @@
 						</span>
 					</div>
 
-					<div class="border-b">
+					<div class="border-b border-border/60">
 						{#each steps as step, index}
-							<div class="group relative border-t first:border-t-0">
+							<div class="group relative border-t border-border/60 first:border-t-0">
 								<div
 									class="grid gap-4 py-6 sm:grid-cols-[72px_1fr_100px] sm:items-center sm:gap-6 sm:py-7"
 								>
 									<div>
 										<span
-											class="font-mono text-xs font-semibold tracking-[0.08em] text-muted-foreground"
+											class="font-mono text-xs font-bold tracking-[0.08em] text-primary"
 										>
 											{step.number}
 										</span>
@@ -140,7 +141,7 @@
 
 									<div>
 										<h3
-											class="text-lg font-semibold tracking-[-0.02em] transition-transform duration-200 group-hover:translate-x-1 sm:text-xl"
+											class="text-lg font-semibold tracking-[-0.02em] transition-all duration-200 group-hover:translate-x-1 group-hover:text-primary sm:text-xl"
 										>
 											{step.title}
 										</h3>
@@ -162,13 +163,13 @@
 										</span>
 
 										<ArrowRight
-											class="size-4 text-muted-foreground transition-transform duration-200 group-hover:translate-x-1 group-hover:text-foreground"
+											class="size-4 text-muted-foreground transition-transform duration-200 group-hover:translate-x-1 group-hover:text-primary"
 										/>
 									</div>
 								</div>
 
 								<div
-									class="absolute bottom-0 left-0 h-px w-0 bg-foreground transition-all duration-300 group-hover:w-full"
+									class="absolute bottom-0 left-0 h-0.5 w-0 bg-accent transition-all duration-300 group-hover:w-full"
 								></div>
 							</div>
 						{/each}
@@ -179,7 +180,7 @@
 	</section>
 
 	<!-- Before You Begin -->
-	<section class="border-b">
+	<section class="border-b border-border/60">
 		<div
 			class="container mx-auto px-5 py-16 sm:py-20 lg:px-6 lg:py-24"
 		>
@@ -188,38 +189,39 @@
 			>
 				<div>
 					<p
-						class="font-mono text-[9px] font-semibold uppercase tracking-[0.16em] text-muted-foreground"
+						class="font-mono text-[9px] font-semibold uppercase tracking-[0.16em] text-accent flex items-center gap-2"
 					>
+						<span class="h-px w-5 bg-accent"></span>
 						02 / Preparation
 					</p>
 
 					<h2
-						class="mt-4 text-3xl font-semibold leading-[1.05] tracking-[-0.045em]"
+						class="mt-4 text-3xl font-semibold leading-[1.05] tracking-[-0.045em] text-foreground"
 					>
 						Before you begin.
 					</h2>
 				</div>
 
 				<div>
-					<div class="grid border-t sm:grid-cols-2">
+					<div class="grid border-t border-border/60 sm:grid-cols-2">
 						<a
 							href="/academics/programmes"
-							class="group border-b py-7 sm:border-r sm:pr-10"
+							class="group border-b border-border/60 py-7 sm:border-r sm:pr-10 transition-colors hover:bg-muted/30 px-2"
 						>
 							<div class="flex items-start justify-between">
 								<span
-									class="font-mono text-xs text-muted-foreground"
+									class="font-mono text-xs font-bold text-primary"
 								>
 									01
 								</span>
 
 								<ArrowUpRight
-									class="size-4 text-muted-foreground transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-foreground"
+									class="size-4 text-muted-foreground transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary"
 								/>
 							</div>
 
 							<h3
-								class="mt-12 text-xl font-semibold tracking-[-0.025em]"
+								class="mt-12 text-xl font-semibold tracking-[-0.025em] group-hover:text-primary transition-colors"
 							>
 								Explore programmes
 							</h3>
@@ -234,22 +236,22 @@
 
 						<a
 							href="/admissions/requirements"
-							class="group border-b py-7 sm:pl-10"
+							class="group border-b border-border/60 py-7 sm:pl-10 transition-colors hover:bg-muted/30 px-2"
 						>
 							<div class="flex items-start justify-between">
 								<span
-									class="font-mono text-xs text-muted-foreground"
+									class="font-mono text-xs font-bold text-primary"
 								>
 									02
 								</span>
 
 								<ArrowUpRight
-									class="size-4 text-muted-foreground transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-foreground"
+									class="size-4 text-muted-foreground transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary"
 								/>
 							</div>
 
 							<h3
-								class="mt-12 text-xl font-semibold tracking-[-0.025em]"
+								class="mt-12 text-xl font-semibold tracking-[-0.025em] group-hover:text-primary transition-colors"
 							>
 								Review requirements
 							</h3>
@@ -264,7 +266,7 @@
 					</div>
 
 					<div
-						class="flex flex-col justify-between gap-5 border-b py-6 sm:flex-row sm:items-center"
+						class="flex flex-col justify-between gap-5 border-b border-border/60 py-6 sm:flex-row sm:items-center"
 					>
 						<div>
 							<p
@@ -274,7 +276,7 @@
 							</p>
 
 							<p
-								class="mt-2 text-sm font-medium tracking-tight"
+								class="mt-2 text-sm font-medium tracking-tight text-foreground"
 							>
 								Get in touch with MMU admissions.
 							</p>
@@ -282,7 +284,7 @@
 
 						<a
 							href="/contact"
-							class="group inline-flex items-center text-[10px] font-bold uppercase tracking-[0.1em]"
+							class="group inline-flex items-center text-[10px] font-bold uppercase tracking-[0.1em] text-primary hover:text-accent transition-colors"
 						>
 							Contact admissions
 

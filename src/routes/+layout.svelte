@@ -8,7 +8,7 @@
 	let { children } = $props();
 </script>
 
-<ModeWatcher defaultMode="light" track={false} />
+<!-- <ModeWatcher defaultMode="light" track={false} /> -->
 
 <div class="flex min-h-screen flex-col">
 	<Header />

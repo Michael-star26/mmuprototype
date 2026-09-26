@@ -32,10 +32,10 @@
 	} = $props();
 </script>
 
-<section class="border-b bg-background">
+<section class="border-b border-border/60 bg-background">
 	<div class="container mx-auto px-5 sm:px-6">
 		{#if breadcrumbs.length > 0}
-			<div class="border-b py-4 sm:py-5">
+			<div class="border-b border-border/40 py-4 sm:py-5">
 				<Breadcrumbs items={breadcrumbs} />
 			</div>
 		{/if}
@@ -48,14 +48,15 @@
 					<div
 						class="mb-5 flex items-center gap-3 text-[9px] font-semibold uppercase tracking-[0.18em] text-muted-foreground sm:text-[10px]"
 					>
-						<span class="h-px w-7 bg-foreground sm:w-10"></span>
+						<!-- Accent Red indicator line matching MMU brand identity -->
+						<span class="h-px w-7 bg-accent sm:w-10"></span>
 
 						{eyebrow}
 					</div>
 				{/if}
 
 				<h1
-					class="max-w-4xl text-[clamp(3.2rem,11vw,6.5rem)] font-semibold leading-[0.88] tracking-[-0.065em]"
+					class="max-w-4xl text-[clamp(3.2rem,11vw,6.5rem)] font-semibold leading-[0.88] tracking-[-0.065net] text-foreground"
 				>
 					{title}
 				</h1>
@@ -76,7 +77,9 @@
 							<Button
 								href={action.href}
 								variant={action.variant ?? (index === 0 ? 'default' : 'outline')}
-								class="group inline-flex h-11 w-full rounded-none px-5 text-[10px] font-bold uppercase tracking-[0.1em] transition-colors sm:w-auto"
+								class={index === 0 
+									? "group inline-flex h-11 w-full rounded-none px-5 text-[10px] font-bold uppercase tracking-[0.1em] bg-primary text-primary-foreground hover:bg-accent transition-colors sm:w-auto"
+									: "group inline-flex h-11 w-full rounded-none px-5 text-[10px] font-bold uppercase tracking-[0.1em] border-primary/30 text-foreground hover:bg-primary/10 transition-colors sm:w-auto"}
 							>
 								{action.label}
 

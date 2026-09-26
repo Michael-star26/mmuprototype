@@ -44,10 +44,10 @@
 	<div class="mt-10 grid gap-6 md:grid-cols-3">
 		<a
 			href="/admissions/how-to-apply"
-			class="group rounded-lg border bg-background p-6 transition-colors hover:border-primary hover:bg-muted/30"
+			class="group rounded-lg border border-border/60 bg-background p-6 transition-all hover:border-primary hover:bg-muted/30 hover:shadow-sm"
 		>
 			<div
-				class="flex size-10 items-center justify-center rounded-md bg-primary/10 text-primary"
+				class="flex size-10 items-center justify-center rounded-md bg-primary/10 text-primary transition-colors group-hover:bg-accent group-hover:text-accent-foreground"
 			>
 				<FileText class="size-5" />
 			</div>
@@ -61,7 +61,7 @@
 				submitting your application.
 			</p>
 
-			<div class="mt-5 flex items-center gap-2 text-sm font-medium text-primary">
+			<div class="mt-5 flex items-center gap-2 text-sm font-medium text-primary group-hover:text-accent transition-colors">
 				Start Application Guide
 				<ArrowRight class="size-4 transition-transform group-hover:translate-x-1" />
 			</div>
@@ -69,10 +69,10 @@
 
 		<a
 			href="/admissions/requirements"
-			class="group rounded-lg border bg-background p-6 transition-colors hover:border-primary hover:bg-muted/30"
+			class="group rounded-lg border border-border/60 bg-background p-6 transition-all hover:border-primary hover:bg-muted/30 hover:shadow-sm"
 		>
 			<div
-				class="flex size-10 items-center justify-center rounded-md bg-primary/10 text-primary"
+				class="flex size-10 items-center justify-center rounded-md bg-primary/10 text-primary transition-colors group-hover:bg-accent group-hover:text-accent-foreground"
 			>
 				<ClipboardList class="size-5" />
 			</div>
@@ -86,7 +86,7 @@
 				students.
 			</p>
 
-			<div class="mt-5 flex items-center gap-2 text-sm font-medium text-primary">
+			<div class="mt-5 flex items-center gap-2 text-sm font-medium text-primary group-hover:text-accent transition-colors">
 				View Requirements
 				<ArrowRight class="size-4 transition-transform group-hover:translate-x-1" />
 			</div>
@@ -94,10 +94,10 @@
 
 		<a
 			href="/contact"
-			class="group rounded-lg border bg-background p-6 transition-colors hover:border-primary hover:bg-muted/30"
+			class="group rounded-lg border border-border/60 bg-background p-6 transition-all hover:border-primary hover:bg-muted/30 hover:shadow-sm"
 		>
 			<div
-				class="flex size-10 items-center justify-center rounded-md bg-primary/10 text-primary"
+				class="flex size-10 items-center justify-center rounded-md bg-primary/10 text-primary transition-colors group-hover:bg-accent group-hover:text-accent-foreground"
 			>
 				<HelpCircle class="size-5" />
 			</div>
@@ -111,7 +111,7 @@
 				have questions about the application process.
 			</p>
 
-			<div class="mt-5 flex items-center gap-2 text-sm font-medium text-primary">
+			<div class="mt-5 flex items-center gap-2 text-sm font-medium text-primary group-hover:text-accent transition-colors">
 				Contact Us
 				<ArrowRight class="size-4 transition-transform group-hover:translate-x-1" />
 			</div>
@@ -119,7 +119,7 @@
 	</div>
 </section>
 
-<section class="border-y bg-muted/40">
+<section class="border-y border-border/60 bg-muted/40">
 	<div class="container mx-auto px-4 py-16 md:py-20">
 		<SectionHeading
 			align="center"
@@ -131,7 +131,7 @@
 		<div class="mt-8 flex flex-wrap justify-center gap-3">
 			<a
 				href="/academics/programmes"
-				class="inline-flex h-10 items-center justify-center rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground shadow-xs transition-colors hover:bg-primary/90"
+				class="inline-flex h-10 items-center justify-center rounded-md bg-primary px-4 text-sm font-semibold text-primary-foreground shadow-xs transition-colors hover:bg-accent"
 			>
 				Explore Programmes
 				<ArrowRight class="ml-2 size-4" />
@@ -139,7 +139,7 @@
 
 			<a
 				href="/admissions/requirements"
-				class="inline-flex h-10 items-center justify-center rounded-md border border-input bg-background px-4 text-sm font-medium transition-colors hover:bg-muted"
+				class="inline-flex h-10 items-center justify-center rounded-md border border-primary/30 bg-background px-4 text-sm font-semibold text-foreground transition-colors hover:bg-primary/10 hover:text-primary"
 			>
 				View Requirements
 			</a>

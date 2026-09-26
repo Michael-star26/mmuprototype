@@ -19,9 +19,9 @@
 		bind:page={currentPage}
 	>
 		{#snippet children({ pages, currentPage: activePage })}
-			<Pagination.Content>
+			<Pagination.Content class="gap-1.5">
 				<Pagination.Item>
-					<Pagination.Previous />
+					<Pagination.Previous class="border-primary/20 text-foreground hover:bg-primary hover:text-primary-foreground transition-colors" />
 				</Pagination.Item>
 
 				{#each pages as page (page.key)}
@@ -34,6 +34,9 @@
 							<Pagination.Link
 								{page}
 								isActive={activePage === page.value}
+								class={activePage === page.value
+									? 'bg-primary text-primary-foreground font-bold shadow-sm'
+									: 'border-border/60 text-foreground hover:bg-primary/10 hover:text-primary transition-colors'}
 							>
 								{page.value}
 							</Pagination.Link>
@@ -42,7 +45,7 @@
 				{/each}
 
 				<Pagination.Item>
-					<Pagination.Next />
+					<Pagination.Next class="border-primary/20 text-foreground hover:bg-primary hover:text-primary-foreground transition-colors" />
 				</Pagination.Item>
 			</Pagination.Content>
 		{/snippet}

@@ -39,18 +39,20 @@
 	];
 </script>
 
-<footer class="border-t bg-muted/20">
+<!-- Footer styled with the deep navy background to match the official MMU site -->
+<footer class="border-t border-primary-foreground/15 bg-primary text-primary-foreground">
 	<!-- ============================================================
 		ADMISSIONS STRIP
 	============================================================ -->
 
-	<div class="border-b">
+	<div class="border-b border-primary-foreground/15">
 		<div class="container mx-auto px-5 py-7 lg:px-6 lg:py-8">
 			<div
 				class="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between"
 			>
 				<div class="flex items-start gap-4 sm:items-center">
-					<span class="mt-1.5 size-2 shrink-0 bg-primary sm:mt-0"></span>
+					<!-- Accent Red dot matching university brand -->
+					<span class="mt-1.5 size-2 shrink-0 bg-accent sm:mt-0"></span>
 
 					<p
 						class="max-w-xl text-[10px] font-semibold uppercase leading-5 tracking-[0.14em] sm:text-xs sm:leading-normal"
@@ -61,7 +63,7 @@
 
 				<a
 					href="/admissions/how-to-apply"
-					class="group inline-flex items-center text-[10px] font-bold uppercase tracking-[0.1em] sm:text-xs"
+					class="group inline-flex items-center text-[10px] font-bold uppercase tracking-[0.1em] text-primary-foreground transition-opacity hover:opacity-80 sm:text-xs"
 				>
 					Start your application
 
@@ -90,34 +92,34 @@
 					aria-label="Multimedia University of Kenya"
 				>
 					<div
-						class="flex size-11 items-center justify-center border border-foreground bg-foreground text-[11px] font-bold tracking-[-0.04em] text-background transition-colors duration-200 group-hover:bg-primary group-hover:text-primary-foreground sm:size-12 sm:text-sm"
+						class="flex size-11 items-center justify-center border border-primary-foreground/20 bg-primary-foreground text-[11px] font-bold tracking-[-0.04em] text-primary transition-colors duration-200 group-hover:bg-accent group-hover:text-accent-foreground sm:size-12 sm:text-sm"
 					>
 						MMU
 					</div>
 
 					<div>
-						<div class="text-sm font-semibold tracking-tight">
+						<div class="text-sm font-semibold tracking-tight text-primary-foreground">
 							Multimedia University
 						</div>
 
-						<div class="mt-0.5 text-xs text-muted-foreground">
+						<div class="mt-0.5 text-xs text-primary-foreground/70">
 							of Kenya
 						</div>
 					</div>
 				</a>
 
 				<p
-					class="max-w-sm text-xs leading-6 text-muted-foreground sm:text-sm"
+					class="max-w-sm text-xs leading-6 text-primary-foreground/75 sm:text-sm"
 				>
 					A modern technological institution anchored in rigorous
 					academic scholarship, applied research, and creative
 					industry preparation.
 				</p>
 
-				<div class="grid gap-3 pt-1 text-xs text-muted-foreground">
+				<div class="grid gap-3 pt-1 text-xs text-primary-foreground/75">
 					<div class="flex items-start gap-3">
 						<MapPin
-							class="mt-0.5 size-4 shrink-0 text-foreground"
+							class="mt-0.5 size-4 shrink-0 text-primary-foreground"
 						/>
 
 						<span>
@@ -127,12 +129,12 @@
 
 					<div class="flex items-center gap-3">
 						<Phone
-							class="size-4 shrink-0 text-foreground"
+							class="size-4 shrink-0 text-primary-foreground"
 						/>
 
 						<a
 							href="tel:+254700000000"
-							class="transition-colors hover:text-foreground"
+							class="transition-colors hover:text-primary-foreground"
 						>
 							+254 (0) 700 000 000
 						</a>
@@ -140,12 +142,12 @@
 
 					<div class="flex items-center gap-3">
 						<Mail
-							class="size-4 shrink-0 text-foreground"
+							class="size-4 shrink-0 text-primary-foreground"
 						/>
 
 						<a
 							href="mailto:info@mmu.ac.ke"
-							class="transition-colors hover:text-foreground"
+							class="transition-colors hover:text-primary-foreground"
 						>
 							info@mmu.ac.ke
 						</a>
@@ -156,16 +158,16 @@
 			<!-- Link columns -->
 
 			{#each footerSections as section, sIdx}
-				<div class="border-t pt-5 lg:border-t-0 lg:pt-0">
+				<div class="border-t border-primary-foreground/15 pt-5 lg:border-t-0 lg:pt-0">
 					<div class="flex items-center justify-between">
 						<h3
-							class="text-[9px] font-bold uppercase tracking-[0.2em] text-foreground sm:text-[10px]"
+							class="text-[9px] font-bold uppercase tracking-[0.2em] text-primary-foreground sm:text-[10px]"
 						>
 							{section.title}
 						</h3>
 
 						<span
-							class="text-[9px] text-muted-foreground lg:hidden"
+							class="text-[9px] text-primary-foreground/50 lg:hidden"
 						>
 							0{sIdx + 1}
 						</span>
@@ -176,7 +178,7 @@
 							<li>
 								<a
 									href={link.href}
-									class="group inline-flex items-center gap-2 text-xs text-muted-foreground transition-colors hover:text-foreground"
+									class="group inline-flex items-center gap-2 text-xs text-primary-foreground/70 transition-colors hover:text-primary-foreground"
 								>
 									<span
 										class="transition-transform duration-150 group-hover:translate-x-1"
@@ -201,19 +203,18 @@
 			LOWER BAR
 		============================================================ -->
 
-		<div class="mt-14 border-t pt-7 sm:mt-20 sm:pt-8">
+		<div class="mt-14 border-t border-primary-foreground/15 pt-7 sm:mt-20 sm:pt-8">
 			<div
-				class="flex flex-col gap-5 text-[10px] text-muted-foreground sm:text-[11px] md:flex-row md:items-center md:justify-between"
+				class="flex flex-col gap-5 text-[10px] text-primary-foreground/70 sm:text-[11px] md:flex-row md:items-center md:justify-between"
 			>
 				<div
 					class="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-5"
 				>
 					<p>
-						© {new Date().getFullYear()} Multimedia University of Kenya.
-						All rights reserved.
+						© {new Date().getFullYear()} Multimedia University of Kenya. All rights reserved.
 					</p>
 
-					<span class="hidden text-muted-foreground/30 sm:block">
+					<span class="hidden text-primary-foreground/30 sm:block">
 						/
 					</span>
 
@@ -227,25 +228,25 @@
 				<div class="flex flex-wrap items-center gap-x-4 gap-y-2">
 					<a
 						href="#"
-						class="transition-colors hover:text-foreground"
+						class="transition-colors hover:text-primary-foreground"
 					>
 						Privacy
 					</a>
 
-					<span class="text-muted-foreground/40">·</span>
+					<span class="text-primary-foreground/40">·</span>
 
 					<a
 						href="#"
-						class="transition-colors hover:text-foreground"
+						class="transition-colors hover:text-primary-foreground"
 					>
 						Terms
 					</a>
 
-					<span class="text-muted-foreground/40">·</span>
+					<span class="text-primary-foreground/40">·</span>
 
 					<a
 						href="/contact"
-						class="transition-colors hover:text-foreground"
+						class="transition-colors hover:text-primary-foreground"
 					>
 						Contact
 					</a>

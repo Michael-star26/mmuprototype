@@ -60,18 +60,19 @@
 />
 
 <!-- Department directory -->
-<section class="border-b bg-muted/20">
+<section class="border-b border-border/60 bg-muted/20">
 	<div class="container mx-auto px-5 py-12 sm:py-14 lg:px-6 lg:py-16">
 		<div class="mb-8 flex items-end justify-between gap-6">
 			<div>
 				<p
-					class="text-[9px] font-bold uppercase tracking-[0.18em] text-muted-foreground"
+					class="text-[9px] font-bold uppercase tracking-[0.18em] text-accent flex items-center gap-2"
 				>
+					<span class="h-px w-5 bg-accent"></span>
 					Contact directory
 				</p>
 
 				<h2
-					class="mt-2 text-2xl font-semibold tracking-[-0.04em] sm:text-3xl"
+					class="mt-2 text-2xl font-semibold tracking-[-0.04em] sm:text-3xl text-foreground"
 				>
 					Find the right office.
 				</h2>
@@ -84,43 +85,39 @@
 			</span>
 		</div>
 
-		<div class="grid border border-border md:grid-cols-2 lg:grid-cols-4">
+		<div class="grid border border-border/60 md:grid-cols-2 lg:grid-cols-4 bg-border/60 gap-px">
 			{#each departments as dept, i}
 				<div
-					class={`group bg-background p-5 transition-colors hover:bg-muted/40 ${
-						i > 0 ? 'border-t md:border-l lg:border-t-0' : ''
-					} ${
-						i === 2 ? 'md:border-t lg:border-l' : ''
-					}`}
+					class="group bg-background p-5 transition-colors hover:bg-muted/40"
 				>
 					<div class="flex items-start justify-between gap-4">
 						<div
-							class="flex size-8 shrink-0 items-center justify-center border border-foreground bg-foreground text-background"
+							class="flex size-8 shrink-0 items-center justify-center border border-primary bg-primary text-primary-foreground transition-colors group-hover:bg-accent group-hover:border-accent group-hover:text-accent-foreground"
 						>
 							<Building2 class="size-3.5" />
 						</div>
 
 						<span
-							class="text-[9px] text-muted-foreground"
+							class="text-[9px] font-bold text-primary"
 						>
 							0{i + 1}
 						</span>
 					</div>
 
 					<h3
-						class="mt-7 text-xs font-bold uppercase leading-5 tracking-[0.12em]"
+						class="mt-7 text-xs font-bold uppercase leading-5 tracking-[0.12em] text-foreground group-hover:text-primary transition-colors"
 					>
 						{dept.name}
 					</h3>
 
 					<a
 						href={`mailto:${dept.email}`}
-						class="mt-3 inline-flex items-center gap-2 text-xs text-muted-foreground transition-colors hover:text-foreground"
+						class="mt-3 inline-flex items-center gap-2 text-xs text-muted-foreground transition-colors hover:text-primary"
 					>
 						{dept.email}
 
 						<ArrowUpRight
-							class="size-3 opacity-40 transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:opacity-100"
+							class="size-3 opacity-40 transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:opacity-100 group-hover:text-accent"
 						/>
 					</a>
 				</div>
@@ -141,18 +138,18 @@
 				description="Our main campus is located along Magadi Road in Nairobi."
 			/>
 
-			<div class="mt-10 divide-y border-t">
+			<div class="mt-10 divide-y divide-border/60 border-t border-border/60">
 				<!-- Address -->
 				<div class="flex gap-4 py-6">
 					<div
-						class="flex size-9 shrink-0 items-center justify-center border border-foreground bg-foreground text-background"
+						class="flex size-9 shrink-0 items-center justify-center border border-primary bg-primary text-primary-foreground"
 					>
 						<MapPin class="size-3.5" />
 					</div>
 
 					<div>
 						<h3
-							class="text-[10px] font-bold uppercase tracking-[0.16em]"
+							class="text-[10px] font-bold uppercase tracking-[0.16em] text-foreground"
 						>
 							Physical address
 						</h3>
@@ -170,14 +167,14 @@
 				<!-- Hours -->
 				<div class="flex gap-4 py-6">
 					<div
-						class="flex size-9 shrink-0 items-center justify-center border border-foreground bg-foreground text-background"
+						class="flex size-9 shrink-0 items-center justify-center border border-primary bg-primary text-primary-foreground"
 					>
 						<Clock class="size-3.5" />
 					</div>
 
 					<div>
 						<h3
-							class="text-[10px] font-bold uppercase tracking-[0.16em]"
+							class="text-[10px] font-bold uppercase tracking-[0.16em] text-foreground"
 						>
 							Office hours
 						</h3>
@@ -194,21 +191,21 @@
 				<!-- General -->
 				<div class="flex gap-4 py-6">
 					<div
-						class="flex size-9 shrink-0 items-center justify-center border border-foreground bg-foreground text-background"
+						class="flex size-9 shrink-0 items-center justify-center border border-primary bg-primary text-primary-foreground"
 					>
 						<Mail class="size-3.5" />
 					</div>
 
 					<div>
 						<h3
-							class="text-[10px] font-bold uppercase tracking-[0.16em]"
+							class="text-[10px] font-bold uppercase tracking-[0.16em] text-foreground"
 						>
 							General enquiries
 						</h3>
 
 						<a
 							href="mailto:info@mmu.ac.ke"
-							class="mt-2 inline-block text-sm text-muted-foreground transition-colors hover:text-foreground"
+							class="mt-2 inline-block text-sm text-muted-foreground transition-colors hover:text-primary"
 						>
 							info@mmu.ac.ke
 						</a>
@@ -217,15 +214,15 @@
 			</div>
 
 			<!-- Location note -->
-			<div class="mt-8 border bg-muted/30 p-5 sm:p-6">
+			<div class="mt-8 border border-border/60 bg-muted/30 p-5 sm:p-6">
 				<div class="flex items-center justify-between">
 					<span
-						class="text-[9px] font-bold uppercase tracking-[0.18em]"
+						class="text-[9px] font-bold uppercase tracking-[0.18em] text-foreground"
 					>
 						Main campus
 					</span>
 
-					<MapPin class="size-3.5 text-muted-foreground" />
+					<MapPin class="size-3.5 text-accent" />
 				</div>
 
 				<p
@@ -237,7 +234,7 @@
 
 				<a
 					href="/contact"
-					class="mt-4 inline-flex items-center text-[10px] font-bold uppercase tracking-[0.12em]"
+					class="mt-4 inline-flex items-center text-[10px] font-bold uppercase tracking-[0.12em] text-primary hover:text-accent transition-colors"
 				>
 					View campus information
 					<ArrowUpRight class="ml-2 size-3.5" />
@@ -246,16 +243,17 @@
 		</div>
 
 		<!-- Form -->
-		<div class="border bg-background p-6 sm:p-8 lg:p-10">
-			<div class="border-b pb-6">
+		<div class="border border-border/60 bg-background p-6 sm:p-8 lg:p-10">
+			<div class="border-b border-border/60 pb-6">
 				<p
-					class="text-[9px] font-bold uppercase tracking-[0.18em] text-muted-foreground"
+					class="text-[9px] font-bold uppercase tracking-[0.18em] text-accent flex items-center gap-2"
 				>
+					<span class="h-px w-5 bg-accent"></span>
 					Online enquiry
 				</p>
 
 				<h2
-					class="mt-2 text-2xl font-semibold tracking-[-0.04em] sm:text-3xl"
+					class="mt-2 text-2xl font-semibold tracking-[-0.04em] sm:text-3xl text-foreground"
 				>
 					Send us a message.
 				</h2>
@@ -273,25 +271,25 @@
 					<div class="space-y-2">
 						<label
 							for="name"
-							class="text-[9px] font-bold uppercase tracking-[0.15em]"
+							class="text-[9px] font-bold uppercase tracking-[0.15em] text-foreground"
 						>
-							Full name <span class="text-primary">*</span>
+							Full name <span class="text-accent">*</span>
 						</label>
 
 						<Input
 							id="name"
 							name="name"
 							placeholder="Your full name"
-							class="h-11 rounded-none text-sm"
+							class="h-11 rounded-none text-sm border-border/60 focus-visible:ring-primary"
 						/>
 					</div>
 
 					<div class="space-y-2">
 						<label
 							for="email"
-							class="text-[9px] font-bold uppercase tracking-[0.15em]"
+							class="text-[9px] font-bold uppercase tracking-[0.15em] text-foreground"
 						>
-							Email address <span class="text-primary">*</span>
+							Email address <span class="text-accent">*</span>
 						</label>
 
 						<Input
@@ -299,7 +297,7 @@
 							name="email"
 							type="email"
 							placeholder="you@example.com"
-							class="h-11 rounded-none text-sm"
+							class="h-11 rounded-none text-sm border-border/60 focus-visible:ring-primary"
 						/>
 					</div>
 				</div>
@@ -308,7 +306,7 @@
 					<div class="space-y-2">
 						<label
 							for="phone"
-							class="text-[9px] font-bold uppercase tracking-[0.15em]"
+							class="text-[9px] font-bold uppercase tracking-[0.15em] text-foreground"
 						>
 							Phone number
 						</label>
@@ -318,14 +316,14 @@
 							name="phone"
 							type="tel"
 							placeholder="+254 ..."
-							class="h-11 rounded-none text-sm"
+							class="h-11 rounded-none text-sm border-border/60 focus-visible:ring-primary"
 						/>
 					</div>
 
 					<div class="space-y-2">
 						<label
 							for="department"
-							class="text-[9px] font-bold uppercase tracking-[0.15em]"
+							class="text-[9px] font-bold uppercase tracking-[0.15em] text-foreground"
 						>
 							Department
 						</label>
@@ -333,7 +331,7 @@
 						<select
 							id="department"
 							name="department"
-							class="flex h-11 w-full rounded-none border border-input bg-background px-3 text-sm text-foreground transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+							class="flex h-11 w-full rounded-none border border-border/60 bg-background px-3 text-sm text-foreground transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary"
 						>
 							{#each departmentOptions as option}
 								<option value={option.value}>
@@ -347,37 +345,37 @@
 				<div class="space-y-2">
 					<label
 						for="subject"
-						class="text-[9px] font-bold uppercase tracking-[0.15em]"
+						class="text-[9px] font-bold uppercase tracking-[0.15em] text-foreground"
 					>
-						Subject <span class="text-primary">*</span>
+						Subject <span class="text-accent">*</span>
 					</label>
 
 					<Input
 						id="subject"
 						name="subject"
 						placeholder="What is your enquiry about?"
-						class="h-11 rounded-none text-sm"
+						class="h-11 rounded-none text-sm border-border/60 focus-visible:ring-primary"
 					/>
 				</div>
 
 				<div class="space-y-2">
 					<label
 						for="message"
-						class="text-[9px] font-bold uppercase tracking-[0.15em]"
+						class="text-[9px] font-bold uppercase tracking-[0.15em] text-foreground"
 					>
-						Message <span class="text-primary">*</span>
+						Message <span class="text-accent">*</span>
 					</label>
 
 					<Textarea
 						id="message"
 						name="message"
 						placeholder="Tell us how we can help..."
-						class="min-h-40 resize-y rounded-none text-sm leading-6"
+						class="min-h-40 resize-y rounded-none text-sm leading-6 border-border/60 focus-visible:ring-primary"
 					/>
 				</div>
 
 				<div
-					class="flex flex-col gap-4 border-t pt-6 sm:flex-row sm:items-center sm:justify-between"
+					class="flex flex-col gap-4 border-t border-border/60 pt-6 sm:flex-row sm:items-center sm:justify-between"
 				>
 					<p class="max-w-sm text-[10px] leading-5 text-muted-foreground">
 						Please provide accurate contact information so the
@@ -386,7 +384,7 @@
 
 					<Button
 						type="submit"
-						class="group inline-flex h-11 w-full shrink-0 items-center justify-center gap-2 rounded-none bg-foreground px-6 text-[10px] font-bold uppercase tracking-[0.14em] text-background transition-colors hover:bg-primary hover:text-primary-foreground sm:w-auto"
+						class="group inline-flex h-11 w-full shrink-0 items-center justify-center gap-2 rounded-none bg-primary px-6 text-[10px] font-bold uppercase tracking-[0.14em] text-primary-foreground transition-colors hover:bg-accent sm:w-auto"
 					>
 						Send enquiry
 

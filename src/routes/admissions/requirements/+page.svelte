@@ -40,20 +40,21 @@
 
 <main>
 	<!-- General requirements -->
-	<section class="border-b">
+	<section class="border-b border-border/60">
 		<div
 			class="container mx-auto px-5 py-16 sm:py-20 lg:px-6 lg:py-28"
 		>
 			<div class="grid gap-12 lg:grid-cols-[260px_1fr] lg:gap-20">
 				<div>
 					<p
-						class="font-mono text-[9px] font-semibold uppercase tracking-[0.16em] text-muted-foreground"
+						class="font-mono text-[9px] font-semibold uppercase tracking-[0.16em] text-accent flex items-center gap-2"
 					>
+						<span class="h-px w-5 bg-accent"></span>
 						01 / Entry requirements
 					</p>
 
 					<h2
-						class="mt-4 text-3xl font-semibold leading-[1.05] tracking-[-0.045em] sm:text-4xl"
+						class="mt-4 text-3xl font-semibold leading-[1.05] tracking-[-0.045em] sm:text-4xl text-foreground"
 					>
 						Find your entry point.
 					</h2>
@@ -66,10 +67,10 @@
 					</p>
 				</div>
 
-				<div class="border-t">
+				<div class="border-t border-border/60">
 					<!-- Table header -->
 					<div
-						class="hidden border-b py-3 sm:grid sm:grid-cols-[64px_1fr_190px]"
+						class="hidden border-b border-border/60 py-3 sm:grid sm:grid-cols-[64px_1fr_190px]"
 					>
 						<span
 							class="font-mono text-[9px] font-semibold uppercase tracking-[0.14em] text-muted-foreground"
@@ -91,19 +92,19 @@
 					</div>
 
 					<!-- Degree -->
-					<div class="border-b py-7 sm:py-8">
+					<div class="border-b border-border/60 py-7 sm:py-8">
 						<div
 							class="grid gap-5 sm:grid-cols-[64px_1fr_190px] sm:items-start sm:gap-6"
 						>
 							<span
-								class="font-mono text-xs font-semibold text-muted-foreground"
+								class="font-mono text-xs font-bold text-primary"
 							>
 								01
 							</span>
 
 							<div>
 								<h3
-									class="text-xl font-semibold tracking-[-0.025em] sm:text-2xl"
+									class="text-xl font-semibold tracking-[-0.025em] sm:text-2xl text-foreground"
 								>
 									Degree programmes
 								</h3>
@@ -120,13 +121,13 @@
 
 							<div class="sm:text-right">
 								<p
-									class="font-mono text-3xl font-semibold tracking-[-0.05em]"
+									class="font-mono text-3xl font-semibold tracking-[-0.05em] text-primary"
 								>
 									C+
 								</p>
 
 								<p
-									class="mt-1 text-[9px] font-semibold uppercase tracking-[0.12em] text-muted-foreground"
+									class="mt-1 text-[9px] font-semibold uppercase tracking-[0.12em] text-accent"
 								>
 									General minimum
 								</p>
@@ -134,11 +135,11 @@
 						</div>
 
 						<div
-							class="mt-6 border-t pt-5 sm:ml-[90px]"
+							class="mt-6 border-t border-border/40 pt-5 sm:ml-[88px]"
 						>
 							<div class="flex items-start gap-3">
 								<Check
-									class="mt-0.5 size-4 shrink-0 text-primary"
+									class="mt-0.5 size-4 shrink-0 text-accent"
 									aria-hidden="true"
 								/>
 
@@ -152,19 +153,19 @@
 					</div>
 
 					<!-- Diploma -->
-					<div class="border-b py-7 sm:py-8">
+					<div class="border-b border-border/60 py-7 sm:py-8">
 						<div
 							class="grid gap-5 sm:grid-cols-[64px_1fr_190px] sm:items-start sm:gap-6"
 						>
 							<span
-								class="font-mono text-xs font-semibold text-muted-foreground"
+								class="font-mono text-xs font-bold text-primary"
 							>
 								02
 							</span>
 
 							<div>
 								<h3
-									class="text-xl font-semibold tracking-[-0.025em] sm:text-2xl"
+									class="text-xl font-semibold tracking-[-0.025em] sm:text-2xl text-foreground"
 								>
 									Diploma programmes
 								</h3>
@@ -180,13 +181,13 @@
 
 							<div class="sm:text-right">
 								<p
-									class="font-mono text-3xl font-semibold tracking-[-0.05em]"
+									class="font-mono text-3xl font-semibold tracking-[-0.05em] text-primary"
 								>
 									C / C-
 								</p>
 
 								<p
-									class="mt-1 text-[9px] font-semibold uppercase tracking-[0.12em] text-muted-foreground"
+									class="mt-1 text-[9px] font-semibold uppercase tracking-[0.12em] text-accent"
 								>
 									General minimum
 								</p>
@@ -195,19 +196,19 @@
 					</div>
 
 					<!-- Certificate -->
-					<div class="border-b py-7 sm:py-8">
+					<div class="border-b border-border/60 py-7 sm:py-8">
 						<div
 							class="grid gap-5 sm:grid-cols-[64px_1fr_190px] sm:items-start sm:gap-6"
 						>
 							<span
-								class="font-mono text-xs font-semibold text-muted-foreground"
+								class="font-mono text-xs font-bold text-primary"
 							>
 								03
 							</span>
 
 							<div>
 								<h3
-									class="text-xl font-semibold tracking-[-0.025em] sm:text-2xl"
+									class="text-xl font-semibold tracking-[-0.025em] sm:text-2xl text-foreground"
 								>
 									Certificate programmes
 								</h3>
@@ -222,13 +223,13 @@
 
 							<div class="sm:text-right">
 								<p
-									class="font-mono text-3xl font-semibold tracking-[-0.05em]"
+									class="font-mono text-3xl font-semibold tracking-[-0.05em] text-primary"
 								>
 									C-
 								</p>
 
 								<p
-									class="mt-1 text-[9px] font-semibold uppercase tracking-[0.12em] text-muted-foreground"
+									class="mt-1 text-[9px] font-semibold uppercase tracking-[0.12em] text-accent"
 								>
 									General minimum
 								</p>
@@ -237,19 +238,19 @@
 					</div>
 
 					<!-- Masters -->
-					<div class="border-b py-7 sm:py-8">
+					<div class="border-b border-border/60 py-7 sm:py-8">
 						<div
 							class="grid gap-5 sm:grid-cols-[64px_1fr_190px] sm:items-start sm:gap-6"
 						>
 							<span
-								class="font-mono text-xs font-semibold text-muted-foreground"
+								class="font-mono text-xs font-bold text-primary"
 							>
 								04
 							</span>
 
 							<div>
 								<h3
-									class="text-xl font-semibold tracking-[-0.025em] sm:text-2xl"
+									class="text-xl font-semibold tracking-[-0.025em] sm:text-2xl text-foreground"
 								>
 									Master's programmes
 								</h3>
@@ -272,13 +273,13 @@
 
 							<div class="sm:text-right">
 								<p
-									class="font-mono text-2xl font-semibold leading-tight tracking-[-0.05em]"
+									class="font-mono text-2xl font-semibold leading-tight tracking-[-0.05em] text-primary"
 								>
 									2nd Upper
 								</p>
 
 								<p
-									class="mt-1 text-[9px] font-semibold uppercase tracking-[0.12em] text-muted-foreground"
+									class="mt-1 text-[9px] font-semibold uppercase tracking-[0.12em] text-accent"
 								>
 									General minimum
 								</p>
@@ -286,11 +287,11 @@
 						</div>
 
 						<div
-							class="mt-6 border-t pt-5 sm:ml-[90px]"
+							class="mt-6 border-t border-border/40 pt-5 sm:ml-[88px]"
 						>
 							<div class="flex items-start gap-3">
 								<Check
-									class="mt-0.5 size-4 shrink-0 text-primary"
+									class="mt-0.5 size-4 shrink-0 text-accent"
 									aria-hidden="true"
 								/>
 
@@ -310,14 +311,14 @@
 							class="grid gap-5 sm:grid-cols-[64px_1fr_190px] sm:items-start sm:gap-6"
 						>
 							<span
-								class="font-mono text-xs font-semibold text-muted-foreground"
+								class="font-mono text-xs font-bold text-primary"
 							>
 								05
 							</span>
 
 							<div>
 								<h3
-									class="text-xl font-semibold tracking-[-0.025em] sm:text-2xl"
+									class="text-xl font-semibold tracking-[-0.025em] sm:text-2xl text-foreground"
 								>
 									Specialized & artisan courses
 								</h3>
@@ -333,13 +334,13 @@
 
 							<div class="sm:text-right">
 								<p
-									class="font-mono text-lg font-semibold uppercase tracking-[-0.02em]"
+									class="font-mono text-lg font-semibold uppercase tracking-[-0.02em] text-primary"
 								>
 									Varies
 								</p>
 
 								<p
-									class="mt-1 text-[9px] font-semibold uppercase tracking-[0.12em] text-muted-foreground"
+									class="mt-1 text-[9px] font-semibold uppercase tracking-[0.12em] text-accent"
 								>
 									Course specific
 								</p>
@@ -352,39 +353,40 @@
 	</section>
 
 	<!-- Programme-specific requirements -->
-	<section class="border-b">
+	<section class="border-b border-border/60">
 		<div
 			class="container mx-auto px-5 py-16 sm:py-20 lg:px-6 lg:py-24"
 		>
 			<div class="grid gap-12 lg:grid-cols-[260px_1fr] lg:gap-20">
 				<div>
 					<p
-						class="font-mono text-[9px] font-semibold uppercase tracking-[0.16em] text-muted-foreground"
+						class="font-mono text-[9px] font-semibold uppercase tracking-[0.16em] text-accent flex items-center gap-2"
 					>
+						<span class="h-px w-5 bg-accent"></span>
 						02 / Programme criteria
 					</p>
 
 					<h2
-						class="mt-4 text-3xl font-semibold leading-[1.05] tracking-[-0.045em] sm:text-4xl"
+						class="mt-4 text-3xl font-semibold leading-[1.05] tracking-[-0.045em] sm:text-4xl text-foreground"
 					>
 						General entry is only the starting point.
 					</h2>
 				</div>
 
 				<div>
-					<div class="border-t">
+					<div class="border-t border-border/60">
 						<div
-							class="grid gap-5 border-b py-6 sm:grid-cols-[72px_1fr_24px] sm:items-start sm:gap-8"
+							class="grid gap-5 border-b border-border/60 py-6 sm:grid-cols-[72px_1fr_24px] sm:items-start sm:gap-8 group"
 						>
 							<span
-								class="font-mono text-xs font-semibold text-muted-foreground"
+								class="font-mono text-xs font-bold text-primary"
 							>
 								01
 							</span>
 
 							<div>
 								<h3
-									class="text-xl font-semibold tracking-[-0.025em]"
+									class="text-xl font-semibold tracking-[-0.025em] text-foreground group-hover:text-primary transition-colors"
 								>
 									Subject requirements
 								</h3>
@@ -399,22 +401,22 @@
 							</div>
 
 							<ArrowRight
-								class="size-4 text-muted-foreground"
+								class="size-4 text-muted-foreground transition-transform duration-200 group-hover:translate-x-1 group-hover:text-primary"
 							/>
 						</div>
 
 						<div
-							class="grid gap-5 border-b py-6 sm:grid-cols-[72px_1fr_24px] sm:items-start sm:gap-8"
+							class="grid gap-5 border-b border-border/60 py-6 sm:grid-cols-[72px_1fr_24px] sm:items-start sm:gap-8 group"
 						>
 							<span
-								class="font-mono text-xs font-semibold text-muted-foreground"
+								class="font-mono text-xs font-bold text-primary"
 							>
 								02
 							</span>
 
 							<div>
 								<h3
-									class="text-xl font-semibold tracking-[-0.025em]"
+									class="text-xl font-semibold tracking-[-0.025em] text-foreground group-hover:text-primary transition-colors"
 								>
 									Additional criteria
 								</h3>
@@ -429,22 +431,22 @@
 							</div>
 
 							<ArrowRight
-								class="size-4 text-muted-foreground"
+								class="size-4 text-muted-foreground transition-transform duration-200 group-hover:translate-x-1 group-hover:text-primary"
 							/>
 						</div>
 
 						<div
-							class="grid gap-5 border-b py-6 sm:grid-cols-[72px_1fr_24px] sm:items-start sm:gap-8"
+							class="grid gap-5 border-b border-border/60 py-6 sm:grid-cols-[72px_1fr_24px] sm:items-start sm:gap-8 group"
 						>
 							<span
-								class="font-mono text-xs font-semibold text-muted-foreground"
+								class="font-mono text-xs font-bold text-primary"
 							>
 								03
 							</span>
 
 							<div>
 								<h3
-									class="text-xl font-semibold tracking-[-0.025em]"
+									class="text-xl font-semibold tracking-[-0.025em] text-foreground group-hover:text-primary transition-colors"
 								>
 									Check your programme
 								</h3>
@@ -458,13 +460,13 @@
 							</div>
 
 							<ArrowRight
-								class="size-4 text-muted-foreground"
+								class="size-4 text-muted-foreground transition-transform duration-200 group-hover:translate-x-1 group-hover:text-primary"
 							/>
 						</div>
 					</div>
 
 					<div
-						class="mt-8 flex flex-col justify-between gap-5 border-t pt-6 sm:flex-row sm:items-center"
+						class="mt-8 flex flex-col justify-between gap-5 border-t border-border/60 pt-6 sm:flex-row sm:items-center"
 					>
 						<div>
 							<p
@@ -474,7 +476,7 @@
 							</p>
 
 							<p
-								class="mt-2 text-sm font-medium tracking-tight"
+								class="mt-2 text-sm font-medium tracking-tight text-foreground"
 							>
 								Browse the complete programme catalogue.
 							</p>
@@ -482,7 +484,7 @@
 
 						<a
 							href="/academics/programmes"
-							class="group inline-flex items-center text-[10px] font-bold uppercase tracking-[0.1em]"
+							class="group inline-flex items-center text-[10px] font-bold uppercase tracking-[0.1em] text-primary hover:text-accent transition-colors"
 						>
 							Explore programmes
 
@@ -497,24 +499,25 @@
 	</section>
 
 	<!-- Admissions help -->
-	<section class="border-b">
+	<section class="border-b border-border/60">
 		<div
 			class="container mx-auto px-5 py-14 sm:py-16 lg:px-6 lg:py-20"
 		>
 			<div class="grid gap-8 lg:grid-cols-[260px_1fr] lg:gap-20">
 				<div>
 					<p
-						class="font-mono text-[9px] font-semibold uppercase tracking-[0.16em] text-muted-foreground"
+						class="font-mono text-[9px] font-semibold uppercase tracking-[0.16em] text-accent flex items-center gap-2"
 					>
+						<span class="h-px w-5 bg-accent"></span>
 						03 / Admissions
 					</p>
 				</div>
 
 				<div
-					class="border-l pl-6 sm:pl-8"
+					class="border-l border-border/60 pl-6 sm:pl-8"
 				>
 					<h2
-						class="text-xl font-semibold tracking-[-0.025em] sm:text-2xl"
+						class="text-xl font-semibold tracking-[-0.025em] sm:text-2xl text-foreground"
 					>
 						Need clarification?
 					</h2>
@@ -530,7 +533,7 @@
 
 					<a
 						href="/contact"
-						class="group mt-6 inline-flex items-center text-[10px] font-bold uppercase tracking-[0.1em]"
+						class="group mt-6 inline-flex items-center text-[10px] font-bold uppercase tracking-[0.1em] text-primary hover:text-accent transition-colors"
 					>
 						Contact admissions
 
