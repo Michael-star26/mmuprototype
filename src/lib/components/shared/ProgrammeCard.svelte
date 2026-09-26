@@ -11,7 +11,7 @@
 	let { programme }: { programme: Programme } = $props();
 </script>
 
-<Card.Root class="h-full">
+<Card.Root class="h-full transition-shadow hover:shadow-md">
 	<Card.Header>
 		<Badge variant="secondary" class="w-fit">
 			{programme.degree}
@@ -20,7 +20,7 @@
 		<Card.Title class="mt-3">
 			<a
 				href={`/academics/programmes/${programme.slug}`}
-				class="hover:text-primary"
+				class="transition-colors hover:text-primary"
 			>
 				{programme.title}
 			</a>

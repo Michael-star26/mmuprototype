@@ -1,38 +1,34 @@
 <script lang="ts">
-	type SectionHeadingProps = {
-		title: string;
-		description?: string;
-		eyebrow?: string;
-		align?: 'left' | 'center';
-	};
-
 	let {
 		title,
 		description,
 		eyebrow,
 		align = 'left'
-	}: SectionHeadingProps = $props();
+	}: {
+		title: string;
+		description?: string;
+		eyebrow?: string;
+		align?: 'left' | 'center';
+	} = $props();
 </script>
 
 <div
-	class:text-center={align === 'center'}
-	class="space-y-2"
+	class={align === 'center'
+		? 'mx-auto max-w-2xl text-center'
+		: 'max-w-2xl'}
 >
 	{#if eyebrow}
-		<p class="text-sm font-semibold uppercase tracking-wider text-primary">
+		<p class="mb-2 text-sm font-semibold uppercase tracking-wider text-primary">
 			{eyebrow}
 		</p>
 	{/if}
 
-	<h2 class="text-2xl font-bold tracking-tight text-foreground md:text-3xl">
+	<h2 class="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
 		{title}
 	</h2>
 
 	{#if description}
-		<p
-			class="max-w-2xl text-muted-foreground"
-			class:mx-auto={align === 'center'}
-		>
+		<p class="mt-3 text-base leading-7 text-muted-foreground">
 			{description}
 		</p>
 	{/if}

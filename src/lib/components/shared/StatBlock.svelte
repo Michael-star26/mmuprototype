@@ -1,33 +1,26 @@
 <script lang="ts">
-	import type { Component } from 'svelte';
-
-	type StatBlockProps = {
-		value: string | number;
+	let {
+		value,
+		label,
+		description
+	}: {
+		value: string;
 		label: string;
 		description?: string;
-		icon?: Component;
-	};
-
-	let { value, label, description, icon: Icon }: StatBlockProps = $props();
+	} = $props();
 </script>
 
-<div class="space-y-2">
-	{#if Icon}
-		<div class="mb-3 text-primary">
-			<Icon class="size-5" />
-		</div>
-	{/if}
-
-	<div class="text-3xl font-bold tracking-tight text-foreground md:text-4xl">
+<div class="rounded-lg border bg-card p-5">
+	<div class="text-3xl font-bold tracking-tight text-primary sm:text-4xl">
 		{value}
 	</div>
 
-	<div class="font-medium">
+	<div class="mt-1 text-sm font-semibold text-foreground">
 		{label}
 	</div>
 
 	{#if description}
-		<p class="text-sm text-muted-foreground">
+		<p class="mt-2 text-sm leading-6 text-muted-foreground">
 			{description}
 		</p>
 	{/if}

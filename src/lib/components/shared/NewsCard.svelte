@@ -11,16 +11,17 @@
 	let { news }: { news: NewsItem } = $props();
 </script>
 
-<Card.Root class="h-full">
+<Card.Root class="h-full transition-shadow hover:shadow-md">
 	<Card.Header>
-		<div class="flex items-start justify-between gap-4">
-			<Badge variant="secondary">
-				{news.category}
-			</Badge>
-		</div>
+		<Badge variant="secondary">
+			{news.category}
+		</Badge>
 
 		<Card.Title class="mt-3">
-			<a href={`/news/${news.slug}`} class="hover:text-primary">
+			<a
+				href={`/news/${news.slug}`}
+				class="transition-colors hover:text-primary"
+			>
 				{news.title}
 			</a>
 		</Card.Title>
