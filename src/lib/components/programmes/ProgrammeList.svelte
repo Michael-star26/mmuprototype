@@ -122,7 +122,7 @@
 	}
 </script>
 
-<div class="space-y-0">
+<div class="border-y border-border/60">
 	<!-- =========================================================
 	     EXPLORER INTRO
 	========================================================= -->
@@ -547,9 +547,9 @@
 			{#each paginatedProgrammes as programme, index (programme.id)}
 				<a
 					href={`/academics/programmes/${programme.slug}`}
-					class="group relative grid border-b border-border/60 py-7 transition-colors hover:bg-muted/30 md:grid-cols-[80px_1fr_220px_120px_48px] md:items-center md:gap-5 md:py-8"
+					class="group relative grid border-b border-border/60 py-8 transition-colors hover:bg-muted/20 md:grid-cols-[72px_1fr_220px_140px_120px] md:items-center md:gap-6"
 				>
-					<!-- Number -->
+					<!-- Index -->
 					<div class="hidden md:block">
 						<span
 							class="font-mono text-sm text-muted-foreground transition-colors group-hover:text-primary"
@@ -560,29 +560,35 @@
 						</span>
 					</div>
 
-					<!-- Main programme information -->
+
+					<!-- Main programme -->
 					<div class="min-w-0">
-						<div class="mb-3 flex items-center gap-3">
-							<span
-								class="font-mono text-[9px] text-muted-foreground md:hidden"
-							>
-								{((currentPage - 1) * perPage + index + 1)
-									.toString()
-									.padStart(2, '0')}
-							</span>
+
+						<div class="mb-3 flex flex-wrap items-center gap-3">
 
 							<span
-								class="text-[9px] font-bold uppercase tracking-[0.12em] text-accent"
+								class="text-[9px] font-bold uppercase tracking-[0.14em] text-accent"
 							>
 								{programme.level}
 							</span>
+
+							<span class="h-1 w-1 rounded-full bg-border"></span>
+
+							<span
+								class="font-mono text-[9px] uppercase tracking-[0.12em] text-muted-foreground"
+							>
+								{programme.duration}
+							</span>
+
 						</div>
 
+
 						<h3
-							class="max-w-3xl text-xl font-semibold tracking-[-0.03em] text-foreground transition-transform duration-200 group-hover:translate-x-1 group-hover:text-primary md:text-2xl"
+							class="max-w-3xl text-xl font-semibold tracking-[-0.04em] text-foreground transition-all duration-200 group-hover:translate-x-1 group-hover:text-primary md:text-2xl"
 						>
 							{programme.title}
 						</h3>
+
 
 						<p
 							class="mt-3 max-w-2xl text-sm leading-6 text-muted-foreground"
@@ -590,55 +596,78 @@
 							{programme.description}
 						</p>
 
+
 						<!-- Mobile metadata -->
-						<div
-							class="mt-5 flex flex-wrap gap-x-5 gap-y-2 md:hidden"
-						>
+						<div class="mt-5 flex flex-wrap gap-4 md:hidden">
+
 							<span
-								class="text-[9px] font-semibold uppercase tracking-[0.1em] text-muted-foreground"
+								class="text-[9px] font-bold uppercase tracking-[0.12em] text-muted-foreground"
 							>
 								{programme.faculty}
 							</span>
 
-							<span
-								class="font-mono text-[9px] text-muted-foreground"
-							>
-								{programme.duration}
-							</span>
 						</div>
+
 					</div>
+
+
 
 					<!-- Faculty -->
 					<div class="hidden md:block">
+
 						<p
-							class="max-w-[190px] text-xs leading-5 text-muted-foreground"
+							class="text-xs leading-5 text-muted-foreground"
 						>
 							{programme.faculty}
 						</p>
+
 					</div>
+
+
 
 					<!-- Duration -->
 					<div class="hidden md:block">
-						<p class="font-mono text-xs text-foreground">
+
+						<p
+							class="font-mono text-xs text-foreground"
+						>
 							{programme.duration}
 						</p>
+
 					</div>
 
-					<!-- Arrow -->
-					<div class="hidden md:flex md:justify-end">
+
+
+					<!-- Action -->
+					<div
+						class="hidden items-center justify-end gap-3 md:flex"
+					>
+
+						<span
+							class="text-[9px] font-bold uppercase tracking-[0.14em] text-muted-foreground opacity-0 transition-opacity duration-200 group-hover:opacity-100"
+						>
+							View
+						</span>
+
+
 						<div
 							class="flex size-9 items-center justify-center border border-border/60 transition-all duration-200 group-hover:border-primary group-hover:bg-primary group-hover:text-primary-foreground"
 						>
+
 							<ArrowUpRight
 								class="size-4 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
 							/>
+
 						</div>
+
 					</div>
 
-					<!-- Editorial hover marker -->
+
+					<!-- Accent line -->
 					<div
 						class="absolute bottom-0 left-0 h-px w-0 bg-accent transition-all duration-500 group-hover:w-full"
 					></div>
+
 				</a>
 			{/each}
 		</div>
@@ -700,46 +729,68 @@
 	{/if}
 
 	<!-- =========================================================
-	     CATALOGUE FOOTER
+		CATALOGUE FOOTER
 	========================================================= -->
 	<div class="grid border-b border-border/60 md:grid-cols-3">
-		<div class="border-b border-border/60 p-6 md:border-b-0 md:border-r md:border-border/60 md:p-7">
+
+		<div
+			class="border-b border-border/60 p-6 md:border-b-0 md:border-r md:border-border/60 md:p-7"
+		>
 			<p class="font-mono text-3xl tracking-[-0.05em] text-primary">
 				{programmes.length.toString().padStart(2, '0')}
 			</p>
 
 			<p
-				class="mt-3 text-[9px] font-bold uppercase tracking-[0.14em] text-accent flex items-center gap-2"
+				class="mt-3 flex items-center gap-2 text-[9px] font-bold uppercase tracking-[0.14em] text-accent"
 			>
 				<span class="h-px w-3 bg-accent"></span>
-				Academic programmes
+				Programmes available
+			</p>
+
+			<p class="mt-2 text-xs leading-5 text-muted-foreground">
+				Degree, diploma, certificate and postgraduate pathways.
 			</p>
 		</div>
 
-		<div class="border-b border-border/60 p-6 md:border-b-0 md:border-r md:border-border/60 md:p-7">
+
+		<div
+			class="border-b border-border/60 p-6 md:border-b-0 md:border-r md:border-border/60 md:p-7"
+		>
 			<p class="font-mono text-3xl tracking-[-0.05em] text-primary">
 				{levels.length.toString().padStart(2, '0')}
 			</p>
 
 			<p
-				class="mt-3 text-[9px] font-bold uppercase tracking-[0.14em] text-accent flex items-center gap-2"
+				class="mt-3 flex items-center gap-2 text-[9px] font-bold uppercase tracking-[0.14em] text-accent"
 			>
 				<span class="h-px w-3 bg-accent"></span>
 				Levels of study
 			</p>
+
+			<p class="mt-2 text-xs leading-5 text-muted-foreground">
+				From entry-level qualifications to advanced research.
+			</p>
 		</div>
 
+
 		<div class="p-6 md:p-7">
+
 			<p class="font-mono text-3xl tracking-[-0.05em] text-primary">
 				{faculties.length.toString().padStart(2, '0')}
 			</p>
 
 			<p
-				class="mt-3 text-[9px] font-bold uppercase tracking-[0.14em] text-accent flex items-center gap-2"
+				class="mt-3 flex items-center gap-2 text-[9px] font-bold uppercase tracking-[0.14em] text-accent"
 			>
 				<span class="h-px w-3 bg-accent"></span>
-				Academic faculties
+				Faculties represented
 			</p>
+
+			<p class="mt-2 text-xs leading-5 text-muted-foreground">
+				Explore programmes across MMU's academic schools.
+			</p>
+
 		</div>
+
 	</div>
 </div>

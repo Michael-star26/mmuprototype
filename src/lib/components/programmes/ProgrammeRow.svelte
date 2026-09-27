@@ -1,49 +1,93 @@
 <script lang="ts">
-	import ArrowRight from '@lucide/svelte/icons/arrow-right';
+	import ArrowUpRight from '@lucide/svelte/icons/arrow-up-right';
 
-	import { Button } from '$lib/components/ui/button';
 	import type { Programme } from '$lib/types';
 
 	let { programme }: { programme: Programme } = $props();
 </script>
 
-<div class="group relative border-b border-border/60 py-6 transition-colors hover:bg-muted/30 px-4 rounded-lg">
-	<!-- Left red brand indicator accent line on hover -->
-	<div class="absolute left-0 top-1/2 -translate-y-1/2 h-10 w-1 bg-accent opacity-0 transition-opacity duration-200 group-hover:opacity-100"></div>
 
-	<div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-		<div class="min-w-0 space-y-2">
-			<div class="flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-				<span class="text-primary">{programme.level}</span>
-				<span aria-hidden="true">·</span>
-				<span>{programme.duration}</span>
+<div
+	class="group relative border-b border-border/60 py-8 transition-colors hover:bg-muted/20"
+>
+	<div
+		class="absolute bottom-0 left-0 h-px w-0 bg-accent transition-all duration-500 group-hover:w-full"
+	></div>
+
+
+	<a
+		href={`/academics/programmes/${programme.slug}`}
+		class="grid gap-6 md:grid-cols-[1fr_auto] md:items-center"
+	>
+
+		<div class="min-w-0">
+
+			<div class="mb-3 flex flex-wrap items-center gap-3">
+
+				<span
+					class="text-[9px] font-bold uppercase tracking-[0.14em] text-accent"
+				>
+					{programme.level}
+				</span>
+
+				<span class="h-1 w-1 bg-border"></span>
+
+				<span
+					class="font-mono text-[10px] uppercase tracking-[0.12em] text-muted-foreground"
+				>
+					{programme.duration}
+				</span>
+
 			</div>
 
-			<h3 class="text-lg font-bold tracking-tight">
-				<a
-					href={`/academics/programmes/${programme.slug}`}
-					class="transition-colors group-hover:text-primary"
-				>
-					{programme.title}
-				</a>
+
+			<h3
+				class="max-w-3xl text-2xl font-semibold tracking-[-0.04em] text-foreground transition-colors group-hover:text-primary"
+			>
+				{programme.title}
 			</h3>
 
-			<p class="text-xs font-medium text-muted-foreground">
-				{programme.faculty}
-			</p>
 
-			<p class="max-w-3xl text-sm text-muted-foreground leading-relaxed">
+			<p
+				class="mt-3 max-w-2xl text-sm leading-6 text-muted-foreground"
+			>
 				{programme.description}
 			</p>
+
+
+			<div class="mt-5">
+
+				<span
+					class="text-[9px] font-semibold uppercase tracking-[0.14em] text-muted-foreground"
+				>
+					{programme.faculty}
+				</span>
+
+			</div>
+
 		</div>
 
-		<Button
-			href={`/academics/programmes/${programme.slug}`}
-			variant="outline"
-			class="w-fit shrink-0 border-primary/20 hover:bg-primary hover:text-primary-foreground transition-all"
-		>
-			View Programme
-			<ArrowRight class="ml-2 size-4 transition-transform group-hover:translate-x-1" />
-		</Button>
-	</div>
+
+
+		<div class="hidden md:flex items-center gap-3">
+
+			<span
+				class="text-[9px] font-bold uppercase tracking-[0.14em] text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100"
+			>
+				View programme
+			</span>
+
+
+			<div
+				class="flex size-9 items-center justify-center border border-border/60 transition-all group-hover:border-primary group-hover:bg-primary group-hover:text-primary-foreground"
+			>
+
+				<ArrowUpRight class="size-4" />
+
+			</div>
+
+		</div>
+
+
+	</a>
 </div>

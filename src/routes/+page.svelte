@@ -4,7 +4,12 @@
     import BookOpen from '@lucide/svelte/icons/book-open';
     import GraduationCap from '@lucide/svelte/icons/graduation-cap';
     import FlaskConical from '@lucide/svelte/icons/flask-conical';
-
+	const quickLinks = [
+		{ label: 'Students', href: '/portal' },
+		{ label: 'Staff', href: '/staff' },
+		{ label: 'Library', href: '/library' },
+		{ label: 'Alumni', href: '/alumni' }
+	];
     import CTASection from '$lib/components/shared/CTASection.svelte';
 
     import { news } from '$lib/data/news';
@@ -113,18 +118,18 @@
     />
 </svelte:head>
 
-<!-- hero section -->
+
+
+
+<!-- Hero -->
+
 <section
-	class="relative isolate h-[calc(100svh-64px)] min-h-[680px] overflow-hidden bg-[#0b0b0b] text-white lg:h-[calc(100svh-72px)]"
+	class="relative isolate h-[calc(100svh-64px)] min-h-[680px] overflow-hidden bg-[#0b0b0b] text-white lg:h-[calc(100svh-80px)]"
 >
-	<!-- ============================================================
-	     MASONRY IMAGE FIELD
-	============================================================ -->
+	<!-- Masonry image field -->
 
 	<div class="absolute inset-0">
-		<!-- ========================================================
-		     PRIMARY LEFT PLANE
-		========================================================= -->
+		<!-- Primary left plane -->
 
 		<div
 			class="absolute left-0 top-0 h-[70%] w-[49%] overflow-hidden sm:h-[74%] sm:w-[44%] lg:h-[80%] lg:w-[39%]"
@@ -153,12 +158,10 @@
 				/>
 			</div>
 
-			<div class="absolute inset-0 bg-black/20"></div>
+			<div class="absolute inset-0 bg-black/25"></div>
 		</div>
 
-		<!-- ========================================================
-		     UPPER RIGHT PLANE
-		========================================================= -->
+		<!-- Upper right plane -->
 
 		<div
 			class="absolute right-0 top-0 h-[49%] w-[47%] overflow-hidden sm:h-[54%] sm:w-[32%] lg:h-[58%] lg:w-[27%]"
@@ -187,12 +190,10 @@
 				/>
 			</div>
 
-			<div class="absolute inset-0 bg-black/25"></div>
+			<div class="absolute inset-0 bg-black/30"></div>
 		</div>
 
-		<!-- ========================================================
-		     CENTRAL MASONRY FRAGMENT
-		========================================================= -->
+		<!-- Central masonry fragment -->
 
 		<div
 			class="absolute bottom-[13%] left-[37%] hidden h-[38%] w-[18%] overflow-hidden sm:block lg:bottom-[13%] lg:left-[31%] lg:h-[44%] lg:w-[13%]"
@@ -222,9 +223,7 @@
 			</div>
 		</div>
 
-		<!-- ========================================================
-		     LOWER RIGHT PLANE
-		========================================================= -->
+		<!-- Lower right plane -->
 
 		<div
 			class="absolute bottom-0 right-0 h-[43%] w-[45%] overflow-hidden sm:h-[40%] sm:w-[35%] lg:h-[43%] lg:w-[30%]"
@@ -253,12 +252,10 @@
 				/>
 			</div>
 
-			<div class="absolute inset-0 bg-black/25"></div>
+			<div class="absolute inset-0 bg-black/30"></div>
 		</div>
 
-		<!-- ========================================================
-		     SMALL LOWER-LEFT FRAGMENT
-		========================================================= -->
+		<!-- Small lower-left fragment -->
 
 		<div
 			class="absolute bottom-[4%] left-[16%] hidden h-[19%] w-[16%] overflow-hidden md:block lg:left-[18%] lg:h-[22%] lg:w-[10%]"
@@ -288,112 +285,145 @@
 			</div>
 		</div>
 
-		<!-- ========================================================
-		     CINEMATIC WASH
-		========================================================= -->
+		<!-- Global cinematic wash -->
 
 		<div
-			class="absolute inset-0 bg-gradient-to-br from-black/[0.88] via-black/[0.34] to-black/[0.72]"
+			class="absolute inset-0 bg-gradient-to-br from-black/[0.92] via-black/[0.42] to-black/[0.78]"
 		></div>
 
 		<div
-			class="absolute inset-0 bg-gradient-to-t from-black via-black/5 to-black/25"
+			class="absolute inset-0 bg-gradient-to-t from-black/[0.96] via-black/[0.12] to-black/[0.38]"
 		></div>
 
+		<!-- Keeps the central text area quiet without killing the photography -->
+
 		<div
-			class="absolute inset-0 bg-[radial-gradient(circle_at_43%_47%,transparent_0%,rgba(0,0,0,.08)_30%,rgba(0,0,0,.7)_100%)]"
+			class="absolute inset-0 bg-[radial-gradient(ellipse_at_42%_48%,rgba(0,0,0,.48)_0%,rgba(0,0,0,.18)_38%,transparent_68%)]"
 		></div>
+
+		<!-- Stronger readability around the top metadata -->
+
+		<div
+			class="absolute inset-x-0 top-0 h-[32%] bg-gradient-to-b from-black/[0.62] via-black/[0.28] to-transparent"
+		></div>
+
+		<!-- Stronger readability around the main copy -->
+
+		<div
+			class="absolute left-0 top-[22%] h-[58%] w-[72%] bg-gradient-to-r from-black/[0.32] via-black/[0.16] to-transparent"
+		></div>
+
+		<!-- Stronger lower fade for the description + navigation -->
+
+		<div
+			class="absolute inset-x-0 bottom-0 h-[34%] bg-gradient-to-t from-black/[0.9] via-black/[0.38] to-transparent"
+		></div>
+
+		<!-- Subtle colour accent -->
 
 		<div
 			class="absolute inset-0 bg-[radial-gradient(circle_at_72%_38%,rgba(111,255,156,.07),transparent_28%)]"
 		></div>
 	</div>
 
-	<!-- ============================================================
-	     EDITORIAL FRAME
-	============================================================ -->
+	<!-- Editorial frame -->
 
-	<div
-		class="pointer-events-none absolute inset-4 sm:inset-6 lg:inset-8"
-	>
+	<div class="pointer-events-none absolute inset-4 sm:inset-6 lg:inset-8">
 		<div class="absolute -left-px top-0 h-16 w-px bg-accent"></div>
-
 		<div class="absolute bottom-0 -right-px h-16 w-px bg-accent"></div>
 
 		<div
-			class="absolute right-0 top-[42%] hidden h-px w-16 bg-white/20 lg:block"
+			class="absolute right-0 top-[42%] hidden h-px w-16 bg-white/25 lg:block"
 		></div>
 	</div>
 
-	<!-- ============================================================
-	     HERO CONTENT
-	============================================================ -->
+	<!-- Hero content -->
 
-	<div
-		class="relative z-10 flex h-full flex-col px-5 sm:px-8 lg:px-12"
-	>
-		<!-- ========================================================
-		     MICRO EDITORIAL RAIL
-		     The header already carries the institution name.
-		     This now carries contextual information instead.
-		========================================================= -->
+	<div class="relative z-10 flex h-full flex-col px-5 sm:px-8 lg:px-12">
+		<!-- Context + utility navigation -->
 
-		<div
-			class="flex shrink-0 items-center justify-between border-b border-white/15 py-4 sm:py-5"
-		>
-			<div class="flex items-center gap-3 sm:gap-4">
-				<span class="h-px w-7 bg-accent sm:w-10"></span>
+		<div class="shrink-0 border-b border-white/20 py-4 sm:py-5">
+			<div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+				<div class="flex items-center gap-3 sm:gap-4">
+					<span class="h-px w-7 bg-accent sm:w-10"></span>
 
-				<span
-					class="font-mono text-[8px] uppercase tracking-[0.22em] text-white/50 sm:text-[9px]"
+					<span
+						class="font-mono text-[8px] font-medium uppercase tracking-[0.22em] text-white/75 sm:text-[9px]"
+					>
+						Nairobi · Kenya
+					</span>
+
+					<span class="hidden h-3 w-px bg-white/30 sm:block"></span>
+
+					<span
+						class="hidden text-[8px] font-semibold uppercase tracking-[0.2em] text-white/55 sm:block"
+					>
+						Technology · Creativity · Research
+					</span>
+				</div>
+
+				<nav
+					class="flex items-center gap-4 overflow-x-auto pb-0.5 sm:gap-5 lg:gap-6"
+					aria-label="Quick access"
 				>
-					Nairobi · Kenya
-				</span>
+					{#each quickLinks as link, index}
+						<a
+							href={link.href}
+							class="group flex shrink-0 items-center gap-1.5 text-[8px] font-semibold uppercase tracking-[0.13em] text-white/75 transition-colors hover:text-white sm:text-[9px]"
+						>
+							<span class="font-mono text-[7px] text-accent">
+								{String(index + 1).padStart(2, '0')}
+							</span>
 
-				<span class="hidden h-3 w-px bg-white/20 sm:block"></span>
+							<span>{link.label}</span>
+						</a>
+					{/each}
+				</nav>
 
+				<div class="hidden items-center gap-4 lg:flex">
+					<span
+						class="font-mono text-[8px] uppercase tracking-[0.18em] text-white/55"
+					>
+						Est. 2008
+					</span>
+
+					<span class="h-3 w-px bg-white/30"></span>
+
+					<span
+						class="font-mono text-[8px] font-semibold tracking-[0.18em] text-accent"
+					>
+						01 / 03
+					</span>
+				</div>
+			</div>
+
+			<div class="mt-3 flex items-center justify-between sm:hidden">
 				<span
-					class="hidden text-[8px] font-semibold uppercase tracking-[0.2em] text-white/35 sm:block"
+					class="font-mono text-[7px] font-medium uppercase tracking-[0.18em] text-white/55"
 				>
 					Technology · Creativity · Research
 				</span>
-			</div>
 
-			<div class="flex items-center gap-4">
-				<span
-					class="hidden font-mono text-[8px] uppercase tracking-[0.18em] text-white/30 sm:block"
-				>
-					Est. 2008
-				</span>
-
-				<span class="h-3 w-px bg-white/20"></span>
-
-				<span
-					class="font-mono text-[8px] tracking-[0.18em] text-accent"
-				>
+				<span class="font-mono text-[8px] font-semibold tracking-[0.18em] text-accent">
 					01 / 03
 				</span>
 			</div>
 		</div>
 
-		<!-- ========================================================
-		     MAIN TYPOGRAPHIC COMPOSITION
-		========================================================= -->
+		<!-- Main composition -->
 
 		<div class="relative flex min-h-0 flex-1 items-center">
 			<div class="relative w-full">
-				<!-- Vertical editorial annotation -->
 				<div
 					class="absolute -left-1 top-2 hidden -translate-x-full pr-6 lg:block"
 				>
 					<div
-						class="writing-mode-vertical rotate-180 font-mono text-[8px] uppercase tracking-[0.25em] text-white/30"
+						class="writing-mode-vertical rotate-180 font-mono text-[8px] uppercase tracking-[0.25em] text-white/55"
 					>
 						Multimedia University of Kenya
 					</div>
 				</div>
 
-				<!-- Small section identifier -->
 				<div class="mb-5 flex items-center gap-3 sm:mb-7">
 					<span
 						class="font-mono text-[8px] font-semibold tracking-[0.2em] text-accent"
@@ -401,18 +431,14 @@
 						MMU / 01
 					</span>
 
-					<span class="h-px w-8 bg-white/20"></span>
+					<span class="h-px w-8 bg-white/35"></span>
 
 					<span
-						class="text-[8px] font-bold uppercase tracking-[0.25em] text-white/40"
+						class="text-[8px] font-bold uppercase tracking-[0.25em] text-white/65"
 					>
 						The future is built here
 					</span>
 				</div>
-
-				<!-- =================================================
-				     SKEWED HERO TYPE
-				================================================== -->
 
 				<h1
 					class="max-w-[1200px] text-[clamp(4rem,13vw,11rem)] font-semibold leading-[0.74] tracking-[-0.085em]"
@@ -436,64 +462,24 @@
 					<br />
 
 					<span
-						class="relative ml-[3vw] inline-block skew-x-[-4deg] text-white/90 sm:ml-[5vw]"
+						class="relative ml-[3vw] inline-block skew-x-[-4deg] text-white sm:ml-[5vw]"
 					>
 						comes next.
 					</span>
 				</h1>
 
-				<!-- =================================================
-				     DESCRIPTION RAIL
-				================================================== -->
-
-				<div
-					class="mt-8 grid max-w-4xl border-y border-white/20 sm:mt-10 sm:grid-cols-[1fr_auto]"
-				>
-					<div
-						class="border-b border-white/15 py-5 pr-6 sm:py-6 sm:pr-10 lg:border-b-0 lg:border-r"
-					>
+				<div class="mt-8 max-w-4xl border-y border-white/25 sm:mt-10">
+					<div class="py-5 sm:py-6">
 						<p
-							class="max-w-2xl text-sm leading-6 text-white/65 sm:text-base sm:leading-7 lg:text-[16px]"
+							class="max-w-2xl text-sm font-medium leading-6 text-white/80 sm:text-base sm:leading-7 lg:text-[16px]"
 						>
 							A university built around technology, creativity,
 							research and the people shaping tomorrow.
 						</p>
 					</div>
-
-					<div class="flex items-center gap-4 py-4 sm:px-6">
-						<div>
-							<span
-								class="block text-[8px] font-bold uppercase tracking-[0.2em] text-white/30"
-							>
-								Discover
-							</span>
-
-							<span
-								class="mt-1 block font-mono text-[8px] text-accent"
-							>
-								01 — 03
-							</span>
-						</div>
-
-						<a
-							href="/academics/programmes"
-							aria-label="Explore programmes"
-							class="group flex size-10 items-center justify-center border-l border-white/20 pl-3 transition-colors hover:text-accent"
-						>
-							<ArrowUpRight
-								class="size-4 transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1"
-							/>
-						</a>
-					</div>
 				</div>
 
-				<!-- =================================================
-				     ACTIONS
-				================================================== -->
-
-				<div
-					class="mt-6 flex flex-wrap items-center gap-x-8 gap-y-4"
-				>
+				<div class="mt-6 flex flex-wrap items-center gap-x-8 gap-y-4">
 					<a
 						href="/academics/programmes"
 						class="group inline-flex items-center text-[10px] font-bold uppercase tracking-[0.12em]"
@@ -511,7 +497,7 @@
 
 					<a
 						href="/admissions"
-						class="text-[10px] font-bold uppercase tracking-[0.12em] text-white/45 transition-colors hover:text-white"
+						class="text-[10px] font-bold uppercase tracking-[0.12em] text-white/70 transition-colors hover:text-white"
 					>
 						Admissions
 					</a>
@@ -519,102 +505,102 @@
 			</div>
 		</div>
 
-		<!-- ========================================================
-		     BOTTOM INFORMATION TABLE
-		========================================================= -->
+		<!-- Bottom information table -->
 
-		<div
-			class="grid shrink-0 border-t border-white/20 lg:grid-cols-[150px_1fr_150px]"
-		>
-			<!-- Section label -->
+		<div class="grid shrink-0 border-t border-white/25 lg:grid-cols-[150px_1fr_150px]">
 			<div
-				class="hidden items-center border-r border-white/15 pr-7 lg:flex"
+				class="hidden items-center border-r border-white/20 pr-7 lg:flex"
 			>
 				<div>
-					<span
-						class="block font-mono text-[8px] font-semibold tracking-[0.2em] text-accent"
-					>
-						EXPLORE_M​MU
+					<span class="block font-mono text-[8px] font-semibold tracking-[0.2em] text-accent">
+						EXPLORE_MMU
 					</span>
 
-					<span
-						class="mt-1 block text-[8px] uppercase tracking-[0.15em] text-white/25"
-					>
+					<span class="mt-1 block text-[8px] uppercase tracking-[0.15em] text-white/45">
 						Navigation
 					</span>
 				</div>
 			</div>
 
-			<!-- Navigation -->
 			<div class="grid grid-cols-3">
-				{#each exploreLinks as item}
-					<a
-						href={item.href}
-						class="group relative flex min-h-[62px] items-center justify-between px-3 transition-colors duration-300 hover:bg-white/5 sm:min-h-[68px] sm:px-5 lg:px-6"
-					>
-						{#if item.number !== '01'}
-							<span
-								class="absolute left-0 top-1/2 h-7 -translate-y-1/2 border-l border-white/15"
-							></span>
-						{/if}
+				<a
+					href="/academics/programmes"
+					class="group relative flex min-h-[62px] items-center justify-between px-3 transition-colors duration-300 hover:bg-white/8 sm:min-h-[68px] sm:px-5 lg:px-6"
+				>
+					<div>
+						<span class="block font-mono text-[8px] text-accent">01</span>
 
-						<div>
-							<span
-								class="block font-mono text-[8px] text-accent"
-							>
-								{item.number}
-							</span>
+						<span
+							class="mt-1 block text-[9px] font-medium leading-4 text-white/75 transition-colors group-hover:text-white sm:text-[10px]"
+						>
+							Study at MMU
+						</span>
+					</div>
 
-							<span
-								class="mt-1 block max-w-[140px] text-[9px] font-medium leading-4 text-white/65 transition-colors group-hover:text-white sm:text-[10px]"
-							>
-								{item.label}
-							</span>
-						</div>
+					<ArrowUpRight
+						class="hidden size-3.5 text-white/40 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-accent sm:block"
+					/>
+				</a>
 
-						<ArrowRight
-							class="hidden size-3.5 text-white/25 transition-all duration-300 group-hover:translate-x-1 group-hover:text-accent sm:block"
-						/>
-					</a>
-				{/each}
+				<a
+					href="/research"
+					class="group relative flex min-h-[62px] items-center justify-between border-l border-white/20 px-3 transition-colors duration-300 hover:bg-white/8 sm:min-h-[68px] sm:px-5 lg:px-6"
+				>
+					<div>
+						<span class="block font-mono text-[8px] text-accent">02</span>
+
+						<span
+							class="mt-1 block text-[9px] font-medium leading-4 text-white/75 transition-colors group-hover:text-white sm:text-[10px]"
+						>
+							Research & innovation
+						</span>
+					</div>
+
+					<ArrowUpRight
+						class="hidden size-3.5 text-white/40 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-1 sm:block"
+					/>
+				</a>
+
+				<a
+					href="/campus-life"
+					class="group relative flex min-h-[62px] items-center justify-between border-l border-white/20 px-3 transition-colors duration-300 hover:bg-white/8 sm:min-h-[68px] sm:px-5 lg:px-6"
+				>
+					<div>
+						<span class="block font-mono text-[8px] text-accent">03</span>
+
+						<span
+							class="mt-1 block text-[9px] font-medium leading-4 text-white/75 transition-colors group-hover:text-white sm:text-[10px]"
+						>
+							Campus life
+						</span>
+					</div>
+
+					<ArrowUpRight
+						class="hidden size-3.5 text-white/40 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-1 sm:block"
+					/>
+				</a>
 			</div>
 
-			<!-- Carousel indicator -->
 			<div
-				class="hidden items-center justify-end gap-4 border-l border-white/15 pl-7 lg:flex"
+				class="hidden items-center justify-end gap-4 border-l border-white/20 pl-7 lg:flex"
 			>
 				<div class="flex items-center gap-1.5">
 					<span class="h-px w-10 bg-accent"></span>
-					<span class="h-px w-3 bg-white/25"></span>
-					<span class="h-px w-3 bg-white/25"></span>
+					<span class="h-px w-3 bg-white/35"></span>
+					<span class="h-px w-3 bg-white/35"></span>
 				</div>
 
-				<span
-					class="font-mono text-[8px] tracking-[0.15em] text-white/30"
-				>
+				<span class="font-mono text-[8px] tracking-[0.15em] text-white/50">
 					01
 				</span>
 			</div>
 		</div>
 	</div>
 
-	<!-- ============================================================
-	     NATIVE AUTOPLAY
-	============================================================ -->
-
 	<style>
 		.writing-mode-vertical {
 			writing-mode: vertical-rl;
 		}
-
-		/*
-		 * DEV:
-		 * 2.4 seconds per composition.
-		 *
-		 * Production recommendation:
-		 * change the three timing values to something slower,
-		 * e.g. 7s / 14s / 21s.
-		 */
 
 		.carousel-image {
 			opacity: 1;
@@ -661,6 +647,7 @@
 		}
 	</style>
 </section>
+
 
 
 <!-- Study -->

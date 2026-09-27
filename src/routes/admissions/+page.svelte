@@ -3,9 +3,9 @@
 	import FileText from '@lucide/svelte/icons/file-text';
 	import ClipboardList from '@lucide/svelte/icons/clipboard-list';
 	import HelpCircle from '@lucide/svelte/icons/help-circle';
+	import GraduationCap from '@lucide/svelte/icons/graduation-cap';
 
 	import PageHero from '$lib/components/shared/PageHero.svelte';
-	import SectionHeading from '$lib/components/shared/SectionHeading.svelte';
 	import CTASection from '$lib/components/shared/CTASection.svelte';
 </script>
 
@@ -13,152 +13,294 @@
 	<title>Admissions | Multimedia University of Kenya</title>
 	<meta
 		name="description"
-		content="Find admission information, requirements, and application guidance at Multimedia University of Kenya."
+		content="Explore admission requirements, application steps, and opportunities to join Multimedia University of Kenya."
 	/>
 </svelte:head>
 
-<PageHero
-	eyebrow="Admissions"
-	title="Start Your Journey"
-	description="Find the information you need to understand the admission process and prepare your application."
-	actions={[
-		{
-			label: 'Explore Programmes',
-			href: '/academics/programmes'
-		},
-		{
-			label: 'How to Apply',
-			href: '/admissions/how-to-apply',
-			variant: 'outline'
-		}
-	]}
+
+<!-- HERO -->
+<div class="relative">
+	<div
+		class="pointer-events-none absolute inset-x-0 top-0 -z-10 h-72 overflow-hidden"
+	>
+		<div
+			class="absolute left-1/2 top-0 h-64 w-[42rem] -translate-x-1/2 rounded-full bg-primary/5 blur-3xl"
+		></div>
+	</div>
+
+
+	<PageHero
+		eyebrow="Admissions"
+		title="Begin your journey at MMU."
+		description="Discover programmes, understand admission requirements, and follow the steps needed to become part of Multimedia University of Kenya."
+		actions={[
+			{
+				label: 'Explore Programmes',
+				href: '/academics/programmes'
+			},
+			{
+				label: 'How to Apply',
+				href: '/admissions/how-to-apply',
+				variant: 'outline'
+			}
+		]}
+	/>
+</div>
+
+
+<!-- ADMISSION PATHWAY -->
+<section class="border-y border-border/60">
+
+	<div class="mx-auto max-w-[1440px] px-6 py-16 md:py-24">
+
+		<div class="grid gap-10 lg:grid-cols-[280px_1fr]">
+
+			<div>
+
+				<p class="flex items-center gap-2 text-[9px] font-bold uppercase tracking-[0.18em] text-accent">
+					<span class="h-px w-4 bg-accent"></span>
+					01 / Admission Guide
+				</p>
+
+
+				<h2 class="mt-5 text-4xl font-semibold tracking-[-0.05em]">
+					Your path to MMU.
+				</h2>
+
+
+				<p class="mt-5 text-sm leading-6 text-muted-foreground">
+					Everything you need from choosing a programme to submitting your application.
+				</p>
+
+			</div>
+
+
+			<div class="border-y border-border/60">
+
+
+				<a
+					href="/admissions/how-to-apply"
+					class="group grid gap-6 border-b border-border/60 p-6 transition-colors hover:bg-muted/40 md:grid-cols-[80px_1fr_auto] md:items-center"
+				>
+
+					<span class="font-mono text-sm text-muted-foreground">
+						01
+					</span>
+
+
+					<div>
+
+						<h3 class="text-xl font-semibold group-hover:text-primary transition-colors">
+							How to Apply
+						</h3>
+
+
+						<p class="mt-2 text-sm text-muted-foreground">
+							Follow the application process and understand what documents you need before applying.
+						</p>
+
+					</div>
+
+
+					<ArrowRight
+						class="size-5 text-muted-foreground transition-transform group-hover:translate-x-1"
+					/>
+
+				</a>
+
+
+
+				<a
+					href="/admissions/requirements"
+					class="group grid gap-6 border-b border-border/60 p-6 transition-colors hover:bg-muted/40 md:grid-cols-[80px_1fr_auto] md:items-center"
+				>
+
+					<span class="font-mono text-sm text-muted-foreground">
+						02
+					</span>
+
+
+					<div>
+
+						<h3 class="text-xl font-semibold group-hover:text-primary transition-colors">
+							Admission Requirements
+						</h3>
+
+
+						<p class="mt-2 text-sm text-muted-foreground">
+							Review academic qualifications and entry requirements for different levels of study.
+						</p>
+
+					</div>
+
+
+					<ArrowRight
+						class="size-5 text-muted-foreground transition-transform group-hover:translate-x-1"
+					/>
+
+				</a>
+
+
+
+				<a
+					href="/contact"
+					class="group grid gap-6 p-6 transition-colors hover:bg-muted/40 md:grid-cols-[80px_1fr_auto] md:items-center"
+				>
+
+					<span class="font-mono text-sm text-muted-foreground">
+						03
+					</span>
+
+
+					<div>
+
+						<h3 class="text-xl font-semibold group-hover:text-primary transition-colors">
+							Need Assistance?
+						</h3>
+
+
+						<p class="mt-2 text-sm text-muted-foreground">
+							Connect with MMU admissions support for guidance and enquiries.
+						</p>
+
+					</div>
+
+
+					<ArrowRight
+						class="size-5 text-muted-foreground transition-transform group-hover:translate-x-1"
+					/>
+
+				</a>
+
+
+			</div>
+
+
+		</div>
+
+	</div>
+
+</section>
+
+
+
+<!-- STUDENT TYPES -->
+<section class="border-b border-border/60">
+
+<div class="mx-auto max-w-[1440px] px-6 py-16 md:py-24">
+
+
+<div class="grid gap-10 lg:grid-cols-[280px_1fr]">
+
+
+<div>
+
+<p class="text-[9px] font-bold uppercase tracking-[0.18em] text-accent">
+02 / Explore Admissions
+</p>
+
+
+<p class="mt-4 text-sm leading-6 text-muted-foreground">
+Different applicants have different pathways into MMU.
+</p>
+
+</div>
+
+
+<div class="grid border-y border-border/60 md:grid-cols-3">
+
+
+<a
+href="/academics/programmes"
+class="group border-b border-border/60 p-7 hover:bg-muted/40 md:border-b-0 md:border-r"
+>
+
+<GraduationCap class="size-5 text-primary"/>
+
+
+<h3 class="mt-12 text-lg font-semibold">
+Undergraduate
+</h3>
+
+
+<p class="mt-3 text-sm text-muted-foreground">
+Explore bachelor's programmes and entry pathways.
+</p>
+
+</a>
+
+
+
+<a
+href="/academics/programmes"
+class="group border-b border-border/60 p-7 hover:bg-muted/40 md:border-b-0 md:border-r"
+>
+
+<FileText class="size-5 text-primary"/>
+
+
+<h3 class="mt-12 text-lg font-semibold">
+Postgraduate
+</h3>
+
+
+<p class="mt-3 text-sm text-muted-foreground">
+Discover advanced study and research opportunities.
+</p>
+
+</a>
+
+
+
+<a
+href="/contact"
+class="group p-7 hover:bg-muted/40"
+>
+
+<HelpCircle class="size-5 text-primary"/>
+
+
+<h3 class="mt-12 text-lg font-semibold">
+Need Help?
+</h3>
+
+
+<p class="mt-3 text-sm text-muted-foreground">
+Speak with admissions for guidance.
+</p>
+
+</a>
+
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- CTA -->
+
+<section class="mx-auto max-w-[1440px] px-6 py-16 md:py-24">
+
+<CTASection
+	eyebrow="Next Step"
+	title="Ready to join MMU?"
+	description="Explore programmes, review requirements, and begin your application journey."
+	primaryAction={{
+		label:'Start Application',
+		href:'/admissions/how-to-apply'
+	}}
+	secondaryAction={{
+		label:'Explore Programmes',
+		href:'/academics/programmes'
+	}}
 />
 
-<section class="container mx-auto px-4 py-16 md:py-20">
-	<SectionHeading
-		eyebrow="Your Next Step"
-		title="Join MMU"
-		description="Find the information you need to understand our admission process and prepare your application."
-	/>
-
-	<div class="mt-10 grid gap-6 md:grid-cols-3">
-		<a
-			href="/admissions/how-to-apply"
-			class="group rounded-lg border border-border/60 bg-background p-6 transition-all hover:border-primary hover:bg-muted/30 hover:shadow-sm"
-		>
-			<div
-				class="flex size-10 items-center justify-center rounded-md bg-primary/10 text-primary transition-colors group-hover:bg-accent group-hover:text-accent-foreground"
-			>
-				<FileText class="size-5" />
-			</div>
-
-			<h2 class="mt-5 text-lg font-semibold transition-colors group-hover:text-primary">
-				How to Apply
-			</h2>
-
-			<p class="mt-2 text-sm leading-6 text-muted-foreground">
-				Follow the application process and learn what to prepare before
-				submitting your application.
-			</p>
-
-			<div class="mt-5 flex items-center gap-2 text-sm font-medium text-primary group-hover:text-accent transition-colors">
-				Start Application Guide
-				<ArrowRight class="size-4 transition-transform group-hover:translate-x-1" />
-			</div>
-		</a>
-
-		<a
-			href="/admissions/requirements"
-			class="group rounded-lg border border-border/60 bg-background p-6 transition-all hover:border-primary hover:bg-muted/30 hover:shadow-sm"
-		>
-			<div
-				class="flex size-10 items-center justify-center rounded-md bg-primary/10 text-primary transition-colors group-hover:bg-accent group-hover:text-accent-foreground"
-			>
-				<ClipboardList class="size-5" />
-			</div>
-
-			<h2 class="mt-5 text-lg font-semibold transition-colors group-hover:text-primary">
-				Admission Requirements
-			</h2>
-
-			<p class="mt-2 text-sm leading-6 text-muted-foreground">
-				Review the academic and application requirements for prospective
-				students.
-			</p>
-
-			<div class="mt-5 flex items-center gap-2 text-sm font-medium text-primary group-hover:text-accent transition-colors">
-				View Requirements
-				<ArrowRight class="size-4 transition-transform group-hover:translate-x-1" />
-			</div>
-		</a>
-
-		<a
-			href="/contact"
-			class="group rounded-lg border border-border/60 bg-background p-6 transition-all hover:border-primary hover:bg-muted/30 hover:shadow-sm"
-		>
-			<div
-				class="flex size-10 items-center justify-center rounded-md bg-primary/10 text-primary transition-colors group-hover:bg-accent group-hover:text-accent-foreground"
-			>
-				<HelpCircle class="size-5" />
-			</div>
-
-			<h2 class="mt-5 text-lg font-semibold transition-colors group-hover:text-primary">
-				Need Help?
-			</h2>
-
-			<p class="mt-2 text-sm leading-6 text-muted-foreground">
-				Contact the university if you need assistance with admissions or
-				have questions about the application process.
-			</p>
-
-			<div class="mt-5 flex items-center gap-2 text-sm font-medium text-primary group-hover:text-accent transition-colors">
-				Contact Us
-				<ArrowRight class="size-4 transition-transform group-hover:translate-x-1" />
-			</div>
-		</a>
-	</div>
-</section>
-
-<section class="border-y border-border/60 bg-muted/40">
-	<div class="container mx-auto px-4 py-16 md:py-20">
-		<SectionHeading
-			align="center"
-			eyebrow="Plan Your Application"
-			title="Choose your next step"
-			description="Explore our academic programmes, review admission requirements, and learn how to apply."
-		/>
-
-		<div class="mt-8 flex flex-wrap justify-center gap-3">
-			<a
-				href="/academics/programmes"
-				class="inline-flex h-10 items-center justify-center rounded-md bg-primary px-4 text-sm font-semibold text-primary-foreground shadow-xs transition-colors hover:bg-accent"
-			>
-				Explore Programmes
-				<ArrowRight class="ml-2 size-4" />
-			</a>
-
-			<a
-				href="/admissions/requirements"
-				class="inline-flex h-10 items-center justify-center rounded-md border border-primary/30 bg-background px-4 text-sm font-semibold text-foreground transition-colors hover:bg-primary/10 hover:text-primary"
-			>
-				View Requirements
-			</a>
-		</div>
-	</div>
-</section>
-
-<section class="container mx-auto px-4 py-16 md:py-20">
-	<CTASection
-		eyebrow="Have Questions?"
-		title="We're here to help."
-		description="If you need additional information about admissions, programmes, or the application process, get in touch with us."
-		primaryAction={{
-			label: 'Contact MMU',
-			href: '/contact'
-		}}
-		secondaryAction={{
-			label: 'View Programmes',
-			href: '/academics/programmes'
-		}}
-	/>
 </section>
