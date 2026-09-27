@@ -1,12 +1,12 @@
 <script lang="ts">
+	import ArrowUpRight from '@lucide/svelte/icons/arrow-up-right';
 	import Mail from '@lucide/svelte/icons/mail';
 	import MapPin from '@lucide/svelte/icons/map-pin';
 	import Phone from '@lucide/svelte/icons/phone';
-	import ArrowUpRight from '@lucide/svelte/icons/arrow-up-right';
-	import Globe from '@lucide/svelte/icons/globe';
 
 	const footerSections = [
 		{
+			number: '01',
 			title: 'University',
 			links: [
 				{ label: 'About MMU', href: '/university' },
@@ -17,6 +17,7 @@
 			]
 		},
 		{
+			number: '02',
 			title: 'Academics',
 			links: [
 				{ label: 'Programmes Directory', href: '/academics/programmes' },
@@ -27,6 +28,7 @@
 			]
 		},
 		{
+			number: '03',
 			title: 'Resources',
 			links: [
 				{ label: 'Student Portal', href: '#', external: true },
@@ -39,219 +41,179 @@
 	];
 </script>
 
-<!-- Footer styled with the deep navy background to match the official MMU site -->
-<footer class="border-t border-primary-foreground/15 bg-primary text-primary-foreground">
-	<!-- ============================================================
-		ADMISSIONS STRIP
-	============================================================ -->
+<footer class="relative overflow-hidden bg-foreground text-background">
+	<!-- Admissions -->
 
-	<div class="border-b border-primary-foreground/15">
-		<div class="container mx-auto px-5 py-7 lg:px-6 lg:py-8">
-			<div
-				class="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between"
-			>
-				<div class="flex items-start gap-4 sm:items-center">
-					<!-- Accent Red dot matching university brand -->
-					<span class="mt-1.5 size-2 shrink-0 bg-accent sm:mt-0"></span>
+	<div class="border-b border-background/15">
+		<div class="container mx-auto px-5 lg:px-6">
+			<div class="grid gap-6 py-7 sm:grid-cols-[1fr_auto] sm:items-center sm:py-8">
+				<div class="flex items-center gap-4">
+					<span class="size-2 shrink-0 bg-accent"></span>
 
-					<p
-						class="max-w-xl text-[10px] font-semibold uppercase leading-5 tracking-[0.14em] sm:text-xs sm:leading-normal"
-					>
-						Admissions for the upcoming academic intake are open.
-					</p>
+					<div class="flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-4">
+						<span class="font-mono text-[8px] font-semibold uppercase tracking-[0.2em] text-accent">
+							Admissions / 2026
+						</span>
+
+						<span class="hidden h-3 w-px bg-background/20 sm:block"></span>
+
+						<p class="text-[10px] font-semibold uppercase tracking-[0.12em] opacity-80 sm:text-xs">
+							Applications for the upcoming intake are open.
+						</p>
+					</div>
 				</div>
 
 				<a
 					href="/admissions/how-to-apply"
-					class="group inline-flex items-center text-[10px] font-bold uppercase tracking-[0.1em] text-primary-foreground transition-opacity hover:opacity-80 sm:text-xs"
+					class="group inline-flex w-fit items-center text-[9px] font-bold uppercase tracking-[0.15em] transition-colors hover:text-accent sm:text-[10px]"
 				>
 					Start your application
-
-					<ArrowUpRight
-						class="ml-2 size-3.5 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-					/>
+					<ArrowUpRight class="ml-3 size-4 transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1" />
 				</a>
 			</div>
 		</div>
 	</div>
 
-	<!-- ============================================================
-		MAIN FOOTER
-	============================================================ -->
+	<!-- Main footer -->
 
-	<div class="container mx-auto px-5 py-16 sm:py-20 lg:px-6 lg:py-24">
-		<div
-			class="grid gap-12 sm:gap-16 lg:grid-cols-[1.5fr_1fr_1fr_1fr] lg:gap-12"
-		>
-			<!-- Brand / Contact -->
+	<div class="container mx-auto px-5 py-20 sm:py-24 lg:px-6 lg:py-32">
+		<div class="grid gap-16 lg:grid-cols-[1.15fr_1fr] lg:gap-24">
+			<!-- Brand -->
 
-			<div class="space-y-7 sm:space-y-8">
-				<a
-					href="/"
-					class="group inline-flex items-center gap-4"
-					aria-label="Multimedia University of Kenya"
-				>
-					<div
-						class="flex size-11 items-center justify-center border border-primary-foreground/20 bg-primary-foreground text-[11px] font-bold tracking-[-0.04em] text-primary transition-colors duration-200 group-hover:bg-accent group-hover:text-accent-foreground sm:size-12 sm:text-sm"
-					>
-						MMU
-					</div>
+			<div class="relative">
+				<div class="flex items-center gap-3">
+					<span class="font-mono text-[9px] font-semibold tracking-[0.2em] text-accent">
+						08
+					</span>
 
-					<div>
-						<div class="text-sm font-semibold tracking-tight text-primary-foreground">
-							Multimedia University
-						</div>
+					<span class="h-px w-10 bg-background/25"></span>
 
-						<div class="mt-0.5 text-xs text-primary-foreground/70">
-							of Kenya
-						</div>
-					</div>
-				</a>
+					<span class="text-[9px] font-bold uppercase tracking-[0.2em] opacity-50">
+						Stay connected
+					</span>
+				</div>
 
-				<p
-					class="max-w-sm text-xs leading-6 text-primary-foreground/75 sm:text-sm"
-				>
-					A modern technological institution anchored in rigorous
-					academic scholarship, applied research, and creative
-					industry preparation.
+				<h2 class="mt-9 select-none text-[clamp(5rem,15vw,13rem)] font-semibold leading-[0.68] tracking-[-0.11em]">
+					MMU
+				</h2>
+
+				<p class="mt-10 max-w-md text-sm leading-6 opacity-60 sm:text-base sm:leading-7">
+					Multimedia University of Kenya — technology, creativity,
+					research and people shaping what comes next.
 				</p>
 
-				<div class="grid gap-3 pt-1 text-xs text-primary-foreground/75">
+				<div class="mt-9 grid gap-3 text-xs opacity-65">
 					<div class="flex items-start gap-3">
-						<MapPin
-							class="mt-0.5 size-4 shrink-0 text-primary-foreground"
-						/>
-
-						<span>
-							Magadi Road, Nairobi, Kenya
-						</span>
+						<MapPin class="mt-0.5 size-4 shrink-0 opacity-80" />
+						<span>Magadi Road, Nairobi, Kenya</span>
 					</div>
 
 					<div class="flex items-center gap-3">
-						<Phone
-							class="size-4 shrink-0 text-primary-foreground"
-						/>
-
+						<Phone class="size-4 shrink-0 opacity-80" />
 						<a
 							href="tel:+254700000000"
-							class="transition-colors hover:text-primary-foreground"
+							class="transition-opacity hover:opacity-100"
 						>
 							+254 (0) 700 000 000
 						</a>
 					</div>
 
 					<div class="flex items-center gap-3">
-						<Mail
-							class="size-4 shrink-0 text-primary-foreground"
-						/>
-
+						<Mail class="size-4 shrink-0 opacity-80" />
 						<a
 							href="mailto:info@mmu.ac.ke"
-							class="transition-colors hover:text-primary-foreground"
+							class="transition-opacity hover:opacity-100"
 						>
 							info@mmu.ac.ke
 						</a>
 					</div>
 				</div>
+
+				<span
+					class="pointer-events-none absolute -bottom-8 -left-2 select-none font-mono text-[7rem] font-semibold leading-none tracking-[-0.12em] opacity-[0.025] sm:text-[10rem]"
+					aria-hidden="true"
+				>
+					08
+				</span>
 			</div>
 
-			<!-- Link columns -->
+			<!-- Link index -->
 
-			{#each footerSections as section, sIdx}
-				<div class="border-t border-primary-foreground/15 pt-5 lg:border-t-0 lg:pt-0">
-					<div class="flex items-center justify-between">
-						<h3
-							class="text-[9px] font-bold uppercase tracking-[0.2em] text-primary-foreground sm:text-[10px]"
-						>
-							{section.title}
-						</h3>
+			<div class="border-t border-background/15 lg:border-t-0 lg:pt-0">
+				<div class="grid sm:grid-cols-3 lg:gap-8">
+					{#each footerSections as section}
+						<div class="border-b border-background/15 py-7 first:pt-6 sm:border-b-0 sm:border-l sm:pl-6 sm:first:border-l-0 sm:first:pl-0 sm:py-0 sm:first:pt-0">
+							<div class="flex items-center gap-3">
+								<span class="font-mono text-[8px] font-semibold tracking-[0.16em] text-accent">
+									{section.number}
+								</span>
 
-						<span
-							class="text-[9px] text-primary-foreground/50 lg:hidden"
-						>
-							0{sIdx + 1}
-						</span>
-					</div>
+								<span class="text-[9px] font-bold uppercase tracking-[0.18em] opacity-75">
+									{section.title}
+								</span>
+							</div>
 
-					<ul class="mt-5 space-y-3 sm:mt-6 sm:space-y-3.5">
-						{#each section.links as link}
-							<li>
-								<a
-									href={link.href}
-									class="group inline-flex items-center gap-2 text-xs text-primary-foreground/70 transition-colors hover:text-primary-foreground"
-								>
-									<span
-										class="transition-transform duration-150 group-hover:translate-x-1"
-									>
-										{link.label}
-									</span>
+							<ul class="mt-7 space-y-4">
+								{#each section.links as link}
+									<li>
+										<a
+											href={link.href}
+											class="group flex items-start gap-2 text-xs opacity-55 transition-opacity hover:opacity-100"
+										>
+											<span class="transition-transform duration-200 group-hover:translate-x-1">
+												{link.label}
+											</span>
 
-									{#if link.external}
-										<ArrowUpRight
-											class="size-3 opacity-40 transition-opacity duration-150 group-hover:opacity-100"
-										/>
-									{/if}
-								</a>
-							</li>
-						{/each}
-					</ul>
+											{#if link.external}
+												<ArrowUpRight class="mt-0.5 size-3 shrink-0 opacity-40 transition-all duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:opacity-100" />
+											{/if}
+										</a>
+									</li>
+								{/each}
+							</ul>
+						</div>
+					{/each}
 				</div>
-			{/each}
+			</div>
 		</div>
 
-		<!-- ============================================================
-			LOWER BAR
-		============================================================ -->
+		<!-- Final footer statement -->
 
-		<div class="mt-14 border-t border-primary-foreground/15 pt-7 sm:mt-20 sm:pt-8">
-			<div
-				class="flex flex-col gap-5 text-[10px] text-primary-foreground/70 sm:text-[11px] md:flex-row md:items-center md:justify-between"
-			>
-				<div
-					class="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-5"
-				>
-					<p>
-						© {new Date().getFullYear()} Multimedia University of Kenya. All rights reserved.
-					</p>
-
-					<span class="hidden text-primary-foreground/30 sm:block">
-						/
+		<div class="mt-20 border-t border-background/15 pt-8 sm:mt-28">
+			<div class="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end lg:gap-16">
+				<div>
+					<span class="font-mono text-[8px] font-semibold uppercase tracking-[0.2em] text-accent">
+						MMU / Nairobi / Kenya
 					</span>
 
-					<div class="flex items-center gap-2">
-						<Globe class="size-3" />
-
-						<span>Nairobi, Kenya</span>
-					</div>
+					<p class="mt-4 max-w-2xl text-[clamp(1.8rem,4vw,3.5rem)] font-semibold leading-[0.9] tracking-[-0.06em] opacity-90">
+						Shape what comes next.
+					</p>
 				</div>
 
-				<div class="flex flex-wrap items-center gap-x-4 gap-y-2">
-					<a
-						href="#"
-						class="transition-colors hover:text-primary-foreground"
-					>
-						Privacy
-					</a>
-
-					<span class="text-primary-foreground/40">·</span>
-
-					<a
-						href="#"
-						class="transition-colors hover:text-primary-foreground"
-					>
-						Terms
-					</a>
-
-					<span class="text-primary-foreground/40">·</span>
-
-					<a
-						href="/contact"
-						class="transition-colors hover:text-primary-foreground"
-					>
-						Contact
-					</a>
+				<div class="flex flex-wrap items-center gap-x-5 gap-y-3 text-[9px] uppercase tracking-[0.14em] opacity-45">
+					<a href="#" class="transition-opacity hover:opacity-100">Privacy</a>
+					<span>·</span>
+					<a href="#" class="transition-opacity hover:opacity-100">Terms</a>
+					<span>·</span>
+					<a href="/contact" class="transition-opacity hover:opacity-100">Contact</a>
 				</div>
 			</div>
 		</div>
+
+		<div class="mt-8 flex flex-col gap-2 text-[8px] uppercase tracking-[0.14em] opacity-30 sm:flex-row sm:items-center sm:justify-between">
+			<span>© {new Date().getFullYear()} Multimedia University of Kenya</span>
+			<span>All rights reserved</span>
+		</div>
 	</div>
+
+	<!-- Oversized editorial mark -->
+
+	<span
+		class="pointer-events-none absolute -bottom-16 -right-6 select-none font-mono text-[20rem] font-semibold leading-none tracking-[-0.14em] opacity-[0.025] sm:text-[28rem]"
+		aria-hidden="true"
+	>
+		MMU
+	</span>
 </footer>
+
