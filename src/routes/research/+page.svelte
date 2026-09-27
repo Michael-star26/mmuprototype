@@ -32,56 +32,91 @@
 	]}
 />
 
-<section class="container mx-auto px-4 py-16">
+<section class="container mx-auto px-5 py-16 lg:px-6 lg:py-24">
+
 	<SectionHeading
 		eyebrow="Research at MMU"
 		title="Advancing Knowledge Through Research"
 		description="Explore research activities, innovation, and opportunities to contribute to solutions that address real-world challenges."
 	/>
 
-	<div class="mt-10 grid gap-6 md:grid-cols-3">
-		<div class="group rounded-lg border border-border/60 bg-background p-6 transition-colors hover:border-accent/40 hover:bg-muted/30">
-			<div class="flex h-12 w-12 items-center justify-center rounded-md bg-primary/10 text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
-				<FlaskConical class="size-6" />
+
+	<div class="mt-12 border-t border-border/60">
+
+		<div class="grid md:grid-cols-3">
+
+			<div class="group border-b border-border/60 p-8 md:border-b-0 md:border-r">
+
+				<div class="font-mono text-sm text-muted-foreground">
+					01
+				</div>
+
+
+				<FlaskConical class="mt-8 size-7 text-accent" />
+
+
+				<h2 class="mt-6 text-xl font-semibold tracking-tight text-foreground group-hover:text-primary transition-colors">
+					Research Areas
+				</h2>
+
+
+				<p class="mt-3 text-sm leading-7 text-muted-foreground">
+					Discover areas of academic inquiry, emerging technologies, and research themes across the university.
+				</p>
+
 			</div>
 
-			<h2 class="mt-5 text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
-				Research Areas
-			</h2>
 
-			<p class="mt-2 text-sm leading-6 text-muted-foreground">
-				Discover areas of research and academic inquiry across the university.
-			</p>
-		</div>
 
-		<div class="group rounded-lg border border-border/60 bg-background p-6 transition-colors hover:border-accent/40 hover:bg-muted/30">
-			<div class="flex h-12 w-12 items-center justify-center rounded-md bg-primary/10 text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
-				<Microscope class="size-6" />
+			<div class="group border-b border-border/60 p-8 md:border-b-0 md:border-r">
+
+				<div class="font-mono text-sm text-muted-foreground">
+					02
+				</div>
+
+
+				<Microscope class="mt-8 size-7 text-accent" />
+
+
+				<h2 class="mt-6 text-xl font-semibold tracking-tight text-foreground group-hover:text-primary transition-colors">
+					Research Centres
+				</h2>
+
+
+				<p class="mt-3 text-sm leading-7 text-muted-foreground">
+					Explore research centres, institutes, and collaborations driving innovation and knowledge creation.
+				</p>
+
 			</div>
 
-			<h2 class="mt-5 text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
-				Research Centres
-			</h2>
 
-			<p class="mt-2 text-sm leading-6 text-muted-foreground">
-				Explore research centres, institutes, and collaborative initiatives.
-			</p>
-		</div>
 
-		<div class="group rounded-lg border border-border/60 bg-background p-6 transition-colors hover:border-accent/40 hover:bg-muted/30">
-			<div class="flex h-12 w-12 items-center justify-center rounded-md bg-primary/10 text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
-				<Lightbulb class="size-6" />
+			<div class="group p-8">
+
+				<div class="font-mono text-sm text-muted-foreground">
+					03
+				</div>
+
+
+				<Lightbulb class="mt-8 size-7 text-accent" />
+
+
+				<h2 class="mt-6 text-xl font-semibold tracking-tight text-foreground group-hover:text-primary transition-colors">
+					Innovation
+				</h2>
+
+
+				<p class="mt-3 text-sm leading-7 text-muted-foreground">
+					Transform research ideas into practical solutions through entrepreneurship, technology, and collaboration.
+				</p>
+
 			</div>
 
-			<h2 class="mt-5 text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
-				Innovation
-			</h2>
 
-			<p class="mt-2 text-sm leading-6 text-muted-foreground">
-				See how research and innovation can translate ideas into practical impact.
-			</p>
 		</div>
+
 	</div>
+
 </section>
 
 <section class="border-y border-border/60 bg-muted/20">
@@ -107,16 +142,17 @@
 			<div class="flex flex-wrap gap-3 lg:justify-end">
 				<Button 
 					href="/contact"
-					class="bg-primary text-primary-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
+					class="rounded-none h-11 bg-primary px-6 text-[10px] font-bold uppercase tracking-[0.14em] text-primary-foreground hover:bg-accent hover:text-accent-foreground"
 				>
 					Get Involved
 					<ArrowRight class="ml-2 size-4" />
 				</Button>
 
+
 				<Button 
-					href="/academics" 
+					href="/academics"
 					variant="outline"
-					class="border-border text-foreground hover:bg-muted hover:text-primary transition-colors"
+					class="rounded-none h-11 border-border/60 px-6 text-[10px] font-bold uppercase tracking-[0.14em] text-foreground hover:border-primary hover:bg-primary hover:text-primary-foreground"
 				>
 					Explore Academics
 				</Button>
